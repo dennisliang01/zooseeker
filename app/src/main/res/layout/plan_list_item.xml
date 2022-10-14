@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <TextView
+        android:id="@+id/plan_exhibit_name"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/PLI_item_name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/plan_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/decoration"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plan_location"
+        android:layout_width="166dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/PLI_location_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/plan_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plan_exhibit_name" />
+
+    <TextView
+        android:id="@+id/plan_distance"
+        android:layout_width="133dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/PLI_distance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plan_location"
+        app:layout_constraintTop_toBottomOf="@+id/plan_exhibit_name"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/decoration"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/PLI_O"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/plan_location"
+        app:layout_constraintEnd_toStartOf="@+id/plan_exhibit_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

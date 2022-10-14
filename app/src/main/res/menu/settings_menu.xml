@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/replan_option"
+        android:orderInCategory="100"
+        android:title="Replan"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/DirectionsMode"
+        android:orderInCategory="200"
+        android:title="Directions Mode: Brief"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ClearNavigation"
+        android:orderInCategory="300"
+        android:title="Clear Navigation"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SetLocation"
+        android:orderInCategory="400"
+        android:title="Set Location"
+        app:showAsAction="never" />
+
+</menu>

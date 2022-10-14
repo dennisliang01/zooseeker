@@ -1,0 +1,11 @@
+[
+  {"exhibit_name": "Elephant",     "loc": "1 Way",        "dist": 200},
+  {"exhibit_name": "Baboons",       "loc": "Forcest Way", "dist": 200},
+  {"exhibit_name": "Hippos",        "loc": "Swamp St",     "dist": 300},
+  {"exhibit_name": "Elephant",     "loc": "1 Way",        "dist": 200},
+  {"exhibit_name": "Baboons",       "loc": "Forcest Way", "dist": 200},
+  {"exhibit_name": "Hippos",        "loc": "Swamp St",     "dist": 300},
+  {"exhibit_name": "Elephant",     "loc": "1 Way",        "dist": 200},
+  {"exhibit_name": "Baboons",       "loc": "Forcest Way", "dist": 200},
+  {"exhibit_name": "Hippos",        "loc": "Swamp St",     "dist": 300}
+]

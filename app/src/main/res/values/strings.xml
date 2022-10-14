@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">zooseeker-jj-zaaz-team-52</string>
+    <string name="search_hint">exhibit</string>
+    <string name="search_label">searchlabel</string>
+    <string name="defaultexhibit">DefaultExhibit</string>
+    <string name="animal_name">Animal Name</string>
+    <string name="exhibit_type">Exhibit Type</string>
+    <string name="search_title">exhibit</string>
+    <string name="voice_search">voice_search</string>
+    <string name="previous_text">previous text</string>
+    <string name="next_text">next text</string>
+    <string name="directions">Directions</string>
+    <string name="textview">TextView</string>
+    <string name="hello_world">Hello World</string>
+    <string name="previous">Previous</string>
+    <string name="next">next</string>
+    <string name="_0_plan">(0) Plan</string>
+    <string name="plan_view_directions">DIRECTIONS</string>
+    <string name="search_create_plan">Create Plan</string>
+    <string name="PLI_item_name">Item_name</string>
+    <string name="PLI_location_name">location_name</string>
+    <string name="PLI_distance">distance</string>
+    <string name="PLI_O">○</string>
+    <string name="SSI_displayed_exhibit_name">displayed exhibit name</string>
+    <string name="SSI_displayed_location">displayed location</string>
+    <string name="SSI_x">×</string>
+    <string name="sample_node_file">sample_node_info.json</string>
+    <string name="title_activity_location">LocationActivity</string>
+
+    <string name="sample_graph_file">sample_zoo_graph.json</string>
+    <string name="sample_edge_file">sample_edge_info.json</string>
+
+    <string name="node_file">zoo_node_info.json</string>
+    <string name="graph_file">zoo_graph.json</string>
+    <string name="edge_file">zoo_edge_info.json</string>
+    <string name="_0">[ 0 ]</string>
+</resources>
