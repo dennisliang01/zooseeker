@@ -14,8 +14,10 @@ ZooSeeker is an Android application developed by Team 52 for navigating zoo exhi
 To install ZooSeeker, follow these steps:
 
 1. Clone the repository.
-2. Open the project in Android Studio.
-3. Build the project and run on an Android device or emulator.
+2. Select open project and select the folder you just cloned in Android Studio.
+3. Go to Tools -> Device Manager, there you will configure and download the virtual device that you need to run the app on Android, select any phone you want and just selecting the recommended system image should be ok.
+4. Wait for the gradle files to finish compiling, after you should see a run configuration named "app", and next to it in the available devices select the simulator you set up in the previous step.
+5. Click the "Run app" button and Android Studio should build and startup the simulator with the app installed.
 
 ## Usage
 
