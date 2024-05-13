@@ -1,33 +1,30 @@
-# Workplan for the week of 5/5-5/11
+# Workplan for the week of 5/12-5/18
 
-### For this week we are setting up our users stories, defining tasks, and breaking them down before jumping into coding
+### For this week we are assigning tasks and beginning a code sprint, this sprint will entail UI refinement before feature addition, and the creation and input of our visual map
 
-*Initial 5/7 writeup*
+The user stories we will focus on for this sprint are as follows:
+- 2
+  - Visual Map implementation
+  - Map section UI creation
+  - Database expansion for map features
+- 11
+  - Visual refinement of direction page
+- 12
+  - Plan page UI improvements
+    - Touched up overall page
+    - Touched up exhibit add page
+- 13
+  - Design plan for detail page
+    - Live animal section
+    - Description
+    - Pictures
+- 14
+  - General UI design
+    - Overall colors
+    - UI features outside of others stories such as bottom bar
 
-The groups we have defined for our user stories are as follows:
-1. Small Children
-2. Students
-3. Adults
-4. Family
-5. Elderly
-6. Disabled Users
+We were to focused on implementing features that we realized we did not have user stories that covered our UI implementations that would accomodate the user stories. 
 
-We are working on users stories to be shared and asses on 5/8 in a meeting as a group. After we assess the user stories, we will breakdown the stories into executable tasks. The tasks will be given to 3 groups of 3 to implement in a pair programesque manner. 
+Each user story will be accompanied by an initial figma design; UI will be developed in XML; we are currently choosing a database that we can make calls to in the development of a more live service platform in the anticipation of live features such as exhibit closures and animal statuses.
 
-We currently do not have a sprint schedule at this time. However, we continue to meet Wednesday's after class, and Sunday's at 5pm.
-
-The current tasks to be done will be fully assessed after the user stories, but will most likely include the following:
-1. Creation of our own custom map
-   - This will include animal exhibits, show areas, and disabled access locations
-   - Nodes and locations / routes will be assessed between exhibits
-2. Creating a new an impoved UI
-    - this will need to incorporate the new map feature and clean up the old buttons
-    - Use the current node system to test until the new one is implemented
-3. Creating New JSON entries
-    - Overhaul backend to include new node types, and new information
-
-Challenges still to be met as a group:
-1. Assign into teams
-2. Break down tasks to fundamental compenets
-3. Prioritize tasks
-4. Give the tasks qualitive measurements
+Our milestone for this section is the creation of the map section with scrollable and clickable map, plan section with same features but cleaned up look, direction section with same features but cleaned up look
