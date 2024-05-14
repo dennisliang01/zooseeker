@@ -34,4 +34,8 @@
     <string name="graph_file">zoo_graph.json</string>
     <string name="edge_file">zoo_edge_info.json</string>
     <string name="_0">[ 0 ]</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Map</string>
+    <string name="title_plan">Plan</string>
+    <string name="title_directions">Direction</string>
 </resources>

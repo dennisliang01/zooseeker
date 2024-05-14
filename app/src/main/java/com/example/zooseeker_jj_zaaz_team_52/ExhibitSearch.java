@@ -26,7 +26,7 @@ import info.debatty.java.stringsimilarity.interfaces.StringDistance;
  * not be displayed in search menu depending on String user inputs
  */
 public class ExhibitSearch {
-    Map<String, ZooData.VertexInfo> zooData;
+    public Map<String, ZooData.VertexInfo> zooData;
     StringDistance stringMatcher;
     public static final double DEFAULT_THRESHOLD = .3;
     public static final StringDistance DEFAULT_STRING_MATCHER = new JaroWinkler();
@@ -74,7 +74,7 @@ public class ExhibitSearch {
      * @param keyword the search term to match.
      * @return a list of VertexInfo matching the keyword within DEFAULT_THRESHOLD
      */
-    List<ZooData.VertexInfo> searchKeyword(String keyword) {
+    public List<ZooData.VertexInfo> searchKeyword(String keyword) {
         return searchKeyword(keyword, DEFAULT_THRESHOLD);
     }
 

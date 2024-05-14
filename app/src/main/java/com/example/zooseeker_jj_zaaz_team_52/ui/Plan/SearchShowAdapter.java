@@ -1,4 +1,4 @@
-package com.example.zooseeker_jj_zaaz_team_52;
+package com.example.zooseeker_jj_zaaz_team_52.ui.Plan;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
+import com.example.zooseeker_jj_zaaz_team_52.R;
 
 import java.util.Collections;
 import java.util.List;

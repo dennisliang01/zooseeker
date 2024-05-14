@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.zooseeker_jj_zaaz_team_52"
@@ -44,9 +44,14 @@ android {
 
 
 dependencies {
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'com.android.tools.build:gradle:7.2.0'
     implementation 'androidx.test:core:1.4.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
     androidTestImplementation 'androidx.test:rules:1.4.0'
     testImplementation 'androidx.test:rules:1.4.0'
     def gson_version = "2.9.0"
