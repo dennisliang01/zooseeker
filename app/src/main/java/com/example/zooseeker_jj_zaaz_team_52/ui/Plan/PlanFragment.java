@@ -1,40 +1,49 @@
-package com.example.zooseeker_jj_zaaz_team_52;
+package com.example.zooseeker_jj_zaaz_team_52.ui.Plan;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.zooseeker_jj_zaaz_team_52.ui.Plan.SearchListViewModel;
-import com.example.zooseeker_jj_zaaz_team_52.ui.Plan.SearchShowAdapter;
+import com.example.zooseeker_jj_zaaz_team_52.*;
+import com.example.zooseeker_jj_zaaz_team_52.location.PermissionChecker;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * SearchActivity Class: Single Responsibility - Maintain and display the components of
- * view of the SearchActivity UI as user searches for and selects
- * exhibits and also transition into PlanViewActivity
- */
-public class SearchActivity extends AppCompatActivity {
+public class PlanFragment extends Fragment {
 
+    public static final String EXTRA_USE_LOCATION_SERVICE = "use_location_updated";
+    private boolean useLocationService;
+    private RecyclerView recyclerView;
+    private ZooNavigator zooNavigator;
+    private PlanViewAdapter adapter;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String KEY = "index";
+    private boolean hasPermissions;
+    private PermissionChecker permissionChecker;
     private RecyclerView courseRV;
+    private TextView numItemSelected;
 
     private ZooDataAdapter zooAdapter;
     private SearchShowAdapter searchAdapter;
@@ -44,32 +53,26 @@ public class SearchActivity extends AppCompatActivity {
     private Button createPlanBtn;
 
     private boolean isVisible = false;
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY = "index";
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_search, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        // Reserve the app state if user has killed the app.
-        if(loadData() == -2){
-            Intent intent = new Intent(this, PlanViewActivity.class);
-            startActivity(intent);
-        }
-        else if(loadData() != -1){
-            Intent intent = new Intent(this, DirectionsActivity.class);
-            PlanListItemDao planListItemDao = PlanDatabase.getSingleton(this).planListItemDao();
-            List<PlanListItem> planListItems = planListItemDao.getAll();
-            ZooNavigator zooNavigator = new ZooShortestNavigator(planListItems, this);
-            zooNavigator.setCurrentIndex(loadData());
-            intent.putExtra("CurrentNavigator", (Serializable) zooNavigator);
-            startActivity(intent);
-        }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
+
         if (search == null) {
-            this.search = new ExhibitSearch(getApplicationContext());
+            this.search = new ExhibitSearch(getContext());
         }
-        createPlanBtn = findViewById(R.id.create_plan);
-        dao = PlanDatabase.getSingleton(this).planListItemDao();
+        createPlanBtn = view.findViewById(R.id.create_plan);
+        courseRV = view.findViewById(R.id.plan_items);
+        numItemSelected = view.findViewById(R.id.plan_title);
+        dao = PlanDatabase.getSingleton(getContext()).planListItemDao();
         buildRecyclerView();
         if (dao.getAll().size() < 1) {
             createPlanBtn.setEnabled(false);
@@ -77,55 +80,31 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(KEY, -1);
         editor.apply();
         if (dao.getAll().size() < 1) {
             createPlanBtn.setEnabled(false);
         }
-        //loop through each item in zooData, if we find a matching exhibit in the planItem, it means
-        //that item is still in the plan, and therefore should be selected, otherwise, set to unselected.
         for (var item : search.zooData.keySet()) {
-            boolean foundMatchinDao = false;
+            boolean foundMatchingDao = false;
             for (var daoItem : dao.getAll()) {
                 if (Objects.requireNonNull(search.zooData.get(item)).id.equals(daoItem.exhibit_id)) {
-                    foundMatchinDao = true;
+                    foundMatchingDao = true;
                 }
             }
-            Objects.requireNonNull(search.zooData.get(item)).isSelected = foundMatchinDao;
+            Objects.requireNonNull(search.zooData.get(item)).isSelected = foundMatchingDao;
         }
     }
 
-    // Load the index of direction user has viewed in Direction before the app is killed. Default value is -1.
-    public int loadData(){
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        return sharedPreferences.getInt(KEY, -1);
-    }
-
-    public RecyclerView getCourseRV() {
-        return courseRV;
-    }
-
-    public SearchView getSearchView() {
-        return searchView;
-    }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // below line is to get our inflater
-        MenuInflater inflater = getMenuInflater();
-
-        // inside inflater we are inflating our menu file.
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.search_menu, menu);
-
-        // below line is to get our menu item.
         MenuItem searchItem = menu.findItem(R.id.actionSearch);
-
         searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 toggleListVisible();
@@ -138,10 +117,7 @@ public class SearchActivity extends AppCompatActivity {
                 return true;
             }
         });
-        // getting search view of our item.
         this.searchView = (SearchView) searchItem.getActionView();
-
-        // below line is to call set on query text listener method.
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -150,17 +126,13 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // inside on query text change method we are
-                // calling a method to filter our recycler view.
-
                 filter(newText, newText.length() == 0);
                 return false;
             }
         });
-        return true;
     }
 
-    public void toggleListVisible() {
+    private void toggleListVisible() {
         if (isVisible) {
             courseRV.setAdapter(searchAdapter);
             createPlanBtn.setVisibility(View.VISIBLE);
@@ -175,15 +147,12 @@ public class SearchActivity extends AppCompatActivity {
         List<ZooData.VertexInfo> results;
         if (show_all) {
             results = new ArrayList<>(search.zooData.values());
-            results.removeIf(((vertexInfo -> vertexInfo.kind != ZooData.VertexInfo.Kind.EXHIBIT)));
+            results.removeIf(vertexInfo -> vertexInfo.kind != ZooData.VertexInfo.Kind.EXHIBIT);
         } else {
             results = search.searchKeyword(text);
         }
-
         if (results.isEmpty()) {
-            // if no item is added in filtered list we are
-            // displaying a toast message as no data found.
-            Toast.makeText(this, "No Data Found..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "No Data Found..", Toast.LENGTH_SHORT).show();
             zooAdapter.setExhibits(Collections.emptyList());
         } else {
             zooAdapter.setExhibits(results);
@@ -191,18 +160,16 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void buildRecyclerView() {
-
-        this.courseRV = findViewById(R.id.plan_items);
         // initializing our adapter class.
         zooAdapter = new ZooDataAdapter();
         zooAdapter.setDataBase(dao);
-        searchAdapter = new SearchShowAdapter(findViewById(R.id.plan_title));
+        searchAdapter = new SearchShowAdapter(numItemSelected);
 
         SearchListViewModel viewModel = new ViewModelProvider(this).get(SearchListViewModel.class);
         searchAdapter.setOnDeletedClickedHandler(viewModel::setDeleted);
 
         searchAdapter.setHasStableIds(true);
-        viewModel.getPlanListItems().observe(this, searchAdapter::setPlanItems);
+        viewModel.getPlanListItems().observe(getViewLifecycleOwner(), searchAdapter::setPlanItems);
         viewModel.setPlanBtn(createPlanBtn);
 
         zooAdapter.setSelectedConsumer((view, exhibit) -> {
@@ -231,7 +198,7 @@ public class SearchActivity extends AppCompatActivity {
         List<ZooData.VertexInfo> allExhibits = new ArrayList<>(search.zooData.values());
         zooAdapter.setExhibits(allExhibits);
         // adding layout manager to our recycler view.
-        LinearLayoutManager manager = new LinearLayoutManager(this);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         courseRV.setHasFixedSize(true);
         courseRV.setVisibility(View.VISIBLE);
         // setting layout manager
@@ -246,9 +213,5 @@ public class SearchActivity extends AppCompatActivity {
         searchAdapter.setPlanItems(dao.getAll());
     }
 
-    public void goToPlan(View view) {
-        Intent intent = new Intent(this, PlanViewActivity.class);
-        intent.putExtra(PlanViewActivity.EXTRA_USE_LOCATION_SERVICE, true);
-        startActivity(intent);
-    }
+
 }

@@ -44,13 +44,13 @@ public class PlanListItem implements Serializable {
                 '}';
     }
 
-    PlanListItem(@NonNull String exhibit_name, String exhibit_id) {
+    public PlanListItem(@NonNull String exhibit_name, String exhibit_id) {
         this.exhibit_name = exhibit_name;
         this.exhibit_id = exhibit_id;
     }
 
 
-    PlanListItem(@NonNull String exhibit_name, String exhibit_id, String parent_id) {
+    public PlanListItem(@NonNull String exhibit_name, String exhibit_id, String parent_id) {
         this.exhibit_name = exhibit_name;
         this.exhibit_id = exhibit_id;
         this.parent_exhibit_id = parent_id;

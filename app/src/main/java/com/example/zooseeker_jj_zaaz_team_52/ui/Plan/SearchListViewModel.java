@@ -1,4 +1,4 @@
-package com.example.zooseeker_jj_zaaz_team_52;
+package com.example.zooseeker_jj_zaaz_team_52.ui.Plan;
 
 import android.app.Application;
 import android.content.Context;
@@ -7,6 +7,11 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
+import com.example.zooseeker_jj_zaaz_team_52.PlanDatabase;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
+import com.example.zooseeker_jj_zaaz_team_52.ZooDataAdapter;
 
 import java.util.List;
 
