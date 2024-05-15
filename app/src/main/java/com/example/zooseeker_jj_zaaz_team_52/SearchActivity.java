@@ -192,11 +192,11 @@ public class SearchActivity extends AppCompatActivity {
 
     private void buildRecyclerView() {
 
-        this.courseRV = findViewById(R.id.idRVCourses);
+        this.courseRV = findViewById(R.id.plan_items);
         // initializing our adapter class.
         zooAdapter = new ZooDataAdapter();
         zooAdapter.setDataBase(dao);
-        searchAdapter = new SearchShowAdapter(findViewById(R.id.num_item_selected));
+        searchAdapter = new SearchShowAdapter(findViewById(R.id.plan_title));
 
         SearchListViewModel viewModel = new ViewModelProvider(this).get(SearchListViewModel.class);
         searchAdapter.setOnDeletedClickedHandler(viewModel::setDeleted);

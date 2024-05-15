@@ -70,8 +70,8 @@ public class PlanFragment extends Fragment {
             this.search = new ExhibitSearch(getContext());
         }
         createPlanBtn = view.findViewById(R.id.create_plan);
-        courseRV = view.findViewById(R.id.idRVCourses);
-        numItemSelected = view.findViewById(R.id.num_item_selected);
+        courseRV = view.findViewById(R.id.plan_items);
+        numItemSelected = view.findViewById(R.id.plan_title);
         dao = PlanDatabase.getSingleton(getContext()).planListItemDao();
         buildRecyclerView();
         if (dao.getAll().size() < 1) {
