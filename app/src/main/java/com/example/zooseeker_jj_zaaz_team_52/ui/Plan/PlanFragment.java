@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zooseeker_jj_zaaz_team_52.*;
-import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentNotificationsBinding;
 import com.example.zooseeker_jj_zaaz_team_52.location.PermissionChecker;
 
 import java.util.ArrayList;
@@ -33,8 +32,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class PlanFragment extends Fragment {
-
-    private FragmentNotificationsBinding binding;
 
     public static final String EXTRA_USE_LOCATION_SERVICE = "use_location_updated";
     private boolean useLocationService;
