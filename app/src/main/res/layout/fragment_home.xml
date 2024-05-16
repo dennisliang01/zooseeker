@@ -7,24 +7,29 @@
     android:visibility="visible"
     tools:context=".ui.Map.MapFragment">
     <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
-    <ImageView
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/zoomap"/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/zoomap"/>
+            
+        </RelativeLayout>
     </ScrollView>
-    </HorizontalScrollView>
+</HorizontalScrollView>
+
+
+   
 
 </androidx.constraintlayout.widget.ConstraintLayout>
