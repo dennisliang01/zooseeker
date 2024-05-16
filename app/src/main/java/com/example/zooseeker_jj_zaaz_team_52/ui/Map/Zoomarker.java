@@ -13,6 +13,7 @@ public class Zoomarker extends View {
     private final Paint paint = new Paint();
     private float posX = 0; // X position
     private float posY = 0; // Y position
+    private String name = "MARKER_NAME";
 
     public Zoomarker(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -75,5 +76,15 @@ public class Zoomarker extends View {
         int radius = Math.min(width, height) / 4;
 
         canvas.drawCircle(width / 2, height / 2, radius, paint);
+
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
+
+
 }
+

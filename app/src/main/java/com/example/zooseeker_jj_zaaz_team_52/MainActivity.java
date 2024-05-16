@@ -1,9 +1,13 @@
 package com.example.zooseeker_jj_zaaz_team_52;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.zooseeker_jj_zaaz_team_52.ui.Map.MapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +21,10 @@ import com.example.zooseeker_jj_zaaz_team_52.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    public static Dialog dialog;
+    Button btnDialogCancel;
+    Button btnDialogAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,34 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        //
+
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.zoomarker_popup);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.zoomarker_popup));
+        dialog.setCancelable(false);
+
+        btnDialogAdd = dialog.findViewById(R.id.btnDialogAdd);
+        btnDialogCancel = dialog.findViewById(R.id.btnDialogCancel);
+
+        btnDialogCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        btnDialogAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        //
+
     }
     public void goToPlan(View view) {
         Intent intent = new Intent(this, PlanViewActivity.class);
