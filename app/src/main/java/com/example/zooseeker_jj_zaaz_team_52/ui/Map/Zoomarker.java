@@ -8,19 +8,20 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import com.example.zooseeker_jj_zaaz_team_52.R;
+import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 
 public class Zoomarker extends View {
     private final Paint paint = new Paint();
     private float posX = 0; // X position
     private float posY = 0; // Y position
     private String name = "MARKER_NAME";
-
+    ZooData.VertexInfo markerData;
     private OnZoomarkerClickListener clickListener;
 
-    public Zoomarker(Context context, AttributeSet attrs) {
+    public Zoomarker(ZooData.VertexInfo value, Context context, AttributeSet attrs) {
         super(context, attrs);
+        markerData = value;
         paint.setColor(Color.RED);
-
         // Get the position attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
@@ -89,7 +90,7 @@ public class Zoomarker extends View {
             @Override
             public void onClick(View v) {
                 if (clickListener != null) {
-                    clickListener.onZoomarkerClick();
+                    clickListener.onZoomarkerClick(markerData);
                 }
             }
         });
@@ -100,7 +101,7 @@ public class Zoomarker extends View {
     }
 
     public interface OnZoomarkerClickListener {
-        void onZoomarkerClick();
+        void onZoomarkerClick(ZooData.VertexInfo clickedMarkerData);
     }
 
 }
