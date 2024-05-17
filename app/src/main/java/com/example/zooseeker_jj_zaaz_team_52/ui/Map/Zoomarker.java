@@ -15,6 +15,8 @@ public class Zoomarker extends View {
     private float posY = 0; // Y position
     private String name = "MARKER_NAME";
 
+    private OnZoomarkerClickListener clickListener;
+
     public Zoomarker(Context context, AttributeSet attrs) {
         super(context, attrs);
         paint.setColor(Color.RED);
@@ -31,7 +33,9 @@ public class Zoomarker extends View {
         } finally {
             a.recycle();
         }
-    
+
+        init();
+
     }
 
     @Override
@@ -77,14 +81,27 @@ public class Zoomarker extends View {
 
         canvas.drawCircle(width / 2, height / 2, radius, paint);
 
+    }
+
+    private void init() {
+        // Set the OnClickListener for this view
         this.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onClick(View v) {
+                if (clickListener != null) {
+                    clickListener.onZoomarkerClick();
+                }
             }
         });
     }
 
+    public void setOnZoomarkerClickListener(OnZoomarkerClickListener listener) {
+        this.clickListener = listener;
+    }
+
+    public interface OnZoomarkerClickListener {
+        void onZoomarkerClick();
+    }
 
 }
 

@@ -1,6 +1,5 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -18,11 +16,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zooseeker_jj_zaaz_team_52.MainActivity;
 import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-public class MapFragment extends Fragment {
+public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
     private FragmentHomeBinding binding;
     private ImageView mapView;
-    public static Zoomarker zoomarker;
+
+    private Zoomarker zoomarker;
     private ScaleGestureDetector scaleGestureDetector;
     private float scaleFactor = 1.0f;
 
@@ -38,6 +38,7 @@ public class MapFragment extends Fragment {
 
         // Create a new Zoomarker view
         zoomarker = new Zoomarker(getContext(), null);
+        zoomarker.setOnZoomarkerClickListener(this);
 
         // Create layout parameters
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
@@ -50,13 +51,6 @@ public class MapFragment extends Fragment {
         zoomarker.setLayoutParams(params);
         // Add the Zoomarker view to the RelativeLayout
         binding.relativeLayout.addView(zoomarker);
-
-        zoomarker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainActivity.dialog.show();
-            }
-        });
 
         return root;
     }
@@ -71,4 +65,24 @@ public class MapFragment extends Fragment {
     public static int convertDpToPixel(float dp, Context context){
         return (int) (dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT));
     }
+
+    @Override
+    public void onZoomarkerClick() {
+        // Handle the click event here
+        showDialog();
+    }
+
+    public void showDialog() {
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Title")
+                .setMessage("Message")
+                .setPositiveButton("OK", (dialog, which) -> {
+                    // Handle positive button press
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> {
+                    // Handle negative button press
+                })
+                .show();
+    }
+
 }
