@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zooseeker_jj_zaaz_team_52.ExhibitSearch;
 import com.example.zooseeker_jj_zaaz_team_52.MainActivity;
+import com.example.zooseeker_jj_zaaz_team_52.PlanDatabase;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -46,17 +50,17 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             @Override
             public void afterTextChanged(Editable s) {
                 String newText = s.toString();
-                addZoomerkers(search.searchKeyword(newText)); // This will trigger the search and notify the listener
+                addZoomarkers(search.searchKeyword(newText)); // This will trigger the search and notify the listener
             }
         });
 
         this.search = new ExhibitSearch(getContext());
-        addZoomerkers(new ArrayList<>(this.search.searchKeyword("")));
+        addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
         return root;
     }
 
 
-    private void addZoomerkers(List<ZooData.VertexInfo> zooData) {
+    private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
 
         //Clear all zoomarkers mapview
         for (int i = mapView.getChildCount() - 1; i >= 0; i--) {
@@ -110,9 +114,17 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     public void showDialog(ZooData.VertexInfo zoomarkerData) {
         new MaterialAlertDialogBuilder(requireContext())
                 .setTitle(zoomarkerData.name)
-                .setMessage("Message")
-                .setPositiveButton("OK", (dialog, which) -> {
-                    // Handle positive button press
+                .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
+                .setPositiveButton("Confirm", (dialog, which) -> {
+                    PlanListItemDao planListItemDao = PlanDatabase.getSingleton(getContext()).planListItemDao();
+
+                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
+
+                    planListItemDao.insert(newPlanExhibit);
+
+                    Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
+                    mapPlanSuccessToast.show();
+
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     // Handle negative button press
