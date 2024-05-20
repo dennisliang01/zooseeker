@@ -1,15 +1,14 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -17,8 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.zooseeker_jj_zaaz_team_52.DetailsActivity;
 import com.example.zooseeker_jj_zaaz_team_52.ExhibitSearch;
-import com.example.zooseeker_jj_zaaz_team_52.MainActivity;
 import com.example.zooseeker_jj_zaaz_team_52.PlanDatabase;
 import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
 import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
@@ -28,7 +27,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
     private FragmentHomeBinding binding;
@@ -116,10 +114,9 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 .setTitle(zoomarkerData.name)
                 .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
                 .setPositiveButton("Confirm", (dialog, which) -> {
+
                     PlanListItemDao planListItemDao = PlanDatabase.getSingleton(getContext()).planListItemDao();
-
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-
                     planListItemDao.insert(newPlanExhibit);
 
                     Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
@@ -129,7 +126,18 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     // Handle negative button press
                 })
+                .setNeutralButton("Details", (dialog, which) -> {
+                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
+                    openExhibitDetails(newPlanExhibit);
+                })
                 .show();
+    }
+
+    public void openExhibitDetails(PlanListItem details) {
+        Intent intent = new Intent(getContext(), DetailsActivity.class);
+        intent.putExtra("ExhibitID", details.exhibit_id);
+        intent.putExtra("ExhibitName", details.exhibit_name);
+        startActivity(intent);
     }
 
 }

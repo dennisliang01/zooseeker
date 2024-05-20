@@ -38,4 +38,11 @@
     <string name="title_home">Map</string>
     <string name="title_plan">Plan</string>
     <string name="title_directions">Direction</string>
+    <string name="title_activity_details2">DetailsActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

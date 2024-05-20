@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.zooseeker_jj_zaaz_team_52.ui.Map.MapFragment;
 import com.example.zooseeker_jj_zaaz_team_52.ui.Map.Zoomarker;
@@ -47,24 +48,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        //
+        // Check if we need to reopen the dialog
+        if (getIntent().getBooleanExtra("OPEN_DIALOG", true)) {
+            String currExhibitName = getIntent().getStringExtra("ExhibitName");
+            String currExhibitID = getIntent().getStringExtra("ExhibitID");
 
-//
-//        btnDialogCancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.dismiss();
-//            }
-//        });
-//
-//        btnDialogAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.dismiss();
-//            }
-//        });
-
-        //
+            showDialog(currExhibitName, currExhibitID);
+        }
 
     }
     public void goToPlan(View view) {

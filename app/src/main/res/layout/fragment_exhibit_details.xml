@@ -57,6 +57,18 @@
                 android:text="The leopard is the epitome of stealth. Its very name brings mental pictures of this great spotted cat crouched on a tree limb awaiting the approach of a deer, or of a sleek, spotted body slipping silently through the dry savanna grass with scarcely a ripple as it nears its chosen target. Amur leopards love climbing, exploring, and playing with new things, and have a keen appreciation for scents; wildlife care specialists add spice oils like cinnamon, spearmint, and lavender to their hay and climbing structures. But, like most cats, they also sleep a lot. You'll find leopards in Africa Rocks and also in Asian Passage."
                 android:textSize="15sp" />
 
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back to Map" />
+
+            <Button
+                android:id="@+id/btn_detail_plan_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Plan" />
+
 
         </LinearLayout>
     </ScrollView>
