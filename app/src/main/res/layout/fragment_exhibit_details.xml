@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#F5F2EB"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/exhibit_id"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:text="Amur Leopard"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/exhibit_image"
+                android:layout_width="match_parent"
+                android:layout_height="233dp"
+                android:src="@drawable/amur_leopard_hero_0" />
+
+            <TextView
+                android:id="@+id/exhibit_location"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center"
+                android:text="Location: Africa Rocks and Asian Passage" />
+
+            <TextView
+                android:id="@+id/exhibit_status"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center"
+                android:text="Conservation Status: Endangered" />
+
+            <TextView
+                android:id="@+id/exhibit_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="The leopard is the epitome of stealth. Its very name brings mental pictures of this great spotted cat crouched on a tree limb awaiting the approach of a deer, or of a sleek, spotted body slipping silently through the dry savanna grass with scarcely a ripple as it nears its chosen target. Amur leopards love climbing, exploring, and playing with new things, and have a keen appreciation for scents; wildlife care specialists add spice oils like cinnamon, spearmint, and lavender to their hay and climbing structures. But, like most cats, they also sleep a lot. You'll find leopards in Africa Rocks and also in Asian Passage."
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
