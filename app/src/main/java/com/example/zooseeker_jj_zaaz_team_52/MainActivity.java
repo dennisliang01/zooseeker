@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         if (getIntent().getBooleanExtra("OPEN_DIALOG", true)) {
             String currExhibitName = getIntent().getStringExtra("ExhibitName");
             String currExhibitID = getIntent().getStringExtra("ExhibitID");
-
-            showDialog(currExhibitName, currExhibitID);
         }
 
     }

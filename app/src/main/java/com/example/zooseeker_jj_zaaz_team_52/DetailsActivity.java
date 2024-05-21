@@ -2,6 +2,7 @@ package com.example.zooseeker_jj_zaaz_team_52;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,10 +23,13 @@ public class DetailsActivity extends AppCompatActivity {
         titleText.setText(currExhibitName);
 
         Button backButton = findViewById(R.id.btn_back);
+
+        Context context = this;
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(context, MainActivity.class);
                 intent.putExtra("ExhibitName", currExhibitName);
                 intent.putExtra("ExhibitID", currExhibitID);
                 intent.putExtra("OPEN_DIALOG", true);
