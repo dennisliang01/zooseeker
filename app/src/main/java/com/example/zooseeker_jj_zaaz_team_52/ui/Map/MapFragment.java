@@ -9,6 +9,8 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
+import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -40,6 +42,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         mapView = binding.relativeLayout;
+        search = new ExhibitSearch(getContext());
         binding.searchField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -52,11 +55,22 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             }
         });
 
+        List<ZooData.VertexInfo> allExhibits = new ArrayList<>(search.zooData.values());
+
+        List<String> items = new ArrayList<String>();
+
+        for(ZooData.VertexInfo item : allExhibits) {
+            if((item.kind.toString()).equals("EXHIBIT"))
+                items.add(item.name);
+        }
+
+        ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, items);
+        binding.searchField.setAdapter(autoCompleteAdapter);
+
         this.search = new ExhibitSearch(getContext());
         addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
         return root;
     }
-
 
     private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
 
@@ -115,7 +129,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
                 .setPositiveButton("Confirm", (dialog, which) -> {
 
-                    PlanListItemDao planListItemDao = PlanDatabase.getSingleton(getContext()).planListItemDao();
+                    PlanListItemDao planListItemDao = getPlanItems();
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
                     planListItemDao.insert(newPlanExhibit);
 
@@ -138,6 +152,10 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         intent.putExtra("ExhibitID", details.exhibit_id);
         intent.putExtra("ExhibitName", details.exhibit_name);
         startActivity(intent);
+    }
+
+    private PlanListItemDao getPlanItems() {
+        return PlanDatabase.getSingleton(getContext()).planListItemDao();
     }
 
 }

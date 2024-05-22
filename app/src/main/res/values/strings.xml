@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">zooseeker-jj-zaaz-team-52</string>
-    <string name="search_hint">exhibit</string>
+    <string name="search_hint">Search for an exhibit...</string>
     <string name="search_label">searchlabel</string>
+    <string name="search_title">exhibit</string>
     <string name="defaultexhibit">DefaultExhibit</string>
     <string name="animal_name">Animal Name</string>
     <string name="exhibit_type">Exhibit Type</string>
-    <string name="search_title">exhibit</string>
     <string name="voice_search">voice_search</string>
     <string name="previous_text">previous text</string>
     <string name="next_text">next text</string>
