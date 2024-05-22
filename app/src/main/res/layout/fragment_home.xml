@@ -52,13 +52,15 @@
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
+                    android:background="#79AD78"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/map"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="fitXY"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
                         android:src="@drawable/zoomap" />
 
                 </RelativeLayout>

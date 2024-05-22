@@ -1,11 +1,15 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
+import static androidx.core.util.TypedValueCompat.pxToDp;
+
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +33,8 @@ import java.util.Map;
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
     private FragmentHomeBinding binding;
     private RelativeLayout mapView;
+    private ImageView map;
+
     private ExhibitSearch search;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,6 +44,39 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         mapView = binding.relativeLayout;
+        map = binding.map;
+        Drawable drawable = map.getDrawable();
+        if (drawable != null) {
+            // Get the intrinsic dimensions of the drawable
+            int intrinsicWidth = drawable.getIntrinsicWidth();
+            int intrinsicHeight = drawable.getIntrinsicHeight();
+
+            // Get the scale factors
+            float scaleX = map.getScaleX();
+            float scaleY = map.getScaleY();
+
+            // Calculate the new dimensions
+            int scaledWidth = (int) (intrinsicWidth * scaleX);
+            int scaledHeight = (int) (intrinsicHeight * scaleY);
+
+            // Set the new dimensions to the ImageView
+            ViewGroup.LayoutParams layoutParams = map.getLayoutParams();
+            layoutParams.width = scaledWidth;
+            layoutParams.height = scaledHeight;
+            map.setLayoutParams(layoutParams);
+
+            mapView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    float x = event.getX();
+                    float y = event.getY();
+//                    float xDp = pxToDp(x, this);
+//                    float yDp = pxToDp(y, MainActivity.this);
+                    System.out.println("x : "  + x + " y: " + y);
+                    return true;
+                }
+            });
+        }
         binding.searchField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
