@@ -12,14 +12,23 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_direction"
-        android:name="com.example.zooseeker_jj_zaaz_team_52.ui.Direction.DirectionFragment"
-        android:label="@string/title_directions"
-        tools:layout="@layout/fragment_direction" />
-
-    <fragment
         android:id="@+id/navigation_plan"
         android:name="com.example.zooseeker_jj_zaaz_team_52.ui.Plan.PlanFragment"
         android:label="@string/title_plan"
         tools:layout="@layout/fragment_plan" />
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.zooseeker_jj_zaaz_team_52.ui.Setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/plan_view_activity"
+        android:name="com.example.zooseeker_jj_zaaz_team_52.ui.Plan.CompletedPlanFragment"
+        android:label="Plan view"
+        />
+    <fragment
+        android:id="@+id/navigation_directions"
+        android:name="com.example.zooseeker_jj_zaaz_team_52.ui.Plan.DirectionFragment"
+        android:label="Directions"
+        />
 </navigation>

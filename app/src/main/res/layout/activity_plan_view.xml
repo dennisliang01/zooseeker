@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlanViewActivity">
+    tools:context=".ui.Plan.CompletedPlanFragment">
 
     <TextView
         android:id="@+id/plan_title"
@@ -29,7 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:onClick="goToDirection"
         android:text="@string/plan_view_directions"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"

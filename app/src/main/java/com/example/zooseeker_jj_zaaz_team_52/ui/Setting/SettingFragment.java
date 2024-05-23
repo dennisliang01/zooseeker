@@ -1,4 +1,4 @@
-package com.example.zooseeker_jj_zaaz_team_52.ui.Direction;
+package com.example.zooseeker_jj_zaaz_team_52.ui.Setting;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,19 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentDirectionBinding;
+import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentSettingBinding;
 
 
-public class DirectionFragment extends Fragment {
+public class SettingFragment extends Fragment {
 
-    private FragmentDirectionBinding binding;
+    private FragmentSettingBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DirectionViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DirectionViewModel.class);
+        SettingViewModel dashboardViewModel =
+                new ViewModelProvider(this).get(SettingViewModel.class);
 
-        binding = FragmentDirectionBinding.inflate(inflater, container, false);
+        binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;

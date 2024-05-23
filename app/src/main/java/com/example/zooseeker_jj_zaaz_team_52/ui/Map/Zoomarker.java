@@ -2,11 +2,13 @@ package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Paint;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.View;
 import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 
@@ -15,6 +17,7 @@ public class Zoomarker extends View {
     private float posX = 0; // X position
     private float posY = 0; // Y position
     private String name = "MARKER_NAME";
+    private Bitmap backgroundBitmap;
     ZooData.VertexInfo markerData;
     private OnZoomarkerClickListener clickListener;
 
@@ -22,6 +25,10 @@ public class Zoomarker extends View {
         super(context, attrs);
         markerData = value;
         paint.setColor(Color.RED);
+
+        // Load the background image
+        backgroundBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background); // Replace with your drawable resource
+
         // Get the position attributes
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
@@ -36,13 +43,12 @@ public class Zoomarker extends View {
         }
 
         init();
-
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int desiredWidth = 200; // Replace with your desired size
-        int desiredHeight = 200; // Replace with your desired size
+        int desiredWidth = 50; // Replace with your desired size
+        int desiredHeight = 50; // Replace with your desired size
 
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
@@ -78,10 +84,16 @@ public class Zoomarker extends View {
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
 
-        int radius = Math.min(width, height) / 4;
+        // Draw the background image
+        if (backgroundBitmap != null) {
+            canvas.drawBitmap(backgroundBitmap, 0, 0, paint);
+        }
 
+        int radius = Math.min(width, height) / 2;
+
+
+        // Draw the marker circle
         canvas.drawCircle(width / 2, height / 2, radius, paint);
-
     }
 
     private void init() {
@@ -103,6 +115,4 @@ public class Zoomarker extends View {
     public interface OnZoomarkerClickListener {
         void onZoomarkerClick(ZooData.VertexInfo clickedMarkerData);
     }
-
 }
-
