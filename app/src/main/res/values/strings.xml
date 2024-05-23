@@ -37,5 +37,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Map</string>
     <string name="title_plan">Plan</string>
-    <string name="title_directions">Direction</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_directions">Directions</string>
+
 </resources>

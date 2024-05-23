@@ -335,7 +335,7 @@ public class SuccessScenarioTest {
         textView2.check(matches(withText("Hippos")));
 
         ViewInteraction textView3 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Treetops Way 60 feet towards Treetops Way / Hippo Trail\nProceed on Hippo Trail 30 feet to Hippos"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Treetops Way 60 feet towards Treetops Way / Hippo Trail\nProceed on Hippo Trail 30 feet to Hippos"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView3.check(matches(withText("Proceed on Treetops Way 60 feet towards Treetops Way / Hippo Trail\nProceed on Hippo Trail 30 feet to Hippos")));
@@ -394,7 +394,7 @@ public class SuccessScenarioTest {
         textView4.check(matches(withText("Hippos")));
 
         ViewInteraction textView5 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Hippo Trail 10 feet to Hippos"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Hippo Trail 10 feet to Hippos"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView5.check(matches(withText("Proceed on Hippo Trail 10 feet to Hippos")));
@@ -453,7 +453,7 @@ public class SuccessScenarioTest {
         textView6.check(matches(withText("Hippos")));
 
         ViewInteraction textView7 = onView(
-                allOf(withId(R.id.directions_view), withText("Find Hippos nearby"),
+                allOf(withId(R.id.navigation_directions), withText("Find Hippos nearby"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView7.check(matches(withText("Find Hippos nearby")));
@@ -475,7 +475,7 @@ public class SuccessScenarioTest {
         textView8.check(matches(withText("Capuchin Monkeys")));
 
         ViewInteraction textView9 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Hippo Trail 40 feet towards Monkey Trail / Hippo Trail\nProceed on Monkey Trail 50 feet to Capuchin Monkeys"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Hippo Trail 40 feet towards Monkey Trail / Hippo Trail\nProceed on Monkey Trail 50 feet to Capuchin Monkeys"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView9.check(matches(withText("Proceed on Hippo Trail 40 feet towards Monkey Trail / Hippo Trail\nProceed on Monkey Trail 50 feet to Capuchin Monkeys")));
@@ -534,7 +534,7 @@ public class SuccessScenarioTest {
         textView10.check(matches(withText("Capuchin Monkeys")));
 
         ViewInteraction textView11 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Monkey Trail 50 feet to Capuchin Monkeys"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Monkey Trail 50 feet to Capuchin Monkeys"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView11.check(matches(withText("Proceed on Monkey Trail 50 feet to Capuchin Monkeys")));
@@ -556,7 +556,7 @@ public class SuccessScenarioTest {
         textView12.check(matches(withText("Hippos")));
 
         ViewInteraction textView13 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Hippo Trail 40 feet to Hippos"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Hippo Trail 40 feet to Hippos"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView13.check(matches(withText("Proceed on Hippo Trail 40 feet to Hippos")));
@@ -678,7 +678,7 @@ public class SuccessScenarioTest {
         materialButton12.perform(scrollTo(), click());
 
         ViewInteraction textView16 = onView(
-                allOf(withId(R.id.directions_view), withText("Find Hippos nearby"),
+                allOf(withId(R.id.navigation_directions), withText("Find Hippos nearby"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView16.check(matches(withText("Find Hippos nearby")));
@@ -762,7 +762,7 @@ public class SuccessScenarioTest {
         textView18.check(matches(withText("Gorillas")));
 
         ViewInteraction textView19 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Monkey Trail 50 feet to Gorillas"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Monkey Trail 50 feet to Gorillas"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView19.check(matches(withText("Proceed on Monkey Trail 50 feet to Gorillas")));
@@ -784,7 +784,7 @@ public class SuccessScenarioTest {
         textView20.check(matches(withText("Capuchin Monkeys")));
 
         ViewInteraction textView21 = onView(
-                allOf(withId(R.id.directions_view), withText("Proceed on Monkey Trail 230 feet to Capuchin Monkeys"),
+                allOf(withId(R.id.navigation_directions), withText("Proceed on Monkey Trail 230 feet to Capuchin Monkeys"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView21.check(matches(withText("Proceed on Monkey Trail 230 feet to Capuchin Monkeys")));

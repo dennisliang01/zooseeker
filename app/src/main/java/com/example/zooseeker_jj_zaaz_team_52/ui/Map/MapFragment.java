@@ -65,17 +65,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             layoutParams.height = scaledHeight;
             map.setLayoutParams(layoutParams);
 
-            mapView.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    float x = event.getX();
-                    float y = event.getY();
-//                    float xDp = pxToDp(x, this);
-//                    float yDp = pxToDp(y, MainActivity.this);
-                    System.out.println("x : "  + x + " y: " + y);
-                    return true;
-                }
-            });
         }
         binding.searchField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -107,6 +96,37 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         int x = 10;
         int y = 10;
 
+        List<double[]> coordinates = new ArrayList<>();
+
+        coordinates.add(new double[]{416.35617, 521.4215});
+        coordinates.add(new double[]{386.89667, 592.32385});
+        coordinates.add(new double[]{452.3473, 592.32385});
+        coordinates.add(new double[]{385.44638, 652.33734});
+        coordinates.add(new double[]{390.54013, 700.6978});
+        coordinates.add(new double[]{483.6282, 662.8814});
+        coordinates.add(new double[]{573.0732, 681.77734});
+        coordinates.add(new double[]{552.3508, 721.41656});
+        coordinates.add(new double[]{557.8093, 389.7997});
+        coordinates.add(new double[]{609.44104, 332.71805});
+        coordinates.add(new double[]{704.3508, 386.1534});
+        coordinates.add(new double[]{613.08453, 723.61755});
+        coordinates.add(new double[]{640.7205, 786.1495});
+        coordinates.add(new double[]{699.62714, 822.8818});
+        coordinates.add(new double[]{591.62714, 613.43396});
+        coordinates.add(new double[]{701.8061, 547.6065});
+        coordinates.add(new double[]{797.07526, 589.0689});
+        coordinates.add(new double[]{803.6225, 670.5092});
+        coordinates.add(new double[]{864.72266, 641.0693});
+        coordinates.add(new double[]{894.1701, 528.70416});
+        coordinates.add(new double[]{989.4393, 526.16693});
+        coordinates.add(new double[]{991.9801, 582.5341});
+        coordinates.add(new double[]{982.1644, 645.7994});
+        coordinates.add(new double[]{783.99115, 773.0689});
+        coordinates.add(new double[]{889.07635, 758.16406});
+        coordinates.add(new double[]{955.2578, 767.9691});
+        coordinates.add(new double[]{801.08167, 912.3363});
+        coordinates.add(new double[]{928.35156, 877.7965});
+        int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
             //Only add exhibits, not streets and etc.
@@ -118,13 +138,14 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
                 // Set the margins to position the Zoomarker view
-                params.leftMargin = convertDpToPixel(x, getContext()); // replace 400 with your desired x position
-                params.topMargin = convertDpToPixel(y, getContext()); // replace 500 with your desired y position
+                params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0], getContext()); // replace 400 with your desired x position
+                params.topMargin = convertDpToPixel((float)coordinates.get(i)[1], getContext()); // replace 500 with your desired y position
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
                 x += 20;
                 y += 20;
+                i+=1;
             }
         }
     }

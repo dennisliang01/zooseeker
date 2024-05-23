@@ -221,7 +221,7 @@ public class PlanWithMockLocationTest {
         textView2.check(matches(withText("Crocodiles")));
 
         ViewInteraction textView3 = onView(
-                allOf(withId(R.id.directions_view), withText("Find Crocodiles nearby"),
+                allOf(withId(R.id.navigation_directions), withText("Find Crocodiles nearby"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
         textView3.check(matches(withText("Find Crocodiles nearby")));
