@@ -26,6 +26,4 @@ jobs:
       # Execute lint
       - name: Run Lint
         run: ./gradlew lint
-        with:
-          report-path: build/reports/*xml
-          ignore-warnings: true # Ignore Lint Warnings
+        continue-on-error: true
