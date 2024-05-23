@@ -17,5 +17,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Create local.properties
+        run: echo "" > local.properties
+
+      # Execute lint
       - name: Run Lint
         run: ./gradlew lint
+        with:
+          report-path: build/reports/*xml
+          ignore-warnings: true # Ignore Lint Warnings
