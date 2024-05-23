@@ -54,6 +54,7 @@ public class ZooData implements Serializable {
         public String description;
         public String accessibility_options;
         public Kind kind;
+
         public String name;
         public List<String> tags;
         public double lat;
