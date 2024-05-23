@@ -1,30 +1,30 @@
-# Workplan for the week of 5/12-5/18
+# Workplan for the week of 5/19-5/25
 
-### For this week we are assigning tasks and beginning a code sprint, this sprint will entail UI refinement before feature addition, and the creation and input of our visual map
+### For this week we will be assigning cleanup, testing, and documentation tasks to help solidify the progress that was made over the last sprint
 
-The user stories we will focus on for this sprint are as follows:
-- 2
-  - Visual Map implementation
-  - Map section UI creation
-  - Database expansion for map features
-- 11
-  - Visual refinement of direction page
-- 12
-  - Plan page UI improvements
-    - Touched up overall page
-    - Touched up exhibit add page
-- 13
-  - Design plan for detail page
-    - Live animal section
-    - Description
-    - Pictures
-- 14
-  - General UI design
-    - Overall colors
-    - UI features outside of others stories such as bottom bar
+Of the user stories that were assigned (2,11,12,13,14) we made significant progress on both 2 and 13 in terms of UI and database for both. Unfortunately we misjudged the time it would take for the user story tasks and quite a few issues slipped through. These issues were mainly related to further improvement of old items and these were neglected in favor of new features.
 
-We were to focused on implementing features that we realized we did not have user stories that covered our UI implementations that would accomodate the user stories. 
+However 2 and 13 are almost fully completed with the features that were proposed to be implemented including a new map design, feature funcitonality and app flow paths.
 
-Each user story will be accompanied by an initial figma design; UI will be developed in XML; we are currently choosing a database that we can make calls to in the development of a more live service platform in the anticipation of live features such as exhibit closures and animal statuses.
+For this week we will continue with these same stories but as 2 and 13 are able to wind down, we will focus more on the UI cleanup that was intended with 11, 12, and 14.
 
-Our milestone for this section is the creation of the map section with scrollable and clickable map, plan section with same features but cleaned up look, direction section with same features but cleaned up look
+We will present on our current changes on 5/20 to the class highlighting the following:
+
+What’s going well
+- Map Design
+- Exhibit Detail
+- Visual Map
+- Database move
+
+What’s not going well
+- Amount of work
+- Previous cleanup
+- Pipeline
+- Some documentation
+
+What we’re looking at moving forward
+- Cleanup sprint
+- Pipeline solidification
+- Documentation solidification
+
+Our tasks for this week will include more documentation, and setting up of the currently unimpressive CI/CD pipeline.
