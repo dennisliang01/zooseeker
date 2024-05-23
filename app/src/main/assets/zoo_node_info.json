@@ -8,68 +8,417 @@
     "lng": -117.14936
   },
   {
+    "id": "intxn_front_safari",
+    "kind": "intersection",
+    "name": "Front Street / Safari Way",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_safari_2",
+    "kind": "intersection",
+    "name": "Front Street / Safari Way 2",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_savannah",
+    "kind": "intersection",
+    "name": "Front Street / Savannah Walk",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_savannah_safari",
+    "kind": "intersection",
+    "name": "Savannah Walk / Safari Way",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_arctic",
+    "kind": "intersection",
+    "name": "Front Street / Arctic Circle",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_arctic_bird",
+    "kind": "intersection",
+    "name": "Arctic Circle / Bird Walk",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_arctic_2",
+    "kind": "intersection",
+    "name": "Front Street / Arctic Circle 2",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_arctic_fern",
+    "kind": "intersection",
+    "name": "Arctic Circle / Fern Grove",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_safari_fern",
+    "kind": "intersection",
+    "name": "Safari Way / Fern Grove",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_safari_arctic",
+    "kind": "intersection",
+    "name": "Safari Way / Arctic Circle",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_safari_lagoon",
+    "kind": "intersection",
+    "name": "Safari Way / Lagoon Terrace",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_safari_plaza",
+    "kind": "intersection",
+    "name": "Safari Way / Plaza Path",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_plaza_rainforest",
+    "kind": "intersection",
+    "name": "Plaza Path / Rainforest Walk",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_plaza_southbound",
+    "kind": "intersection",
+    "name": "Plaza Path / Southbound Way",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_lagoon",
+    "kind": "intersection",
+    "name": "Front Street / Lagoon Terrace",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_south",
+    "kind": "intersection",
+    "name": "Front Street / Southbound Way",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_bear",
+    "kind": "intersection",
+    "name": "Front Street / Bear Crossing",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_plaza_benchley",
+    "kind": "intersection",
+    "name": "Plaza Path / Benchley Plaza",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_benchley_bear",
+    "kind": "intersection",
+    "name": "Benchley Plaza / Bear Crossing",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_benchley_bamboo",
+    "kind": "intersection",
+    "name": "Benchley Plaza / Bamboo Lane",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_benchley_front",
+    "kind": "intersection",
+    "name": "Benchley Plaza / Front Street",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_benchley_front_2",
+    "kind": "intersection",
+    "name": "Benchley Plaza / Front Street 2",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_bamboo_primate",
+    "kind": "intersection",
+    "name": "Bamboo Lane / Primate Path",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_bamboo",
+    "kind": "intersection",
+    "name": "Front Street / Bamboo Lane",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_primate_monkey",
+    "kind": "intersection",
+    "name": "Primate Path / Monkey Trail",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_primate_treetops",
+    "kind": "intersection",
+    "name": "Primate Path / Treetops Way",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_primate",
+    "kind": "intersection",
+    "name": "Front Street / Primate Path",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
     "id": "intxn_front_treetops",
     "kind": "intersection",
     "name": "Front Street / Treetops Way",
     "tags": [],
-    "lat": 32.735546539459556,
-    "lng": -117.1521136981983
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
+  },
+  {
+    "id": "intxn_front_bird",
+    "kind": "intersection",
+    "name": "Front Street / Bird Walk",
+    "tags": [],
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
   },
   {
     "id": "intxn_front_monkey",
     "kind": "intersection",
     "name": "Front Street / Monkey Trail",
     "tags": [],
-    "lat": 32.742335294284764,
-    "lng": -117.15496383006723
+    "lat": 32.748983757472594,
+    "lng": -117.16951754140803
   },
   {
-    "id": "intxn_front_lagoon_1",
+    "id": "intxn_front_rainforest",
     "kind": "intersection",
-    "name": "Front Street / Terrace Lagoon Loop (South)",
-    "tags": [],
-    "lat": 32.72726737662313,
-    "lng": -117.15496383006723
-  },
-  {
-    "id": "intxn_front_lagoon_2",
-    "kind": "intersection",
-    "name": "Front Street / Terrace Lagoon Loop (North)",
-    "tags": [],
-    "lat": 32.72442520989079,
-    "lng": -117.16066409380507
-  },
-  {
-    "id": "intxn_treetops_fern_trail",
-    "kind": "intersection",
-    "name": "Treetops Way / Fern Canyon Trail",
-    "tags": [],
-    "lat": 32.735612428188205,
-    "lng": -117.15496383006723
-  },
-  {
-    "id": "intxn_treetops_orangutan_trail",
-    "kind": "intersection",
-    "name": "Treetops Way / Orangutan Trail",
-    "tags": [],
-    "lat": 32.73796433208615,
-    "lng": -117.15781396193616
-  },
-  {
-    "id": "intxn_treetops_hippo_trail",
-    "kind": "intersection",
-    "name": "Treetops Way / Hippo Trail",
-    "tags": [],
-    "lat": 32.74213959255212,
-    "lng": -117.16066409380507
-  },
-  {
-    "id": "intxn_hippo_monkey_trails",
-    "kind": "intersection",
-    "name": "Monkey Trail / Hippo Trail",
+    "name": "Front Street / Rainforest Walk",
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803
+  },
+  {
+    "id": "lion",
+    "kind": "exhibit",
+    "name": "Lion",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "meerkat",
+    "kind": "exhibit",
+    "name": "Meerkat",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "warthog",
+    "kind": "exhibit",
+    "name": "Warthog",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "african_plains",
+    "kind": "exhibit_group",
+    "name": "African Plains",
+    "tags": [],
+    "lat": 32.73971798112842,
+    "lng": -117.16644660080382
+  },
+  {
+    "id": "zebra",
+    "parent_id": "african_plains",
+    "kind": "exhibit",
+    "name": "Zebra",
+    "tags": []
+  },
+  {
+    "id": "giraffe",
+    "parent_id": "african_plains",
+    "kind": "exhibit",
+    "name": "Giraffe",
+    "tags": []
+  },
+  {
+    "id": "elephant",
+    "kind": "exhibit",
+    "name": "Elephant",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "black_rhino",
+    "kind": "exhibit",
+    "name": "Black Rhino",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "cheetah",
+    "kind": "exhibit",
+    "name": "Cheetah",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "jaguar",
+    "kind": "exhibit",
+    "name": "Jaguar",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "capybara",
+    "kind": "exhibit",
+    "name": "Capybara",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "sloth_bear",
+    "kind": "exhibit",
+    "name": "Sloth Bear",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "tiger",
+    "kind": "exhibit",
+    "name": "Tiger",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "panda",
+    "kind": "exhibit",
+    "name": "Panda",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "chimpanzee",
+    "kind": "exhibit",
+    "name": "Chimpanzee",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "wolf",
+    "kind": "exhibit",
+    "name": "Wolf",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "polar_bear",
+    "kind": "exhibit",
+    "name": "Polar Bear",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "penguin",
+    "kind": "exhibit",
+    "name": "Penguin",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "amur_leopard",
+    "kind": "exhibit",
+    "name": "Amur Leopard",
+    "tags": [],
+    "lat": 32.72211788245888,
+    "lng": -117.15794384136309
+  },
+  {
+    "id": "reptile_house",
+    "kind": "exhibit_group",
+    "name": "Reptile House",
+    "tags": [],
+    "lat": 32.73971798112842,
+    "lng": -117.16644660080382
+  },
+  {
+    "id": "black_mamba",
+    "parent_id": "reptile_house",
+    "kind": "exhibit",
+    "name": "Black Mamba",
+    "tags": []
   },
   {
     "id": "koi",
@@ -300,13 +649,5 @@
       "east",
       "asia"
     ]
-  },
-  {
-    "id": "benchley_plaza",
-    "kind": "intersection",
-    "name": "Benchley Plaza",
-    "tags": [],
-    "lat": 32.74577064618906,
-    "lng": -117.17837098901099
   }
 ]
