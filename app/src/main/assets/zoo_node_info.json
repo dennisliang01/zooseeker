@@ -5,7 +5,11 @@
     "name": "Entrance and Exit Gate",
     "tags": [],
     "lat": 32.73561,
-    "lng": -117.14936
+    "lng": -117.14936,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_safari",
@@ -13,7 +17,11 @@
     "name": "Front Street / Safari Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_safari_2",
@@ -21,7 +29,11 @@
     "name": "Front Street / Safari Way 2",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_savannah",
@@ -29,7 +41,11 @@
     "name": "Front Street / Savannah Walk",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_savannah_safari",
@@ -37,7 +53,11 @@
     "name": "Savannah Walk / Safari Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_arctic",
@@ -45,7 +65,11 @@
     "name": "Front Street / Arctic Circle",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_arctic_bird",
@@ -53,7 +77,11 @@
     "name": "Arctic Circle / Bird Walk",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_arctic_2",
@@ -61,7 +89,11 @@
     "name": "Front Street / Arctic Circle 2",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_arctic_fern",
@@ -69,7 +101,11 @@
     "name": "Arctic Circle / Fern Grove",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_safari_fern",
@@ -77,7 +113,11 @@
     "name": "Safari Way / Fern Grove",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_safari_arctic",
@@ -85,7 +125,11 @@
     "name": "Safari Way / Arctic Circle",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_safari_lagoon",
@@ -93,7 +137,11 @@
     "name": "Safari Way / Lagoon Terrace",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_safari_plaza",
@@ -101,7 +149,11 @@
     "name": "Safari Way / Plaza Path",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_plaza_rainforest",
@@ -109,7 +161,11 @@
     "name": "Plaza Path / Rainforest Walk",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_plaza_southbound",
@@ -117,7 +173,11 @@
     "name": "Plaza Path / Southbound Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_lagoon",
@@ -125,7 +185,11 @@
     "name": "Front Street / Lagoon Terrace",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_south",
@@ -133,7 +197,11 @@
     "name": "Front Street / Southbound Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_bear",
@@ -141,7 +209,11 @@
     "name": "Front Street / Bear Crossing",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_plaza_benchley",
@@ -149,7 +221,11 @@
     "name": "Plaza Path / Benchley Plaza",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_benchley_bear",
@@ -157,7 +233,11 @@
     "name": "Benchley Plaza / Bear Crossing",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_benchley_bamboo",
@@ -165,7 +245,11 @@
     "name": "Benchley Plaza / Bamboo Lane",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_benchley_front",
@@ -173,7 +257,11 @@
     "name": "Benchley Plaza / Front Street",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_benchley_front_2",
@@ -181,7 +269,11 @@
     "name": "Benchley Plaza / Front Street 2",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_bamboo_primate",
@@ -189,7 +281,11 @@
     "name": "Bamboo Lane / Primate Path",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_bamboo",
@@ -197,7 +293,11 @@
     "name": "Front Street / Bamboo Lane",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_primate_monkey",
@@ -205,7 +305,11 @@
     "name": "Primate Path / Monkey Trail",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_primate_treetops",
@@ -213,7 +317,11 @@
     "name": "Primate Path / Treetops Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_primate",
@@ -221,7 +329,11 @@
     "name": "Front Street / Primate Path",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_treetops",
@@ -229,7 +341,11 @@
     "name": "Front Street / Treetops Way",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_bird",
@@ -237,7 +353,11 @@
     "name": "Front Street / Bird Walk",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_monkey",
@@ -245,7 +365,11 @@
     "name": "Front Street / Monkey Trail",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "intxn_front_rainforest",
@@ -253,7 +377,11 @@
     "name": "Front Street / Rainforest Walk",
     "tags": [],
     "lat": 32.748983757472594,
-    "lng": -117.16951754140803
+    "lng": -117.16951754140803,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "lion",
@@ -261,7 +389,11 @@
     "name": "Lion",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "meerkat",
@@ -269,7 +401,11 @@
     "name": "Meerkat",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "warthog",
@@ -277,7 +413,11 @@
     "name": "Warthog",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "african_plains",
@@ -285,21 +425,33 @@
     "name": "African Plains",
     "tags": [],
     "lat": 32.73971798112842,
-    "lng": -117.16644660080382
+    "lng": -117.16644660080382,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "zebra",
     "parent_id": "african_plains",
     "kind": "exhibit",
     "name": "Zebra",
-    "tags": []
+    "tags": [],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "giraffe",
     "parent_id": "african_plains",
     "kind": "exhibit",
     "name": "Giraffe",
-    "tags": []
+    "tags": [],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "elephant",
@@ -307,7 +459,11 @@
     "name": "Elephant",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "black_rhino",
@@ -315,7 +471,11 @@
     "name": "Black Rhino",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "cheetah",
@@ -323,7 +483,11 @@
     "name": "Cheetah",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "jaguar",
@@ -331,7 +495,11 @@
     "name": "Jaguar",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "capybara",
@@ -339,7 +507,11 @@
     "name": "Capybara",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "sloth_bear",
@@ -347,7 +519,11 @@
     "name": "Sloth Bear",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "tiger",
@@ -355,7 +531,11 @@
     "name": "Tiger",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "panda",
@@ -363,7 +543,11 @@
     "name": "Panda",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "chimpanzee",
@@ -371,7 +555,11 @@
     "name": "Chimpanzee",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "wolf",
@@ -379,7 +567,11 @@
     "name": "Wolf",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "polar_bear",
@@ -387,7 +579,11 @@
     "name": "Polar Bear",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "penguin",
@@ -395,7 +591,11 @@
     "name": "Penguin",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "amur_leopard",
@@ -403,7 +603,11 @@
     "name": "Amur Leopard",
     "tags": [],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "reptile_house",
@@ -411,14 +615,22 @@
     "name": "Reptile House",
     "tags": [],
     "lat": 32.73971798112842,
-    "lng": -117.16644660080382
+    "lng": -117.16644660080382,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "black_mamba",
     "parent_id": "reptile_house",
     "kind": "exhibit",
     "name": "Black Mamba",
-    "tags": []
+    "tags": [],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "koi",
@@ -434,7 +646,11 @@
       "asia"
     ],
     "lat": 32.72211788245888,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "flamingo",
@@ -450,7 +666,11 @@
       "america"
     ],
     "lat": 32.74505139995802,
-    "lng": -117.15794384136309
+    "lng": -117.15794384136309,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "capuchin",
@@ -466,7 +686,11 @@
       "america"
     ],
     "lat": 32.751128871469874,
-    "lng": -117.16364410510093
+    "lng": -117.16364410510093,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "gorilla",
@@ -482,7 +706,11 @@
       "africa"
     ],
     "lat": 32.74812588554637,
-    "lng": -117.17565073656901
+    "lng": -117.17565073656901,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "orangutan",
@@ -498,7 +726,11 @@
       "asia"
     ],
     "lat": 32.736864688333235,
-    "lng": -117.16364410510093
+    "lng": -117.16364410510093,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "siamang",
@@ -513,7 +745,11 @@
       "asia"
     ],
     "lat": 32.736864688333235,
-    "lng": -117.16079397323202
+    "lng": -117.16079397323202,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "fern_canyon",
@@ -525,7 +761,11 @@
       "green"
     ],
     "lat": 32.73480907296893,
-    "lng": -117.17269958736802
+    "lng": -117.17269958736802,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "parker_aviary",
@@ -533,7 +773,11 @@
     "name": "Parker Aviary",
     "tags": [],
     "lat": 32.73971798112842,
-    "lng": -117.16644660080382
+    "lng": -117.16644660080382,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "toucan",
@@ -548,7 +792,11 @@
       "orange",
       "south",
       "america"
-    ]
+    ],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "motmot",
@@ -562,7 +810,11 @@
       "colorful",
       "central",
       "america"
-    ]
+    ],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "scripps_aviary",
@@ -570,7 +822,11 @@
     "name": "Scripps Aviary",
     "tags": [],
     "lat": 32.748538318135594,
-    "lng": -117.17255093386991
+    "lng": -117.17255093386991,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "spoonbill",
@@ -585,7 +841,11 @@
       "blue",
       "beak",
       "flat"
-    ]
+    ],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "hippo",
@@ -598,7 +858,11 @@
       "big"
     ],
     "lat": 32.746320519009025,
-    "lng": -117.16364410510093
+    "lng": -117.16364410510093,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "crocodile",
@@ -613,7 +877,11 @@
       "scary"
     ],
     "lat": 32.746302644092815,
-    "lng": -117.16659525430192
+    "lng": -117.16659525430192,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "owens_aviary",
@@ -621,7 +889,11 @@
     "name": "Owens Aviary",
     "tags": [],
     "lat": 32.73798565400121,
-    "lng": -117.16949876733686
+    "lng": -117.16949876733686,
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "mynah",
@@ -634,7 +906,11 @@
       "bird",
       "endangered",
       "indonesia"
-    ]
+    ],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   },
   {
     "id": "dove",
@@ -648,6 +924,10 @@
       "south",
       "east",
       "asia"
-    ]
+    ],
+    "description": "",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "image_link": ""
   }
 ]

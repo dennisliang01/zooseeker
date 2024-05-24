@@ -1,0 +1,56 @@
+[
+  {
+    "visitor_id": "aedan_bailey",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "chuong_nguyen",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "dennis_liang",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "evan_liu",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "jasmine_yang",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "jay_wu",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "merlin_zhang",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "phil_putra",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  },
+  {
+    "visitor_id": "zhach_zhong",
+    "visitor_type": "adult",
+    "break_freq": 5,
+    "accessibility_needs": "none"
+  }
+]

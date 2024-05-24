@@ -18,13 +18,14 @@ public class ZooData implements Serializable {
 
     public static class VertexInfo implements Serializable {
         public static final VertexInfo STARTING_POINT = new VertexInfo(
-                "entrance_exit_gate", "Entrance and Exit Gate", "Place to enter or exit the zoo",
+                "entrance_exit_gate", "owens_aviary", "Entrance and Exit Gate", "Place to enter or exit the zoo",
                 "Accessible by wheelchairs", VertexInfo.Kind.GATE, 32.73561,
                 -117.14936, LocalTime.of(10,30), LocalTime.of(18,20), null);
-        public VertexInfo(String id, String name, String description, String accessibility_options,
+        public VertexInfo(String id, String parent_id, String name, String description, String accessibility_options,
                           Kind kind, double lat, double lng, LocalTime start_time, LocalTime end_time,
                           URL img_link) {
             this.id = id;
+            this.parent_id = parent_id;
             this.name = name;
             this.description = description;
             this.accessibility_options = accessibility_options;
@@ -38,7 +39,7 @@ public class ZooData implements Serializable {
 
 
         public enum Kind {
-            // The SerializedName annotation tells GSON how to convert
+            // The SerializedName annotation tells GSO/;pN how to convert
             // from the strings in our JSON to this Enum.
             @SerializedName("gate") GATE,
             @SerializedName("exhibit") EXHIBIT,
