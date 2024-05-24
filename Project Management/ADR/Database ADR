@@ -1,7 +1,35 @@
-5-21-2024
+5-24-2024
 US2-3 Database Schema Design and Database Selection
 
-To be added ...
+Progress: 
+Schema Design: https://lucid.app/lucidchart/a5a1479b-9480-4e74-95dd-ba03c8f3243c/edit?viewport_loc=-82%2C282%2C2253%2C1175%2C0_0&invitationId=inv_4055a01c-5329-4c4a-8822-ceb3fe892c1f
+New attributes added to current ZooData Java file:
+Description of Exhibit: Wetland African environment exhibit
+Accessibility Options: Disabled individuals can go
+Start Time: When exhibit opens for guess
+End Time: When exhibit closes for guess
+Img Link: Url to an image of the Exhibit
+
+Visitor Table
+Visitor Id: name of visitor
+Visitor Type: Adult, Child
+Break Frequency: How often a person needs to take a break from traveling
+Accessibility Needs: Wheelchair, lifts
+
+Schedule Table
+Vertex Info: (Starting node is always at the gate with visited == true)
+Visitor ID: name of visitor
+Exhibit Name: name of exhibit
+Visited: True/False
+
+Edge Info: 
+ID: Numberth Event
+Start Event Time: 8:00
+End Even Time: 8:30
+
+We decided to implement a fake database using json files because the current data is persistent. Will implement a database in the future as more data get added
+The schedule table is implemented similar to a tree with each node having a single parent and child node except the starting node, which will only have 1 child node and no parent node. Each node will be an exhibit/event and edges being equivalent to the time of the event. We want to implement the schedule as a tree because we want the events to be stored in chronological order for easy traversing, adding, and popping.
+
 
 5-15-2024
 US2-2 Database Selection
