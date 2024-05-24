@@ -23,12 +23,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.zooseeker_jj_zaaz_team_52.DetailsActivity;
 import com.example.zooseeker_jj_zaaz_team_52.ExhibitSearch;
 import com.example.zooseeker_jj_zaaz_team_52.PlanDatabase;
 import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
 import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
+import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -204,7 +207,13 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 })
                 .setNeutralButton("Details", (dialog, which) -> {
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-                    openExhibitDetails(newPlanExhibit);
+//                    openExhibitDetails(newPlanExhibit);
+
+                    NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("exhibitDetails", newPlanExhibit);
+                    controller.navigate(R.id.fragment_details, bundle);
+
                 })
                 .show();
     }
