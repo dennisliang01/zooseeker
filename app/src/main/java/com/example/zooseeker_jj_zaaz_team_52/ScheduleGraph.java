@@ -3,6 +3,9 @@ package com.example.zooseeker_jj_zaaz_team_52;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import org.jgrapht.Graph;
@@ -15,6 +18,8 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -57,6 +62,12 @@ public class ScheduleGraph implements Serializable {
         // And now we just import it!
         importer.importGraph(g, reader);
 
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(LocalTime.class, (JsonDeserializer<LocalTime>) (json, type, jsonDeserializationContext) -> {
+                    JsonElement jsonElement = json.getAsJsonPrimitive();
+                    return LocalTime.parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("HH:mm"));
+                })
+                .create();
 
         //IMPORT THE EDGE
         try {
@@ -67,7 +78,6 @@ public class ScheduleGraph implements Serializable {
 
         reader = new InputStreamReader(inputStream);
 
-        Gson gson = new Gson();
         Type type = new TypeToken<List<Schedule.EdgeInfo>>() {
         }.getType();
         List<Schedule.EdgeInfo> timeData = gson.fromJson(reader, type);
