@@ -119,48 +119,44 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
         List<double[]> coordinates = new ArrayList<>();
 
-        coordinates.add(new double[]{609.44104, 332.71805});//Crocodiles
-        coordinates.add(new double[]{385.44638, 652.33734}); //koi
-        coordinates.add(new double[]{552.3508, 721.41656});
-        coordinates.add(new double[]{573.0732, 681.77734});
-        coordinates.add(new double[]{610.53906, 627.2369});
-        coordinates.add(new double[]{515.99115, 517.788}); //gorilla
-        coordinates.add(new double[]{723.6182, 563.6023});
-        coordinates.add(new double[]{797.07526, 589.0689});
-        coordinates.add(new double[]{557.8093, 389.7997}); // hippo
-        coordinates.add(new double[]{977.8068, 781.0561}); //Orangutans
-        coordinates.add(new double[]{400.54013, 705.6978}); //flamingo
-        coordinates.add(new double[]{822.8963, 680.6971});
-        coordinates.add(new double[]{890.89526, 679.2436});
-        coordinates.add(new double[]{889.07635, 758.16406}); //siamangs
-        coordinates.add(new double[]{416.35617, 521.4215}); // Lion
-        coordinates.add(new double[]{386.89667, 592.32385}); //meerkat
-        coordinates.add(new double[]{452.3473, 592.32385}); //Warthog
+        coordinates.add(new double[]{604.44104, 324.71805});//Crocodiles
+        coordinates.add(new double[]{380.44638, 644.33734}); //koi
+        coordinates.add(new double[]{547.3508, 713.41656});
+        coordinates.add(new double[]{568.0732, 673.77734});
+        coordinates.add(new double[]{605.53906, 619.2369});
+        coordinates.add(new double[]{510.99115, 509.788}); //gorilla
+        coordinates.add(new double[]{718.6182, 555.6023});
+        coordinates.add(new double[]{792.07526, 581.0689});
+        coordinates.add(new double[]{552.8093, 381.7997}); // hippo
+        coordinates.add(new double[]{972.8068, 773.0561}); //Orangutans
+        coordinates.add(new double[]{395.54013, 697.6978}); //flamingo
+        coordinates.add(new double[]{817.8963, 672.6971});
+        coordinates.add(new double[]{885.89526, 671.2436});
+        coordinates.add(new double[]{884.07635, 750.16406}); //siamangs
+        coordinates.add(new double[]{411.35617, 513.4215}); // Lion
+        coordinates.add(new double[]{381.89667, 584.32385}); //meerkat
+        coordinates.add(new double[]{447.3473, 584.32385}); //Warthog
 
 
-        coordinates.add(new double[]{483.6282, 662.8814}); //Parker Aviary
+        coordinates.add(new double[]{478.6282, 654.8814}); //Parker Aviary
 
 
-        coordinates.add(new double[]{627.261, 537.0543}); //scripps aviary
+        coordinates.add(new double[]{622.261, 529.0543}); //scripps aviary
 
-        coordinates.add(new double[]{740.5291, 440.71237}); // elephant
-        coordinates.add(new double[]{613.08453, 723.61755}); //orange 1
-        coordinates.add(new double[]{653.80756, 796.3246}); //orange 2
-        coordinates.add(new double[]{715.6236, 842.1406}); //orange 3
+        coordinates.add(new double[]{735.5291, 432.71237}); // elephant
+        coordinates.add(new double[]{608.08453, 715.61755}); //orange 1
+        coordinates.add(new double[]{648.80756, 788.3246}); //orange 2
+        coordinates.add(new double[]{710.6236, 834.1406}); //orange 3
 
-
-
-
-
-        coordinates.add(new double[]{894.1701, 528.70416});
-        coordinates.add(new double[]{989.4393, 526.16693});
+        coordinates.add(new double[]{889.1701, 523.70416});
+        coordinates.add(new double[]{981.4393, 518.16693});
         coordinates.add(new double[]{991.9801, 582.5341});
         coordinates.add(new double[]{982.1644, 645.7994}); //owens aviary
         coordinates.add(new double[]{783.99115, 773.0689});
 
+        coordinates.add(new double[]{793.08167, 904.3363});
+        coordinates.add(new double[]{920.35156, 869.7965});
 
-        coordinates.add(new double[]{801.08167, 912.3363});
-        coordinates.add(new double[]{928.35156, 877.7965});
         int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
@@ -173,8 +169,8 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
                 // Set the margins to position the Zoomarker view
-                params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0], getContext()); // replace 400 with your desired x position
-                params.topMargin = convertDpToPixel((float)coordinates.get(i)[1], getContext()); // replace 500 with your desired y position
+                params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0] , getContext()); // replace 400 with your desired x position
+                params.topMargin = convertDpToPixel((float)coordinates.get(i)[1] , getContext()); // replace 500 with your desired y position
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
