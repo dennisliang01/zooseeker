@@ -4,97 +4,43 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 
-public class Zoomarker extends View {
-    private final Paint paint = new Paint();
-    private float posX = 0; // X position
-    private float posY = 0; // Y position
-    private String name = "MARKER_NAME";
-    private Bitmap backgroundBitmap;
+public class Zoomarker extends LinearLayout {
+    private Bitmap backgroundBitmap, placeholderImage;
     ZooData.VertexInfo markerData;
     private OnZoomarkerClickListener clickListener;
+    private ShapeableImageView mapIcon;
 
-    public Zoomarker(ZooData.VertexInfo value, Context context, AttributeSet attrs) {
-        super(context, attrs);
-        markerData = value;
-        paint.setColor(Color.RED);
+    public Zoomarker(Context context, ZooData.VertexInfo info, int scale) {
+        super(context);
+        markerData = info;
+        init(context);
+        mapIcon = findViewById(R.id.zoomarkericon);
+        ViewGroup.LayoutParams layoutParams = mapIcon.getLayoutParams();
+        layoutParams.width = 50 * scale;  // width in dp
+        layoutParams.height = 50 * scale;  // height in dp
+        mapIcon.setLayoutParams(layoutParams);
 
-        // Load the background image
-        backgroundBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher_background); // Replace with your drawable resource
 
-        // Get the position attributes
-        TypedArray a = context.getTheme().obtainStyledAttributes(
-                attrs,
-                R.styleable.Zoomarker,
-                0, 0);
+    }
 
-        try {
-            posX = a.getFloat(R.styleable.Zoomarker_posX, 0);
-            posY = a.getFloat(R.styleable.Zoomarker_posY, 0);
-        } finally {
-            a.recycle();
-        }
-
+    private void init(Context context) {
+        LayoutInflater.from(context).inflate(R.layout.zoomarker, this, true);
         init();
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int desiredWidth = 50; // Replace with your desired size
-        int desiredHeight = 50; // Replace with your desired size
-
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-
-        int width;
-        int height;
-
-        if (widthMode == MeasureSpec.EXACTLY) {
-            width = widthSize;
-        } else if (widthMode == MeasureSpec.AT_MOST) {
-            width = Math.min(desiredWidth, widthSize);
-        } else {
-            width = desiredWidth;
-        }
-
-        if (heightMode == MeasureSpec.EXACTLY) {
-            height = heightSize;
-        } else if (heightMode == MeasureSpec.AT_MOST) {
-            height = Math.min(desiredHeight, heightSize);
-        } else {
-            height = desiredHeight;
-        }
-
-        setMeasuredDimension(width, height);
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
-        int width = getMeasuredWidth();
-        int height = getMeasuredHeight();
-
-        // Draw the background image
-        if (backgroundBitmap != null) {
-            canvas.drawBitmap(backgroundBitmap, 0, 0, paint);
-        }
-
-        int radius = Math.min(width, height) / 2;
-
-
-        // Draw the marker circle
-        canvas.drawCircle(width / 2, height / 2, radius, paint);
-    }
 
     private void init() {
         // Set the OnClickListener for this view

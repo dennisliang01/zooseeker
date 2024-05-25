@@ -119,32 +119,46 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
         List<double[]> coordinates = new ArrayList<>();
 
-        coordinates.add(new double[]{416.35617, 521.4215});
-        coordinates.add(new double[]{386.89667, 592.32385});
-        coordinates.add(new double[]{452.3473, 592.32385});
-        coordinates.add(new double[]{385.44638, 652.33734});
-        coordinates.add(new double[]{390.54013, 700.6978});
-        coordinates.add(new double[]{483.6282, 662.8814});
-        coordinates.add(new double[]{573.0732, 681.77734});
+        coordinates.add(new double[]{609.44104, 332.71805});//Crocodiles
+        coordinates.add(new double[]{385.44638, 652.33734}); //koi
         coordinates.add(new double[]{552.3508, 721.41656});
-        coordinates.add(new double[]{557.8093, 389.7997});
-        coordinates.add(new double[]{609.44104, 332.71805});
-        coordinates.add(new double[]{704.3508, 386.1534});
-        coordinates.add(new double[]{613.08453, 723.61755});
-        coordinates.add(new double[]{640.7205, 786.1495});
-        coordinates.add(new double[]{699.62714, 822.8818});
-        coordinates.add(new double[]{591.62714, 613.43396});
-        coordinates.add(new double[]{701.8061, 547.6065});
+        coordinates.add(new double[]{573.0732, 681.77734});
+        coordinates.add(new double[]{610.53906, 627.2369});
+        coordinates.add(new double[]{515.99115, 517.788}); //gorilla
+        coordinates.add(new double[]{723.6182, 563.6023});
         coordinates.add(new double[]{797.07526, 589.0689});
-        coordinates.add(new double[]{803.6225, 670.5092});
-        coordinates.add(new double[]{864.72266, 641.0693});
+        coordinates.add(new double[]{557.8093, 389.7997}); // hippo
+        coordinates.add(new double[]{977.8068, 781.0561}); //Orangutans
+        coordinates.add(new double[]{400.54013, 705.6978}); //flamingo
+        coordinates.add(new double[]{822.8963, 680.6971});
+        coordinates.add(new double[]{890.89526, 679.2436});
+        coordinates.add(new double[]{889.07635, 758.16406}); //siamangs
+        coordinates.add(new double[]{416.35617, 521.4215}); // Lion
+        coordinates.add(new double[]{386.89667, 592.32385}); //meerkat
+        coordinates.add(new double[]{452.3473, 592.32385}); //Warthog
+
+
+        coordinates.add(new double[]{483.6282, 662.8814}); //Parker Aviary
+
+
+        coordinates.add(new double[]{627.261, 537.0543}); //scripps aviary
+
+        coordinates.add(new double[]{740.5291, 440.71237}); // elephant
+        coordinates.add(new double[]{613.08453, 723.61755}); //orange 1
+        coordinates.add(new double[]{653.80756, 796.3246}); //orange 2
+        coordinates.add(new double[]{715.6236, 842.1406}); //orange 3
+
+
+
+
+
         coordinates.add(new double[]{894.1701, 528.70416});
         coordinates.add(new double[]{989.4393, 526.16693});
         coordinates.add(new double[]{991.9801, 582.5341});
-        coordinates.add(new double[]{982.1644, 645.7994});
+        coordinates.add(new double[]{982.1644, 645.7994}); //owens aviary
         coordinates.add(new double[]{783.99115, 773.0689});
-        coordinates.add(new double[]{889.07635, 758.16406});
-        coordinates.add(new double[]{955.2578, 767.9691});
+
+
         coordinates.add(new double[]{801.08167, 912.3363});
         coordinates.add(new double[]{928.35156, 877.7965});
         int i = 0;
@@ -152,7 +166,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         for (ZooData.VertexInfo value : zooData) {
             //Only add exhibits, not streets and etc.
             if (value.kind == ZooData.VertexInfo.Kind.EXHIBIT) {
-                Zoomarker zoomarker = new Zoomarker(value, getContext(), null);
+                Zoomarker zoomarker = new Zoomarker( getContext(), value, 2);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
@@ -166,7 +180,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 mapView.addView(zoomarker);
                 x += 20;
                 y += 20;
-                i+=1;
+                i += 1;
             }
         }
     }
