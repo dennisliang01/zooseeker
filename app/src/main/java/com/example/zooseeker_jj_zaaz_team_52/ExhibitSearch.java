@@ -89,6 +89,10 @@ public class ExhibitSearch {
      * tag or with a name less than threshold.
      */
     List<ZooData.VertexInfo> searchKeyword(String keyword, double threshold) {
+
+        if(keyword.equals("")){
+            return new ArrayList<>(zooData.values());
+        }
         keyword = keyword.toLowerCase(Locale.ROOT);
         List<Pair<Double, ZooData.VertexInfo>> data = new ArrayList<>();
 

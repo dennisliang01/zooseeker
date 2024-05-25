@@ -16,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zooseekerjjzaazteam52"
         tools:ignore="ExtraText">
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_details2"
+            android:theme="@style/Theme.Zooseekerjjzaazteam52.NoActionBar" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

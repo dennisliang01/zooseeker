@@ -25,12 +25,12 @@
         android:layout_marginBottom="20dp"
         android:text="@string/textview"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/directions_view"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_directions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/directions_view"
+        android:id="@+id/navigation_directions"
         android:layout_width="334dp"
         android:layout_height="428dp"
         android:layout_marginStart="24dp"
@@ -96,7 +96,7 @@
         android:layout_marginEnd="24dp"
         android:onClick="onSkipButtonClicked"
         android:text="Skip"
-        app:layout_constraintTop_toBottomOf="@id/directions_view"
+        app:layout_constraintTop_toBottomOf="@id/navigation_directions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/next_btn"
         app:layout_constraintStart_toEndOf="@id/previous_btn"/>
