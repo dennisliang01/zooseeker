@@ -1349,5 +1349,72 @@
       "minute": 0
     },
     "image_link": ""
+  },
+  {
+    "id": "koi_tour",
+    "parent_id": "koi",
+    "kind": "event",
+    "name": "Koi Feeding Tour",
+    "tags": [
+      "koi",
+      "fish",
+      "tour",
+      "guide"
+    ],
+    "description": "",
+    "start_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_time": {
+      "hour": 9,
+      "minute": 0
+    },
+    "image_link": ""
+  },
+  {
+    "id": "panda_tour",
+    "parent_id": "panda",
+    "kind": "event",
+    "name": "Panda Guided Tour",
+    "tags": [
+      "panda",
+      "tour",
+      "guide",
+      "asia"
+    ],
+    "description": "",
+    "start_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_time": {
+      "hour": 9,
+      "minute": 0
+    },
+    "image_link": ""
+  },
+  {
+    "id": "safari_tour",
+    "parent_id": "jaguar",
+    "kind": "event",
+    "name": "Safari Tour",
+    "tags": [
+      "jaguar",
+      "safari",
+      "tour",
+      "guide",
+      "africa"
+    ],
+    "description": "",
+    "start_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_time": {
+      "hour": 9,
+      "minute": 0
+    },
+    "image_link": ""
   }
 ]
