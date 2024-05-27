@@ -19,57 +19,38 @@ import java.io.Reader;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * ZooGraph Class: Single Responsibility - Imports information given in JSON asset files to create
+ * ScheduleGraph Class: Single Responsibility - Imports information given in JSON asset files to create
  * graph of Zoo where vertices are exhibits/intersections/gates and edges are paths between vertices
  */
-
 public class ScheduleGraph implements Serializable {
 
     Graph<String, IdentifiedWeightedEdge> g = new DefaultUndirectedWeightedGraph<>(IdentifiedWeightedEdge.class);
     Map<String, Schedule.EdgeInfo> timeInfo;
     Map<String, Schedule.VertexInfo> exhibitInfo;
 
-
     public ScheduleGraph(String nodeFile, String graphFile, String edgeFile, Context context) {
-        //IMPORT THE GRAPH
+        // IMPORT THE GRAPH
         InputStream inputStream = null;
         try {
             inputStream = context.getAssets().open(graphFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Create an importer that can be used to populate our empty graph.
+
         JSONImporter<String, IdentifiedWeightedEdge> importer = new JSONImporter<>();
-
-        // We don't need to convert the vertices in the graph, so we return them as is.
         importer.setVertexFactory(v -> v);
-
-        // We need to make sure we set the IDs on our edges from the 'id' attribute.
-        // While this is automatic for vertices, it isn't for edges. We keep the
-        // definition of this in the IdentifiedWeightedEdge class for convenience.
         importer.addEdgeAttributeConsumer(IdentifiedWeightedEdge::attributeConsumer);
-
-        // On Android, you would use context.getAssets().open(path) here like in Lab 5.
         Reader reader = new InputStreamReader(inputStream);
-
-        // And now we just import it!
         importer.importGraph(g, reader);
 
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(LocalTime.class, (JsonDeserializer<LocalTime>) (json, type, jsonDeserializationContext) -> {
-                    JsonElement jsonElement = json.getAsJsonPrimitive();
-                    return LocalTime.parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("HH:mm"));
-                })
-                .create();
-
-        //IMPORT THE EDGE
+        Gson gson_edge = new Gson();
+        // IMPORT THE EDGE
         try {
             inputStream = context.getAssets().open(edgeFile);
         } catch (IOException e) {
@@ -77,17 +58,12 @@ public class ScheduleGraph implements Serializable {
         }
 
         reader = new InputStreamReader(inputStream);
-
-        Type type = new TypeToken<List<Schedule.EdgeInfo>>() {
-        }.getType();
-        List<Schedule.EdgeInfo> timeData = gson.fromJson(reader, type);
-
-        timeInfo = timeData
-                .stream()
+        Type type = new TypeToken<List<Schedule.EdgeInfo>>() {}.getType();
+        List<Schedule.EdgeInfo> timeData = gson_edge.fromJson(reader, type);
+        timeInfo = timeData.stream()
                 .collect(Collectors.toMap(v -> v.id, datum -> datum));
 
-
-        //IMPORT THE NODES
+        // IMPORT THE NODES
         try {
             inputStream = context.getAssets().open(nodeFile);
         } catch (IOException e) {
@@ -95,13 +71,13 @@ public class ScheduleGraph implements Serializable {
         }
 
         reader = new InputStreamReader(inputStream);
-
-        gson = new Gson();
-        type = new TypeToken<List<Schedule.VertexInfo>>() {
-        }.getType();
-        List<Schedule.VertexInfo> exhibitData = gson.fromJson(reader, type);
-
-        exhibitInfo = exhibitData.stream().collect(Collectors.toMap(v -> v.visitor_id, datum -> datum));
+        Gson gson_node = new GsonBuilder()
+                .registerTypeAdapter(LocalTime.class, new LocalTimeDeserializer())
+                .create();
+        type = new TypeToken<List<Schedule.VertexInfo>>() {}.getType();
+        List<Schedule.VertexInfo> exhibitData = gson_node.fromJson(reader, type);
+        exhibitInfo = exhibitData.stream()
+                .collect(Collectors.toMap(v -> v.visitor_id, datum -> datum));
     }
 
     public String getExhibitNameById(String id) {
