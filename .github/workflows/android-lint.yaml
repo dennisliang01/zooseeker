@@ -28,8 +28,7 @@ jobs:
         run: ./gradlew lint
         continue-on-error: true
 
-      - name: Upload lint results
-        uses: actions/upload-artifact@v2
+      - name: Check and Report Link Results
+        uses: hidakatsuya/action-report-android-lint@v1.2.0
         with:
-          name: lint-results
-          path: app/build/reports/lint-results.xml
+          result-path: '.github/workflows/lint-result.xml'
