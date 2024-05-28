@@ -2,44 +2,27 @@ package com.example.zooseeker_jj_zaaz_team_52;
 
 import android.content.Context;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.Serializable;
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+@Database(entities = {Activity.class}, version = 1, exportSchema = false)
+public abstract class ActivityDB extends RoomDatabase {
 
-public class ActivityDB implements Serializable {
+    private static ActivityDB singleton = null;
 
-    public ActivityDB(String ActivityFile, Context context) {
+    public abstract ActivityDao activityDao();
 
-        InputStream inputStream = null;
-
-        Map<String, Activity> visitor_info;
-
-        try {
-            inputStream = context.getAssets().open(ActivityFile);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public synchronized static ActivityDB getSingleton(Context context) {
+        if (singleton == null) {
+            singleton = ActivityDB.makeDatabase(context);
         }
+        return singleton;
+    }
 
-        Reader reader = new InputStreamReader(inputStream);
-
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Activity>>() {
-        }.getType();
-        List<Activity> timeData = gson.fromJson(reader, type);
-
-        visitor_info = timeData
-                .stream()
-                .collect(Collectors.toMap(k -> k.activity_name, datum -> datum));
-
+    private static ActivityDB makeDatabase(Context context) {
+        return Room.databaseBuilder(context, ActivityDB.class, "activity.db")
+                .allowMainThreadQueries()
+                .build();
     }
 }
