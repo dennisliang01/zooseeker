@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1st_event_aedan_bailey",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "{1st_event_chuong_nguyen",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_dennis_liang",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_evan_liu",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_jasmine_yang",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_jay_wu",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_merlin_zhang",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_phil_putra",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  },
+  {
+    "id": "1st_event_zhach_zhong",
+    "start_event_time": {
+      "hour": 8,
+      "minute": 0
+    },
+    "end_event_time": {
+      "hour": 9,
+      "minute": 0
+    }
+  }
+]

@@ -1,106 +1,302 @@
 [
   {
-    "id": "gate_to_front",
+    "id": "gate_to_front_safari",
     "street": "Gate Path"
   },
   {
-    "id": "front_to_monkey",
+    "id": "front_safari_to_lion",
     "street": "Front Street"
   },
   {
-    "id": "monkey_to_flamingo",
-    "street": "Monkey Trail"
+    "id": "front_safari_to_meerkat",
+    "street": "Safari Way"
   },
   {
-    "id": "flamingo_to_capuchin",
-    "street": "Monkey Trail"
+    "id": "front_safari_to_koi",
+    "street": "Front Street"
   },
   {
-    "id": "capuchin_to_hippo_monkey",
-    "street": "Monkey Trail"
+    "id": "lion_to_front_savannah",
+    "street": "Front Street"
   },
   {
-    "id": "hippo_monkey_to_scripps",
-    "street": "Monkey Trail"
+    "id": "front_savannah_to_african_plains",
+    "street": "Savannah Walk"
   },
   {
-    "id": "scripps_to_gorilla",
-    "street": "Monkey Trail"
+    "id": "front_savannah_to_hippo",
+    "street": "Front Street"
   },
   {
-    "id": "gorilla_to_benchley",
-    "street": "Monkey Trail"
-  },
-  {
-    "id": "front_to_fern",
-    "street": "Treetops Way"
-  },
-  {
-    "id": "fern_to_orangutan",
-    "street": "Treetops Way"
-  },
-  {
-    "id": "treetops_to_siamang",
-    "street": "Orangutan Trail"
-  },
-  {
-    "id": "treetops_to_hippo",
-    "street": "Treetops Way"
-  },
-  {
-    "id": "hippo_to_hippo",
-    "street": "Hippo Trail"
+    "id": "african_plains_to_savannah_safari",
+    "street": "Savannah Walk"
   },
   {
     "id": "hippo_to_crocodile",
-    "street": "Hippo Trail"
-  },
-  {
-    "id": "crocodile_to_monkey_hippo",
-    "street": "Hippo Trail"
-  },
-  {
-    "id": "hippo_to_parker",
-    "street": "Treetops Way"
-  },
-  {
-    "id": "siamang_to_orangutan",
-    "street": "Orangutan Trail"
-  },
-  {
-    "id": "orangutan_to_parker",
-    "street": "Orangutan Trail"
-  },
-  {
-    "id": "parker_to_owens",
-    "street": "Aviary Trail"
-  },
-  {
-    "id": "parker_to_benchley",
-    "street": "Treetops Way"
-  },
-  {
-    "id": "owens_to_fern",
-    "street": "Aviary Trail"
-  },
-  {
-    "id": "fern_to_fern",
-    "street": "Fern Canyon Trail"
-  },
-  {
-    "id": "front_to_lagoon1",
     "street": "Front Street"
   },
   {
-    "id": "lagoon1_to_lagoon2",
+    "id": "crocodile_to_front_safari_2",
     "street": "Front Street"
   },
   {
-    "id": "lagoon1_to_koi",
-    "street": "Terrace Lagoon Loop"
+    "id": "front_safari_2_to_elephant",
+    "street": "Front Street"
   },
   {
-    "id": "lagoon2_to_koi",
-    "street": "Terrace Lagoon Loop"
+    "id": "elephant_to_front_arctic",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_arctic_to_penguin",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "penguin_to_amur",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "amur_to_arctic_bird",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "arctic_bird_to_wolf",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "wolf_to_front_arctic_2",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "front_arctic_2_to_polar",
+    "street": "Front Street"
+  },
+  {
+    "id": "polar_to_front_arctic",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_arctic_2_to_cheetah",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "cheetah_to_arctic_ferng",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "arctic_ferng_to_safari_arctic",
+    "street": "Arctic Circle"
+  },
+  {
+    "id": "safari_arctic_to_savannah_safari",
+    "street": "Safari Way"
+  },
+  {
+    "id": "savannah_safari_to_front_safari_2",
+    "street": "Safari Way"
+  },
+  {
+    "id": "safari_arctic_to_scripps",
+    "street": "Safari Way"
+  },
+  {
+    "id": "scripps_to_safari_ferng",
+    "street": "Safari Way"
+  },
+  {
+    "id": "safari_ferng_to_fernc",
+    "street": "Fern Grove"
+  },
+  {
+    "id": "fernc_to_arctic_ferng",
+    "street": "Fern Grove"
+  },
+  {
+    "id": "safari_ferng_to_plaza",
+    "street": "Safari Way"
+  },
+  {
+    "id": "safari_plaza_to_warthog",
+    "street": "Safari Way"
+  },
+  {
+    "id": "warthog_to_safari_lagoon",
+    "street": "Safari Way"
+  },
+  {
+    "id": "safari_lagoon_to_meerkat",
+    "street": "Safari Way"
+  },
+  {
+    "id": "safari_lagoon_to_front_lagoon",
+    "street": "Lagoon Terrace"
+  },
+  {
+    "id": "front_lagoon_to_flamingo",
+    "street": "Front Street"
+  },
+  {
+    "id": "flamingo_to_koi",
+    "street": "Front Street"
+  },
+  {
+    "id": "safari_plaza_to_plaza_rainforest",
+    "street": "Plaza Path"
+  },
+  {
+    "id": "plaza_rainforest_to_jaguar",
+    "street": "Plaza Path"
+  },
+  {
+    "id": "plaza_rainforest_to_front_rainforest",
+    "street": "Rainforest Walk"
+  },
+  {
+    "id": "jaguar_to_plaza_south",
+    "street": "Plaza Path"
+  },
+  {
+    "id": "plaza_south_to_front_south",
+    "street": "South Bound"
+  },
+  {
+    "id": "front_south_to_capybara",
+    "street": "Front Street"
+  },
+  {
+    "id": "capybara_to_front_rainforest",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_rainforest_to_parker",
+    "street": "Front Street"
+  },
+  {
+    "id": "parker_to_front_lagoon",
+    "street": "Front Street"
+  },
+  {
+    "id": "plaza_south_to_plaza_benchley",
+    "street": "Plaza Path"
+  },
+  {
+    "id": "front_south_to_front_bear",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_bear_to_sloth",
+    "street": "Bear Crossing"
+  },
+  {
+    "id": "sloth_to_benchley_bear",
+    "street": "Bear Crossing"
+  },
+  {
+    "id": "benchley_bear_to_plaza_benchley",
+    "street": "Benchley Plaza"
+  },
+  {
+    "id": "front_bear_to_tiger",
+    "street": "Front Street"
+  },
+  {
+    "id": "tiger_to_front_bamboo",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_bamboo_to_bamboo_primate",
+    "street": "Bamboo Lane"
+  },
+  {
+    "id": "bamboo_primate_to_panda",
+    "street": "Bamboo Lane"
+  },
+  {
+    "id": "benchley_bamboo_to_panda",
+    "street": "Bamboo Lane"
+  },
+  {
+    "id": "benchley_bear_to_benchley_bamboo",
+    "street": "Benchley Plaza"
+  },
+  {
+    "id": "plaza_benchley_to_benchley_front",
+    "street": "Benchley Plaza"
+  },
+  {
+    "id": "benchley_front_to_benchley_front_2",
+    "street": "Benchley Plaza"
+  },
+  {
+    "id": "benchley_front_2_to_benchley_bamboo",
+    "street": "Benchley Plaza"
+  },
+  {
+    "id": "bamboo_primate_to_chimpanzee",
+    "street": "Primate Path"
+  },
+  {
+    "id": "chimpanzee_to_primate_monkey",
+    "street": "Primate Path"
+  },
+  {
+    "id": "primate_monkey_to_capuchin",
+    "street": "Monkey Trail"
+  },
+  {
+    "id": "capuchin_to_front_monkey",
+    "street": "Monkey Trail"
+  },
+  {
+    "id": "front_monkey_to_front_bamboo",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_monkey_to_gorilla",
+    "street": "Front Street"
+  },
+  {
+    "id": "gorilla_to_front_primate",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_primate_to_front_bird",
+    "street": "Front Street"
+  },
+  {
+    "id": "front_bird_to_owens",
+    "street": "Bird Walk"
+  },
+  {
+    "id": "owens_to_arctic_bird",
+    "street": "Bird Walk"
+  },
+  {
+    "id": "front_primate_to_orangutan",
+    "street": "Primate Path"
+  },
+  {
+    "id": "orangutan_to_primate_treetop",
+    "street": "Primate Path"
+  },
+  {
+    "id": "primate_treetop_to_front_treetop",
+    "street": "Treetop Trail"
+  },
+  {
+    "id": "front_treetop_to_siamang",
+    "street": "Front Street"
+  },
+  {
+    "id": "siamang_to_benchley_front_2",
+    "street": "Front Street"
+  },
+  {
+    "id": "benchley_front_to_reptile",
+    "street": "Front Street"
+  },
+  {
+    "id": "reptile_to_front_arctic_2",
+    "street": "Front Street"
   }
 ]
