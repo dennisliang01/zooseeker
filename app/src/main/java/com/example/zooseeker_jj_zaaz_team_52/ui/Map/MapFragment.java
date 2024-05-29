@@ -37,6 +37,7 @@ import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
@@ -93,8 +94,9 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         List<String> items = new ArrayList<String>();
 
         for(ZooData.VertexInfo item : allExhibits) {
-            if((item.kind.toString()).equals("EXHIBIT"))
-                items.add(item.name);
+            if((item.kind.toString()).equals("EXHIBIT")) {
+                System.out.println(item.name);
+            }
         }
 
         ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, items);
@@ -114,8 +116,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 mapView.removeViewAt(i);
             }
         }
-        int x = 10;
-        int y = 10;
 
         List<double[]> coordinates = new ArrayList<>();
 
@@ -136,27 +136,19 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         coordinates.add(new double[]{411.35617, 513.4215}); // Lion
         coordinates.add(new double[]{381.89667, 584.32385}); //meerkat
         coordinates.add(new double[]{447.3473, 584.32385}); //Warthog
-
-
         coordinates.add(new double[]{478.6282, 654.8814}); //Parker Aviary
-
-
         coordinates.add(new double[]{622.261, 529.0543}); //scripps aviary
-
         coordinates.add(new double[]{735.5291, 432.71237}); // elephant
         coordinates.add(new double[]{608.08453, 715.61755}); //orange 1
         coordinates.add(new double[]{648.80756, 788.3246}); //orange 2
         coordinates.add(new double[]{710.6236, 834.1406}); //orange 3
-
         coordinates.add(new double[]{889.1701, 523.70416});
         coordinates.add(new double[]{981.4393, 518.16693});
         coordinates.add(new double[]{991.9801, 582.5341});
         coordinates.add(new double[]{982.1644, 645.7994}); //owens aviary
         coordinates.add(new double[]{783.99115, 773.0689});
-
         coordinates.add(new double[]{793.08167, 904.3363});
         coordinates.add(new double[]{920.35156, 869.7965});
-
         int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
@@ -169,13 +161,13 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
                 // Set the margins to position the Zoomarker view
-                params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0] , getContext()); // replace 400 with your desired x position
-                params.topMargin = convertDpToPixel((float)coordinates.get(i)[1] , getContext()); // replace 500 with your desired y position
+                if(i < coordinates.size()) {
+                    params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0], getContext()); // replace 400 with your desired x position
+                    params.topMargin = convertDpToPixel((float) coordinates.get(i)[1], getContext()); // replace 500 with your desired y position
+                }
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
-                x += 20;
-                y += 20;
                 i += 1;
             }
         }

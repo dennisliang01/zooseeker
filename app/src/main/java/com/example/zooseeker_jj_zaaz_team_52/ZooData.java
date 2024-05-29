@@ -47,8 +47,10 @@ public class ZooData implements Serializable {
             @SerializedName("exhibit_group") EXHIBIT_GROUP,
             @SerializedName("restroom") RESTROOM,
             @SerializedName("restaurants") RESTAURANT,
-            @SerializedName("resting_area") RESTING_AREA
-        }
+            @SerializedName("resting_area") RESTING_AREA,
+            @SerializedName("event") EVENT
+
+            }
 
         public String id;
         public String parent_id;
