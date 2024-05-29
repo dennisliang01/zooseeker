@@ -112,7 +112,11 @@
     "street": "Fern Grove"
   },
   {
-    "id": "safari_ferng_to_plaza",
+    "id": "safari_ferng_to_rhino",
+    "street": "Safari Way"
+  },
+  {
+    "id": "rhino_to_safari_plaza",
     "street": "Safari Way"
   },
   {
@@ -242,6 +246,10 @@
   {
     "id": "primate_monkey_to_capuchin",
     "street": "Monkey Trail"
+  },
+  {
+    "id": "primate_treetop_to_primate_monkey",
+    "street": "Primate Path"
   },
   {
     "id": "capuchin_to_front_monkey",
