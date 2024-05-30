@@ -591,7 +591,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/lion.jpeg"
   },
   {
     "id": "meerkat",
@@ -609,7 +609,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/meerkat.jpeg"
   },
   {
     "id": "warthog",
@@ -627,7 +627,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/warthog.jpeg"
   },
   {
     "id": "african_plains",
@@ -645,7 +645,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/african_plains.jpeg"
   },
   {
     "id": "zebra",
@@ -662,7 +662,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/zebra.jpeg"
   },
   {
     "id": "giraffe",
@@ -679,7 +679,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/giraffe.jpeg"
   },
   {
     "id": "elephant",
@@ -697,7 +697,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/elephant.jpeg"
   },
   {
     "id": "black_rhino",
@@ -715,7 +715,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/black_rhino.jpeg"
   },
   {
     "id": "cheetah",
@@ -733,7 +733,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/cheetah.jpeg"
   },
   {
     "id": "jaguar",
@@ -751,7 +751,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/jaguar.jpeg"
   },
   {
     "id": "capybara",
@@ -769,7 +769,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/capybara.jpeg"
   },
   {
     "id": "sloth_bear",
@@ -787,7 +787,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/sloth_bear.jpeg"
   },
   {
     "id": "tiger",
@@ -805,7 +805,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/tiger.jpeg"
   },
   {
     "id": "panda",
@@ -823,7 +823,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/panda.jpeg"
   },
   {
     "id": "capuchin",
@@ -849,7 +849,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/capuchin.jpeg"
   },
   {
     "id": "gorilla",
@@ -875,7 +875,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/gorilla.jpeg"
   },
   {
     "id": "orangutan",
@@ -901,7 +901,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/orangutan.jpeg"
   },
   {
     "id": "siamang",
@@ -926,7 +926,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/siamang.jpeg"
   },
   {
     "id": "fern_canyon",
@@ -948,7 +948,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/fern_canyon.jpeg"
   },
   {
     "id": "parker_aviary",
@@ -966,7 +966,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/parker_aviary.jpeg"
   },
   {
     "id": "toucan",
@@ -991,7 +991,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/toucan.jpeg"
   },
   {
     "id": "motmot",
@@ -1015,7 +1015,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/motmot.jpeg"
   },
   {
     "id": "scripps_aviary",
@@ -1033,7 +1033,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/scripps_aviary.jpeg"
   },
   {
     "id": "spoonbill",
@@ -1058,7 +1058,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/spoonbill.jpeg"
   },
   {
     "id": "hippo",
@@ -1081,7 +1081,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/hippo.jpeg"
   },
   {
     "id": "crocodile",
@@ -1106,7 +1106,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/crocodile.jpeg"
   },
   {
     "id": "owens_aviary",
@@ -1124,7 +1124,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/owens_aviary.jpeg"
   },
   {
     "id": "mynah",
@@ -1147,7 +1147,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/mynah.jpeg"
   },
   {
     "id": "dove",
@@ -1171,7 +1171,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/dove.jpeg"
   },
   {
     "id": "koi_tour",
@@ -1193,7 +1193,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/koi_tour.jpeg"
   },
   {
     "id": "panda_tour",
@@ -1215,7 +1215,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/panda_tour.jpeg"
   },
   {
     "id": "safari_tour",
@@ -1238,6 +1238,6 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/safari_tour.jpeg"
   }
 ]
