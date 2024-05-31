@@ -108,7 +108,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     }
 
     private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
-
         //Clear all zoomarkers mapview
         for (int i = mapView.getChildCount() - 1; i >= 0; i--) {
             View child = mapView.getChildAt(i);
@@ -117,54 +116,21 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             }
         }
 
-        List<double[]> coordinates = new ArrayList<>();
-
-        coordinates.add(new double[]{604.44104, 324.71805});//Crocodiles
-        coordinates.add(new double[]{380.44638, 644.33734}); //koi
-        coordinates.add(new double[]{547.3508, 713.41656});
-        coordinates.add(new double[]{568.0732, 673.77734});
-        coordinates.add(new double[]{605.53906, 619.2369});
-        coordinates.add(new double[]{510.99115, 509.788}); //gorilla
-        coordinates.add(new double[]{718.6182, 555.6023});
-        coordinates.add(new double[]{792.07526, 581.0689});
-        coordinates.add(new double[]{552.8093, 381.7997}); // hippo
-        coordinates.add(new double[]{972.8068, 773.0561}); //Orangutans
-        coordinates.add(new double[]{395.54013, 697.6978}); //flamingo
-        coordinates.add(new double[]{817.8963, 672.6971});
-        coordinates.add(new double[]{885.89526, 671.2436});
-        coordinates.add(new double[]{884.07635, 750.16406}); //siamangs
-        coordinates.add(new double[]{411.35617, 513.4215}); // Lion
-        coordinates.add(new double[]{381.89667, 584.32385}); //meerkat
-        coordinates.add(new double[]{447.3473, 584.32385}); //Warthog
-        coordinates.add(new double[]{478.6282, 654.8814}); //Parker Aviary
-        coordinates.add(new double[]{622.261, 529.0543}); //scripps aviary
-        coordinates.add(new double[]{735.5291, 432.71237}); // elephant
-        coordinates.add(new double[]{608.08453, 715.61755}); //orange 1
-        coordinates.add(new double[]{648.80756, 788.3246}); //orange 2
-        coordinates.add(new double[]{710.6236, 834.1406}); //orange 3
-        coordinates.add(new double[]{889.1701, 523.70416});
-        coordinates.add(new double[]{981.4393, 518.16693});
-        coordinates.add(new double[]{991.9801, 582.5341});
-        coordinates.add(new double[]{982.1644, 645.7994}); //owens aviary
-        coordinates.add(new double[]{783.99115, 773.0689});
-        coordinates.add(new double[]{793.08167, 904.3363});
-        coordinates.add(new double[]{920.35156, 869.7965});
         int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
             //Only add exhibits, not streets and etc.
-            if (value.kind == ZooData.VertexInfo.Kind.EXHIBIT) {
-                Zoomarker zoomarker = new Zoomarker( getContext(), value, 2);
+            if ((value.kind == ZooData.VertexInfo.Kind.EXHIBIT && value.parent_id == null) || (value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP) ) {
+                Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
                 // Set the margins to position the Zoomarker view
-                if(i < coordinates.size()) {
-                    params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0], getContext()); // replace 400 with your desired x position
-                    params.topMargin = convertDpToPixel((float) coordinates.get(i)[1], getContext()); // replace 500 with your desired y position
-                }
+                    params.leftMargin = convertDpToPixel((float) zoomarker.markerData.lat, getContext()); // replace 400 with your desired x position
+                    params.topMargin = convertDpToPixel((float) zoomarker.markerData.lng, getContext()); // replace 500 with your desired y position
+
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
@@ -195,27 +161,22 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 .setTitle(zoomarkerData.name)
                 .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
                 .setPositiveButton("Confirm", (dialog, which) -> {
-
                     PlanListItemDao planListItemDao = getPlanItems();
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
                     planListItemDao.insert(newPlanExhibit);
-
                     Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
                     mapPlanSuccessToast.show();
-
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
-                    // Handle negative button press
+                    //Handle negative button press
                 })
                 .setNeutralButton("Details", (dialog, which) -> {
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-//                    openExhibitDetails(newPlanExhibit);
-
+                    //openExhibitDetails(newPlanExhibit);
                     NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("exhibitDetails", newPlanExhibit);
                     controller.navigate(R.id.fragment_details, bundle);
-
                 })
                 .show();
     }

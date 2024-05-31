@@ -580,8 +580,8 @@
     "kind": "exhibit",
     "name": "Lion",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 411.35617,
+    "lng": 513.4215,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -598,8 +598,8 @@
     "kind": "exhibit",
     "name": "Meerkat",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 381.89667,
+    "lng": 584.32385,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -616,8 +616,8 @@
     "kind": "exhibit",
     "name": "Warthog",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 447.3473,
+    "lng": 584.32385,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -634,8 +634,8 @@
     "kind": "exhibit_group",
     "name": "African Plains",
     "tags": [],
-    "lat": 32.73971798112842,
-    "lng": -117.16644660080382,
+    "lat": 520.99115,
+    "lng": 519.788,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -645,7 +645,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3.5
   },
   {
     "id": "zebra",
@@ -686,8 +687,9 @@
     "kind": "exhibit",
     "name": "Elephant",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 735.5291,
+    "lng": 432.71237,
+    "scale": 4,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -704,8 +706,9 @@
     "kind": "exhibit",
     "name": "Black Rhino",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 605.53906,
+    "lng": 619.2369,
+    "scale": 2.5,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -722,8 +725,8 @@
     "kind": "exhibit",
     "name": "Cheetah",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 722.1637,
+    "lng": 563.6211,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -733,15 +736,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3
   },
   {
     "id": "jaguar",
     "kind": "exhibit",
     "name": "Jaguar",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 568.0732,
+    "lng": 673.77734,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -758,8 +762,8 @@
     "kind": "exhibit",
     "name": "Capybara",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 547.3508,
+    "lng": 713.41656,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -776,8 +780,8 @@
     "kind": "exhibit",
     "name": "Sloth Bear",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 608.08453,
+    "lng": 715.61755,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -794,8 +798,8 @@
     "kind": "exhibit",
     "name": "Tiger",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 648.80756,
+    "lng": 788.3246,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -805,15 +809,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3
   },
   {
     "id": "panda",
     "kind": "exhibit",
     "name": "Panda",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 710.6236,
+    "lng": 834.1406,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -823,15 +828,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3
   },
   {
     "id": "chimpanzee",
     "kind": "exhibit",
     "name": "Chimpanzee",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 811.9854,
+    "lng": 801.7841,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -841,15 +847,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": "3.5"
   },
   {
     "id": "wolf",
     "kind": "exhibit",
     "name": "Wolf",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 885.89526,
+    "lng": 671.2436,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -859,15 +866,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3
   },
   {
     "id": "polar_bear",
     "kind": "exhibit",
     "name": "Polar Bear",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 913.07385,
+    "lng":  559.24255,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -877,15 +885,16 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 4
   },
   {
     "id": "penguin",
     "kind": "exhibit",
     "name": "Penguin",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 984.4393,
+    "lng": 518.16693,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -902,8 +911,8 @@
     "kind": "exhibit",
     "name": "Amur Leopard",
     "tags": [],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 986.9801,
+    "lng": 574.5341,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -920,8 +929,8 @@
     "kind": "exhibit_group",
     "name": "Reptile House",
     "tags": [],
-    "lat": 32.73971798112842,
-    "lng": -117.16644660080382,
+    "lat": 792.07526,
+    "lng": 581.0689,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -963,8 +972,8 @@
       "japan",
       "asia"
     ],
-    "lat": 32.72211788245888,
-    "lng": -117.15794384136309,
+    "lat": 380.44638,
+    "lng": 644.33734,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -989,8 +998,8 @@
       "south",
       "america"
     ],
-    "lat": 32.74505139995802,
-    "lng": -117.15794384136309,
+    "lat": 395.54013,
+    "lng": 697.6978,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1015,8 +1024,8 @@
       "south",
       "america"
     ],
-    "lat": 32.751128871469874,
-    "lng": -117.16364410510093,
+    "lat": 811.9869,
+    "lng": 918.5185,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1041,8 +1050,8 @@
       "primate",
       "africa"
     ],
-    "lat": 32.74812588554637,
-    "lng": -117.17565073656901,
+    "lat": 950.1705,
+    "lng": 894.1488,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1052,7 +1061,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3.5
   },
   {
     "id": "orangutan",
@@ -1067,8 +1077,8 @@
       "orange",
       "asia"
     ],
-    "lat": 32.736864688333235,
-    "lng": -117.16364410510093,
+    "lat": 972.8068,
+    "lng":  773.0561,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1078,7 +1088,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "",
+    "scale": 3
   },
   {
     "id": "siamang",
@@ -1092,8 +1103,8 @@
       "orange",
       "asia"
     ],
-    "lat": 32.736864688333235,
-    "lng": -117.16079397323202,
+    "lat": 884.07635,
+    "lng": 750.16406,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1132,8 +1143,8 @@
     "kind": "exhibit_group",
     "name": "Parker Aviary",
     "tags": [],
-    "lat": 32.73971798112842,
-    "lng": -117.16644660080382,
+    "lat": 478.6282,
+    "lng": 654.8814,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1199,8 +1210,8 @@
     "kind": "exhibit_group",
     "name": "Scripps Aviary",
     "tags": [],
-    "lat": 32.748538318135594,
-    "lng": -117.17255093386991,
+    "lat": 622.261,
+    "lng": 529.0543,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1247,8 +1258,8 @@
       "africa",
       "big"
     ],
-    "lat": 32.746320519009025,
-    "lng": -117.16364410510093,
+    "lat": 552.8093,
+    "lng":  381.7997,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1272,8 +1283,8 @@
       "teeth",
       "scary"
     ],
-    "lat": 32.746302644092815,
-    "lng": -117.16659525430192,
+    "lat": 604.44104,
+    "lng": 324.71805,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1290,8 +1301,8 @@
     "kind": "exhibit_group",
     "name": "Owens Aviary",
     "tags": [],
-    "lat": 32.73798565400121,
-    "lng": -117.16949876733686,
+    "lat": 977.1644,
+    "lng": 637.7994,
     "description": "",
     "start_time": {
       "hour": 8,

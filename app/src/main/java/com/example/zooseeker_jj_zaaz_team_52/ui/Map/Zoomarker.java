@@ -23,14 +23,14 @@ public class Zoomarker extends LinearLayout {
     private OnZoomarkerClickListener clickListener;
     private ShapeableImageView mapIcon;
 
-    public Zoomarker(Context context, ZooData.VertexInfo info, int scale) {
+    public Zoomarker(Context context, ZooData.VertexInfo info, double scale) {
         super(context);
         markerData = info;
         init(context);
         mapIcon = findViewById(R.id.zoomarkericon);
         ViewGroup.LayoutParams layoutParams = mapIcon.getLayoutParams();
-        layoutParams.width = 50 * scale;  // width in dp
-        layoutParams.height = 50 * scale;  // height in dp
+        layoutParams.width = (int) (50 * scale);  // width in dp
+        layoutParams.height = (int) (50 * scale);  // height in dp
         mapIcon.setLayoutParams(layoutParams);
 
 

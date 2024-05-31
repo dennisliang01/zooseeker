@@ -20,10 +20,10 @@ public class ZooData implements Serializable {
         public static final VertexInfo STARTING_POINT = new VertexInfo(
                 "entrance_exit_gate", "owens_aviary", "Entrance and Exit Gate", "Place to enter or exit the zoo",
                 "Accessible by wheelchairs", VertexInfo.Kind.GATE, 32.73561,
-                -117.14936, LocalTime.of(10,30), LocalTime.of(18,20), null);
+                -117.14936, LocalTime.of(10,30), LocalTime.of(18,20), null, 1);
         public VertexInfo(String id, String parent_id, String name, String description, String accessibility_options,
                           Kind kind, double lat, double lng, LocalTime start_time, LocalTime end_time,
-                          URL img_link) {
+                          URL img_link, double scale) {
             this.id = id;
             this.parent_id = parent_id;
             this.name = name;
@@ -35,6 +35,7 @@ public class ZooData implements Serializable {
             this.start_time = start_time;
             this.end_time = end_time;
             this.img_link = img_link;
+            this.scale = scale;
         }
 
 
@@ -62,6 +63,7 @@ public class ZooData implements Serializable {
         public List<String> tags;
         public double lat;
         public double lng;
+        public double scale;
         public LocalTime start_time;
         public LocalTime end_time;
         public URL img_link;
