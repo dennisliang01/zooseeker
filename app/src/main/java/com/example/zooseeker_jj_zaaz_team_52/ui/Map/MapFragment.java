@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -38,6 +39,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//SETTINGS
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
     private FragmentHomeBinding binding;
@@ -102,10 +110,28 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
         this.search = new ExhibitSearch(getContext());
         addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
+
+        //SETTINGS
+        Button settings_btn = root.findViewById(R.id.settings_btn);
+        System.out.println(getActivity());
+        NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
+
+        //Go to Settings Fragment
+        settings_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                controller.navigate(R.id.fragment_settings, bundle);
+            }
+        });
+
         return root;
     }
 
     private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
+
+        //if statement to check the type of zoo marker
+        //for loop to filter out the ones we want to show and show them
 
         //Clear all zoomarkers mapview
         for (int i = mapView.getChildCount() - 1; i >= 0; i--) {
