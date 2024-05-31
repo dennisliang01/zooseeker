@@ -1,30 +1,14 @@
-# Workplan for the week of 5/19-5/25
+# Workplan for the week of 5/26-6/1
 
-### For this week we will be assigning cleanup, testing, and documentation tasks to help solidify the progress that was made over the last sprint
+### For this week, we are continuing to work on the backlogged user stories as well as grading our minal and our critiqe presentation for the enemy team minal
 
-Of the user stories that were assigned (2,11,12,13,14) we made significant progress on both 2 and 13 in terms of UI and database for both. Unfortunately we misjudged the time it would take for the user story tasks and quite a few issues slipped through. These issues were mainly related to further improvement of old items and these were neglected in favor of new features.
+Our presentation from last week went very well and we are very happy to continue moving forward! We have made additional issues regarding documentation and testing and are actively working on those parts of the project. Unfortunately we did get sidetracked with reading the SWEBOK document to come up with questions for the minal and finalizing a war binder to use during the testing time. This did take considerable time as we had never made a test before. However we were able to update our database more, adding the possibility for show times, image links, and animal descriptions. The visual map received updates for animal specific medallions to add details, and work has been done on a filter for the map.
 
-However 2 and 13 are almost fully completed with the features that were proposed to be implemented including a new map design, feature funcitonality and app flow paths.
+We have reemphasized some of our user stories and made sure they were accurately assign. User story 11 is now underway officially and we are working on reassigning User story 12 as the original assignees are still working on what they were assigned for User Story 2. 
 
-For this week we will continue with these same stories but as 2 and 13 are able to wind down, we will focus more on the UI cleanup that was intended with 11, 12, and 14.
-
-We will present on our current changes on 5/20 to the class highlighting the following:
-
-What’s going well
-- Map Design
-- Exhibit Detail
-- Visual Map
-- Database move
-
-What’s not going well
-- Amount of work
-- Previous cleanup
-- Pipeline
-- Some documentation
-
-What we’re looking at moving forward
-- Cleanup sprint
-- Pipeline solidification
-- Documentation solidification
-
-Our tasks for this week will include more documentation, and setting up of the currently unimpressive CI/CD pipeline.
+We are currently:
+- Working on US11
+- Reasssigning US12
+- Continuing to make database updates
+- Continuing Documentation
+- Continuing Testing Implementation
