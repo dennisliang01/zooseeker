@@ -93,7 +93,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         List<String> items = new ArrayList<String>();
 
         for(ZooData.VertexInfo item : allExhibits) {
-            if((item.kind.toString()).equals("EXHIBIT"))
+            if((item.kind != null) && (item.kind.toString()).equals("EXHIBIT"))
                 items.add(item.name);
         }
 

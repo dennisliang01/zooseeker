@@ -96,6 +96,7 @@ public class ExhibitSearch {
         keyword = keyword.toLowerCase(Locale.ROOT);
         List<Pair<Double, ZooData.VertexInfo>> data = new ArrayList<>();
 
+        // Android log class, used to log informational messages
         Log.i(this.getClass().getSimpleName(),
                 String.format("Search Weights for search term: [%s]", keyword));
         for (Map.Entry<String, ZooData.VertexInfo> exhibit : zooData.entrySet()) {

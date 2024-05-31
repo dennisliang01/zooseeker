@@ -24,13 +24,17 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class ZooGraph implements Serializable {
+/**
+ * ScheduleGraph Class: Single Responsibility - Imports information given in JSON asset files to create
+ * graph of Zoo where vertices are exhibits/intersections/gates and edges are paths between vertices
+ */
+public class ScheduleGraph implements Serializable {
 
     Graph<String, IdentifiedWeightedEdge> g = new DefaultUndirectedWeightedGraph<>(IdentifiedWeightedEdge.class);
-    Map<String, ZooData.EdgeInfo> streetInfo;
-    Map<String, ZooData.VertexInfo> exhibitInfo;
+    Map<String, Schedule.EdgeInfo> timeInfo;
+    Map<String, Schedule.VertexInfo> exhibitInfo;
 
-    public ZooGraph(String nodeFile, String graphFile, String edgeFile, Context context) {
+    public ScheduleGraph(String nodeFile, String graphFile, String edgeFile, Context context) {
         // IMPORT THE GRAPH
         InputStream inputStream = null;
         try {
@@ -38,6 +42,7 @@ public class ZooGraph implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         JSONImporter<String, IdentifiedWeightedEdge> importer = new JSONImporter<>();
         importer.setVertexFactory(v -> v);
         importer.addEdgeAttributeConsumer(IdentifiedWeightedEdge::attributeConsumer);
@@ -45,17 +50,17 @@ public class ZooGraph implements Serializable {
         importer.importGraph(g, reader);
 
         Gson gson_edge = new Gson();
-
-        // IMPORT THE EDGES
+        // IMPORT THE EDGE
         try {
             inputStream = context.getAssets().open(edgeFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         reader = new InputStreamReader(inputStream);
-        Type edgeType = new TypeToken<List<ZooData.EdgeInfo>>() {}.getType();
-        List<ZooData.EdgeInfo> edgeData = gson_edge.fromJson(reader, edgeType);
-        streetInfo = edgeData.stream()
+        Type type = new TypeToken<List<Schedule.EdgeInfo>>() {}.getType();
+        List<Schedule.EdgeInfo> timeData = gson_edge.fromJson(reader, type);
+        timeInfo = timeData.stream()
                 .collect(Collectors.toMap(v -> v.id, datum -> datum));
 
         // IMPORT THE NODES
@@ -64,18 +69,18 @@ public class ZooGraph implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        reader = new InputStreamReader(inputStream);
         Gson gson_node = new GsonBuilder()
                 .registerTypeAdapter(LocalTime.class, new LocalTimeDeserializer())
                 .create();
-
-        reader = new InputStreamReader(inputStream);
-        Type nodeType = new TypeToken<List<ZooData.VertexInfo>>() {}.getType();
-        List<ZooData.VertexInfo> nodeData = gson_node.fromJson(reader, nodeType);
-        exhibitInfo = nodeData.stream()
-                .collect(Collectors.toMap(v -> v.id, datum -> datum));
+        type = new TypeToken<List<Schedule.VertexInfo>>() {}.getType();
+        List<Schedule.VertexInfo> exhibitData = gson_node.fromJson(reader, type);
+        exhibitInfo = exhibitData.stream()
+                .collect(Collectors.toMap(v -> v.visitor_id, datum -> datum));
     }
 
     public String getExhibitNameById(String id) {
-        return Objects.requireNonNull(exhibitInfo.get(id)).name;
+        return Objects.requireNonNull(exhibitInfo.get(id)).exhibit_name;
     }
 }
