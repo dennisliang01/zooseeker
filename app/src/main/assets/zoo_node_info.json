@@ -6,7 +6,7 @@
     "tags": [],
     "lat": 32.73561,
     "lng": -117.14936,
-    "description": "",
+    "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -24,7 +24,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Safari Way, a central point providing access to various exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -42,7 +42,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Another intersection of Front Street and Safari Way, providing additional routes for visitors.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -60,7 +60,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Savannah Walk, leading to the savannah animal exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -78,7 +78,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Savannah Walk and Safari Way, a key junction within the zoo.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -96,7 +96,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Arctic Circle, leading to the Arctic exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -114,7 +114,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Arctic Circle and Bird Walk, providing access to the bird exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -132,7 +132,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Another intersection of Front Street and Arctic Circle, ensuring smooth visitor flow.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -144,13 +144,13 @@
     "image_link": ""
   },
   {
-    "id": "intxn_arctic_fern",
+    "id": "intxn_arctic_ferng",
     "kind": "intersection",
     "name": "Arctic Circle / Fern Grove",
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Arctic Circle and Fern Grove, leading to the lush, green Fern Grove exhibit.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -162,13 +162,13 @@
     "image_link": ""
   },
   {
-    "id": "intxn_safari_fern",
+    "id": "intxn_safari_ferng",
     "kind": "intersection",
     "name": "Safari Way / Fern Grove",
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Safari Way and Fern Grove, offering access to the Fern Grove and nearby exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -186,7 +186,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Safari Way and Arctic Circle, connecting major paths within the zoo.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -204,7 +204,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Safari Way and Lagoon Terrace, providing routes to various water exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -222,7 +222,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Safari Way and Plaza Path, a central hub for visitor movement.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -240,7 +240,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Plaza Path and Rainforest Walk, leading to the rainforest exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -258,7 +258,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Plaza Path and Southbound Way, providing access to southern exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -276,7 +276,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Lagoon Terrace, leading to water-themed exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -294,7 +294,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Southbound Way, providing access to the southern part of the zoo.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -312,7 +312,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Bear Crossing, leading to bear exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -330,7 +330,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Plaza Path and Benchley Plaza, a key area for visitor services and amenities.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -348,7 +348,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Benchley Plaza and Bear Crossing, providing access to bear and other wildlife exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -366,7 +366,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Benchley Plaza and Bamboo Lane, leading to exhibits featuring bamboo and Asian wildlife.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -384,7 +384,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Benchley Plaza and Front Street, a major node connecting visitor services to the main thoroughfare.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -402,7 +402,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Another key intersection of Benchley Plaza and Front Street, ensuring smooth visitor flow.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -420,7 +420,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Bamboo Lane and Primate Path, providing access to the primate exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -438,7 +438,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Bamboo Lane, leading to exhibits featuring bamboo and Asian wildlife.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -456,7 +456,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Primate Path and Monkey Trail, providing access to various primate exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -474,7 +474,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Primate Path and Treetops Way, leading to exhibits located in the treetops.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -492,7 +492,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Primate Path, providing access to various primate exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -510,7 +510,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Treetops Way, leading to the elevated walkway exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -528,7 +528,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Bird Walk, providing access to the bird exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -546,7 +546,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Monkey Trail, leading to the monkey exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -564,7 +564,7 @@
     "tags": [],
     "lat": 32.748983757472594,
     "lng": -117.16951754140803,
-    "description": "",
+    "description": "Intersection of Front Street and Rainforest Walk, providing access to the lush rainforest exhibits.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -582,7 +582,7 @@
     "tags": [],
     "lat": 411.35617,
     "lng": 513.4215,
-    "description": "",
+    "description": "Lions are large carnivorous mammals that belong to the family of felines. They have a powerful build and are known for their strength and majestic mane.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -591,7 +591,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/lion.jpeg"
   },
   {
     "id": "meerkat",
@@ -600,7 +600,7 @@
     "tags": [],
     "lat": 381.89667,
     "lng": 584.32385,
-    "description": "",
+    "description": "Meerkats are small mongooses known for their upright posture and social behavior. They live in large underground networks in deserts and savannas.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -609,7 +609,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/meerkat.jpeg"
   },
   {
     "id": "warthog",
@@ -618,7 +618,7 @@
     "tags": [],
     "lat": 447.3473,
     "lng": 584.32385,
-    "description": "",
+    "description": "Warthogs are wild members of the pig family that live in grassland, savanna, and woodland in sub-Saharan Africa. They are known for their distinctive tusks.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -627,7 +627,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/warthog.jpeg"
   },
   {
     "id": "african_plains",
@@ -636,7 +636,7 @@
     "tags": [],
     "lat": 520.99115,
     "lng": 519.788,
-    "description": "",
+    "description": "The African Plains exhibit showcases the diverse wildlife of the African savanna, including zebras, giraffes, and other iconic animals.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -645,8 +645,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
-    "scale": 3.5
+    "scale": 3.5,
+    "image_link": "../res/drawable/african_plains.jpeg"
   },
   {
     "id": "zebra",
@@ -654,7 +654,7 @@
     "kind": "exhibit",
     "name": "Zebra",
     "tags": [],
-    "description": "",
+    "description": "Zebras are African equids best known for their distinctive black and white striped coats. Each zebra's stripes are unique.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -663,7 +663,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/zebra.jpeg"
   },
   {
     "id": "giraffe",
@@ -671,7 +671,7 @@
     "kind": "exhibit",
     "name": "Giraffe",
     "tags": [],
-    "description": "",
+    "description": "Giraffes are the tallest land animals, known for their long necks and legs, and spotted patterns. They are native to African savannas and woodlands.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -680,7 +680,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/giraffe.jpeg"
   },
   {
     "id": "elephant",
@@ -690,7 +690,7 @@
     "lat": 735.5291,
     "lng": 432.71237,
     "scale": 4,
-    "description": "",
+    "description": "Elephants are the largest land animals on Earth. They are known for their intelligence, social structure, and long trunks.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -699,7 +699,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/elephant.jpeg"
   },
   {
     "id": "black_rhino",
@@ -709,7 +709,7 @@
     "lat": 605.53906,
     "lng": 619.2369,
     "scale": 2.5,
-    "description": "",
+    "description": "Black rhinos are critically endangered species known for their hooked upper lip which they use to grasp leaves and twigs.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -718,7 +718,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/black_rhino.jpeg"
   },
   {
     "id": "cheetah",
@@ -727,7 +727,7 @@
     "tags": [],
     "lat": 722.1637,
     "lng": 563.6211,
-    "description": "",
+    "description": "Cheetahs are known for their incredible speed, reaching up to 60-70 mph in short bursts covering distances up to 500 meters.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -736,8 +736,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
-    "scale": 3
+    "scale": 3,
+    "image_link": "../res/drawable/cheetah.jpeg"
   },
   {
     "id": "jaguar",
@@ -746,7 +746,7 @@
     "tags": [],
     "lat": 568.0732,
     "lng": 673.77734,
-    "description": "",
+    "description": "Jaguars are large felines native to the Americas, known for their powerful build, and distinctive spotted coats.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -755,7 +755,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/jaguar.jpeg"
   },
   {
     "id": "capybara",
@@ -764,7 +764,7 @@
     "tags": [],
     "lat": 547.3508,
     "lng": 713.41656,
-    "description": "",
+    "description": "Capybaras are the largest rodents in the world. They are highly social animals and live in groups near water bodies in South America.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -773,7 +773,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/capybara.jpeg"
   },
   {
     "id": "sloth_bear",
@@ -782,7 +782,7 @@
     "tags": [],
     "lat": 608.08453,
     "lng": 715.61755,
-    "description": "",
+    "description": "Sloth bears are native to the Indian subcontinent and are known for their shaggy fur, long claws, and unique feeding habits on insects.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -791,7 +791,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/sloth_bear.jpeg"
   },
   {
     "id": "tiger",
@@ -800,7 +800,7 @@
     "tags": [],
     "lat": 648.80756,
     "lng": 788.3246,
-    "description": "",
+    "description": "Tigers are the largest species among the Felidae and are recognized for their pattern of dark vertical stripes on reddish-orange fur.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -809,8 +809,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
-    "scale": 3
+    "scale": 3,
+    "image_link": "../res/drawable/tiger.jpeg"
   },
   {
     "id": "panda",
@@ -819,7 +819,7 @@
     "tags": [],
     "lat": 710.6236,
     "lng": 834.1406,
-    "description": "",
+    "description": "Pandas are bear-like animals native to south-central China. They are known for their distinctive black and white coloring and diet consisting mainly of bamboo.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -875,7 +875,7 @@
     "name": "Polar Bear",
     "tags": [],
     "lat": 913.07385,
-    "lng":  559.24255,
+    "lng": 559.24255,
     "description": "",
     "start_time": {
       "hour": 8,
@@ -1009,7 +1009,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/panda.jpeg"
   },
   {
     "id": "capuchin",
@@ -1026,7 +1026,7 @@
     ],
     "lat": 811.9869,
     "lng": 918.5185,
-    "description": "",
+    "description": "Capuchin monkeys are small primates known for their intelligence and dexterity. Native to South America, they are often recognized by their distinctive tufted hair.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1035,7 +1035,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/capuchin.jpeg"
   },
   {
     "id": "gorilla",
@@ -1052,7 +1052,7 @@
     ],
     "lat": 950.1705,
     "lng": 894.1488,
-    "description": "",
+    "description": "Gorillas are the largest of the primates and are native to the forests of central Africa. They are known for their gentle behavior and complex social structures.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1061,8 +1061,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
-    "scale": 3.5
+    "scale": 3.5,
+    "image_link": "../res/drawable/gorilla.jpeg"
   },
   {
     "id": "orangutan",
@@ -1078,8 +1078,8 @@
       "asia"
     ],
     "lat": 972.8068,
-    "lng":  773.0561,
-    "description": "",
+    "lng": 773.0561,
+    "description": "Orangutans are large apes with distinctive orange fur, native to the rainforests of Borneo and Sumatra. They are highly intelligent and spend most of their time in trees.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1088,8 +1088,8 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
-    "scale": 3
+    "scale": 3,
+    "image_link": "../res/drawable/orangutan.jpeg"
   },
   {
     "id": "siamang",
@@ -1105,7 +1105,7 @@
     ],
     "lat": 884.07635,
     "lng": 750.16406,
-    "description": "",
+    "description": "Siamangs are the largest of the gibbons, known for their impressive vocalizations. They are native to the forests of Malaysia and Indonesia.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1114,7 +1114,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/siamang.jpeg"
   },
   {
     "id": "fern_canyon",
@@ -1127,7 +1127,7 @@
     ],
     "lat": 32.73480907296893,
     "lng": -117.17269958736802,
-    "description": "",
+    "description": "Fern Canyon is a lush, green exhibit featuring a variety of fern species. It provides a cool, shaded environment reminiscent of a prehistoric landscape.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1136,7 +1136,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/fern_canyon.jpeg"
   },
   {
     "id": "parker_aviary",
@@ -1145,7 +1145,7 @@
     "tags": [],
     "lat": 478.6282,
     "lng": 654.8814,
-    "description": "",
+    "description": "Parker Aviary is a large, open-air enclosure housing a variety of bird species. It provides visitors with an immersive experience to observe birds in a naturalistic setting.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1154,7 +1154,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/parker_aviary.jpeg"
   },
   {
     "id": "toucan",
@@ -1170,7 +1170,7 @@
       "south",
       "america"
     ],
-    "description": "",
+    "description": "Toucans are known for their large, colorful beaks and vibrant plumage. They are native to the tropical forests of Central and South America.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1179,7 +1179,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/toucan.jpeg"
   },
   {
     "id": "motmot",
@@ -1194,7 +1194,7 @@
       "central",
       "america"
     ],
-    "description": "",
+    "description": "The Blue Capped Motmot is a colorful bird with a distinctive racket-shaped tail. It is native to the forests of Central America.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1203,7 +1203,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/motmot.jpeg"
   },
   {
     "id": "scripps_aviary",
@@ -1212,7 +1212,7 @@
     "tags": [],
     "lat": 622.261,
     "lng": 529.0543,
-    "description": "",
+    "description": "Scripps Aviary is a large aviary featuring a diverse collection of birds from around the world. It offers a tranquil environment for bird-watching.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1221,7 +1221,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/scripps_aviary.jpeg"
   },
   {
     "id": "spoonbill",
@@ -1237,7 +1237,7 @@
       "beak",
       "flat"
     ],
-    "description": "",
+    "description": "Spoonbills are wading birds known for their distinctive flat, spoon-shaped bills. They can be found in marshes and wetlands around the world.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1246,7 +1246,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/spoonbill.jpeg"
   },
   {
     "id": "hippo",
@@ -1259,8 +1259,8 @@
       "big"
     ],
     "lat": 552.8093,
-    "lng":  381.7997,
-    "description": "",
+    "lng": 381.7997,
+    "description": "Hippos are large, semi-aquatic mammals native to sub-Saharan Africa. They spend much of their time in water to stay cool and are known for their massive size.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1269,7 +1269,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/hippo.jpeg"
   },
   {
     "id": "crocodile",
@@ -1285,7 +1285,7 @@
     ],
     "lat": 604.44104,
     "lng": 324.71805,
-    "description": "",
+    "description": "Crocodiles are large reptiles found in tropical regions around the world. Known for their powerful jaws and aggressive nature, they are apex predators in their habitats.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1294,7 +1294,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/crocodile.jpeg"
   },
   {
     "id": "owens_aviary",
@@ -1303,7 +1303,7 @@
     "tags": [],
     "lat": 977.1644,
     "lng": 637.7994,
-    "description": "",
+    "description": "Owens Aviary is a spacious aviary that houses a variety of exotic birds. It provides a naturalistic habitat for birds to fly and interact.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1312,7 +1312,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/owens_aviary.jpeg"
   },
   {
     "id": "mynah",
@@ -1326,7 +1326,7 @@
       "endangered",
       "indonesia"
     ],
-    "description": "",
+    "description": "The Bali Mynah is a critically endangered bird native to the island of Bali in Indonesia. It is known for its striking white plumage and blue facial skin.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1335,7 +1335,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/mynah.jpeg"
   },
   {
     "id": "dove",
@@ -1350,7 +1350,7 @@
       "east",
       "asia"
     ],
-    "description": "",
+    "description": "The Emerald Dove is a small, colorful bird found in Southeast Asia. It is named for its bright green wings and is often seen foraging on the forest floor.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1359,7 +1359,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/dove.jpeg"
   },
   {
     "id": "koi_tour",
@@ -1372,7 +1372,7 @@
       "tour",
       "guide"
     ],
-    "description": "",
+    "description": "Join us for a tranquil morning tour where you can feed the beautiful koi fish. Learn about their care, behavior, and the significance of koi in various cultures. A guided experience perfect for all ages.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1381,7 +1381,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/koi_tour.jpeg"
   },
   {
     "id": "panda_tour",
@@ -1394,7 +1394,7 @@
       "guide",
       "asia"
     ],
-    "description": "",
+    "description": "Embark on a guided tour to visit our beloved pandas. Learn fascinating facts about their diet, habitat, and conservation efforts from our knowledgeable guides. An unforgettable experience for panda enthusiasts.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1403,7 +1403,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/panda_tour.jpeg"
   },
   {
     "id": "safari_tour",
@@ -1417,7 +1417,7 @@
       "guide",
       "africa"
     ],
-    "description": "",
+    "description": "Experience the thrill of an African safari right here at the zoo. Our guided Safari Tour takes you through the habitats of majestic jaguars and other exotic wildlife. Learn about their behaviors, environments, and the efforts to protect these incredible creatures.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1426,6 +1426,6 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/safari_tour.jpeg"
   }
 ]

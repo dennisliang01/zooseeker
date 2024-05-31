@@ -1,5 +1,7 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
+import static org.apache.commons.lang3.ClassUtils.getPackageName;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -32,7 +34,8 @@ public class Zoomarker extends LinearLayout {
         layoutParams.width = (int) (50 * scale);  // width in dp
         layoutParams.height = (int) (50 * scale);  // height in dp
         mapIcon.setLayoutParams(layoutParams);
-
+        int resId = getResources().getIdentifier("@drawable/" + markerData.id, "drawable", getContext().getPackageName());
+        mapIcon.setImageResource(resId);
 
     }
 

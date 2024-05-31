@@ -362,10 +362,16 @@
       "weight": 130.0
     },
     {
-      "id": "safari_ferng_to_safari_plaza",
+      "id": "safari_ferng_to_rhino",
       "source": "intxn_safari_ferng",
+      "target": "black_rhino",
+      "weight": 70.0
+    },
+    {
+      "id": "rhino_to_safari_plaza",
+      "source": "black_rhino",
       "target": "intxn_safari_plaza",
-      "weight": 120.0
+      "weight": 50.0
     },
     {
       "id": "safari_plaza_to_warthog",
