@@ -47,6 +47,9 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
     private ExhibitSearch search;
 
+    public float convertPixelToDp(float px, Context context) {
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         MapViewModel homeViewModel =
@@ -56,6 +59,21 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         mapView = binding.relativeLayout;
         search = new ExhibitSearch(getContext());
         map = binding.map;
+        mapView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                float x = event.getX();
+                float y = event.getY();
+                // Convert pixels to dp
+                float xDp = convertPixelToDp(x, getContext());
+                float yDp = convertPixelToDp(y, getContext());
+
+                System.out.println("x : "  + xDp + " y: " + yDp);
+
+                
+                return true;
+            }
+        });
         Drawable drawable = map.getDrawable();
         if (drawable != null) {
             // Get the intrinsic dimensions of the drawable

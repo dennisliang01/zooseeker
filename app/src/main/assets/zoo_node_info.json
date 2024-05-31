@@ -582,6 +582,7 @@
     "tags": [],
     "lat": 411.35617,
     "lng": 513.4215,
+    "scale": 3.5,
     "description": "Lions are large carnivorous mammals that belong to the family of felines. They have a powerful build and are known for their strength and majestic mane.",
     "start_time": {
       "hour": 8,
@@ -634,8 +635,8 @@
     "kind": "exhibit_group",
     "name": "African Plains",
     "tags": [],
-    "lat": 520.99115,
-    "lng": 519.788,
+    "lat": 484,
+    "lng": 491,
     "description": "The African Plains exhibit showcases the diverse wildlife of the African savanna, including zebras, giraffes, and other iconic animals.",
     "start_time": {
       "hour": 8,
@@ -645,7 +646,7 @@
       "hour": 9,
       "minute": 0
     },
-    "scale": 3.5,
+    "scale": 5,
     "image_link": "../res/drawable/african_plains.jpeg"
   },
   {
@@ -687,9 +688,9 @@
     "kind": "exhibit",
     "name": "Elephant",
     "tags": [],
-    "lat": 735.5291,
-    "lng": 432.71237,
-    "scale": 4,
+    "lat": 701.5291,
+    "lng": 400.71237,
+    "scale": 6,
     "description": "Elephants are the largest land animals on Earth. They are known for their intelligence, social structure, and long trunks.",
     "start_time": {
       "hour": 8,
@@ -706,9 +707,9 @@
     "kind": "exhibit",
     "name": "Black Rhino",
     "tags": [],
-    "lat": 605.53906,
-    "lng": 619.2369,
-    "scale": 2.5,
+    "lat": 597.53906,
+    "lng": 610.2369,
+    "scale": 3.7,
     "description": "Black rhinos are critically endangered species known for their hooked upper lip which they use to grasp leaves and twigs.",
     "start_time": {
       "hour": 8,
@@ -725,8 +726,8 @@
     "kind": "exhibit",
     "name": "Cheetah",
     "tags": [],
-    "lat": 722.1637,
-    "lng": 563.6211,
+    "lat": 705.1637,
+    "lng": 547.6211,
     "description": "Cheetahs are known for their incredible speed, reaching up to 60-70 mph in short bursts covering distances up to 500 meters.",
     "start_time": {
       "hour": 8,
@@ -736,7 +737,7 @@
       "hour": 9,
       "minute": 0
     },
-    "scale": 3,
+    "scale": 3.5,
     "image_link": "../res/drawable/cheetah.jpeg"
   },
   {
@@ -998,7 +999,7 @@
       "south",
       "america"
     ],
-    "lat": 395.54013,
+    "lat": 388.54013,
     "lng": 697.6978,
     "description": "",
     "start_time": {
@@ -1143,8 +1144,9 @@
     "kind": "exhibit_group",
     "name": "Parker Aviary",
     "tags": [],
-    "lat": 478.6282,
-    "lng": 654.8814,
+    "lat": 473.6282,
+    "lng": 653.8814,
+    "scale": 3,
     "description": "Parker Aviary is a large, open-air enclosure housing a variety of bird species. It provides visitors with an immersive experience to observe birds in a naturalistic setting.",
     "start_time": {
       "hour": 8,
@@ -1210,8 +1212,9 @@
     "kind": "exhibit_group",
     "name": "Scripps Aviary",
     "tags": [],
-    "lat": 622.261,
+    "lat": 605.261,
     "lng": 529.0543,
+    "scale": 3.0,
     "description": "Scripps Aviary is a large aviary featuring a diverse collection of birds from around the world. It offers a tranquil environment for bird-watching.",
     "start_time": {
       "hour": 8,
