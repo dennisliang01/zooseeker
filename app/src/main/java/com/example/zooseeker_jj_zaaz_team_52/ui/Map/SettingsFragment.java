@@ -19,7 +19,10 @@ import android.widget.CheckBox;
 
 public class SettingsFragment extends Fragment {
 
-    @Override
+    private boolean exhibitIncluded;
+    private boolean restroomIncluded;
+    private boolean restaurantIncluded;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,10 @@ public class SettingsFragment extends Fragment {
         CheckBox RestroomCheckbox = view.findViewById(R.id.restrooms_checkbox);
         CheckBox RestuarantCheckbox = view.findViewById(R.id.restuarant_checkbox);
 
+        ExhibitCheckbox.setChecked((boolean)(getArguments().getSerializable("currExhibitToggledStatus")));
+        RestroomCheckbox.setChecked((boolean)(getArguments().getSerializable("currRestroomToggledStatus")));
+        RestuarantCheckbox.setChecked((boolean)(getArguments().getSerializable("currRestaurantToggledStatus")));
+
         Button comfirmBtn = view.findViewById(R.id.settings_confirm_btn);
 
         //Transfer checkbox information back to navigation home
@@ -42,9 +49,9 @@ public class SettingsFragment extends Fragment {
                 boolean ifRestroomsIsChecked = RestroomCheckbox.isChecked();
                 boolean ifRestaurantIsChecked = RestuarantCheckbox.isChecked();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("ExibitCheckBox", ifExhibitIsChecked);
+                bundle.putSerializable("ExhibitCheckBox", ifExhibitIsChecked);
                 bundle.putSerializable("RestroomCheckBox", ifRestroomsIsChecked);
-                bundle.putSerializable("RestuarantCheckBox", ifRestaurantIsChecked);
+                bundle.putSerializable("RestaurantCheckBox", ifRestaurantIsChecked);
                 controller.navigate(R.id.navigation_home, bundle);
             }
         });
