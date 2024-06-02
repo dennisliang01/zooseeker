@@ -31,8 +31,8 @@ public class Zoomarker extends LinearLayout {
         init(context);
         mapIcon = findViewById(R.id.zoomarkericon);
         ViewGroup.LayoutParams layoutParams = mapIcon.getLayoutParams();
-        layoutParams.width = (int) (50 * scale);  // width in dp
-        layoutParams.height = (int) (50 * scale);  // height in dp
+        layoutParams.width = (int) (50.0 * scale);  // width in dp
+        layoutParams.height = (int) (50.0 * scale);  // height in dp
         mapIcon.setLayoutParams(layoutParams);
         int resId = getResources().getIdentifier("@drawable/" + markerData.id, "drawable", getContext().getPackageName());
         mapIcon.setImageResource(resId);
