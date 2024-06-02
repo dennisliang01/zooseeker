@@ -1002,7 +1002,7 @@
     ],
     "lat": 388.54013,
     "lng": 697.6978,
-    "description": "",
+    "description": "Flamingos are tall, graceful birds known for their vibrant pink feathers, long legs, and distinctive downward-bending beaks, which they use to filter-feed on small organisms in shallow waters. Their striking color comes from the carotenoid pigments in their diet of algae and crustaceans.",
     "start_time": {
       "hour": 8,
       "minute": 0
@@ -1011,7 +1011,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "../res/drawable/panda.jpeg"
+    "image_link": "../res/drawable/flamingo.webp"
   },
   {
     "id": "capuchin",
