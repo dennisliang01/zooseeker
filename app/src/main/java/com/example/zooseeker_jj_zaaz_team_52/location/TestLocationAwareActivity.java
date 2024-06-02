@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.zooseeker_jj_zaaz_team_52.LocalTimeDeserializer;
 import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.google.gson.Gson;
@@ -21,6 +22,8 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import com.google.gson.GsonBuilder;
+import java.time.LocalTime;
 
 /**
  * TestLocationAwareActivity Class: Single Responsibility - Solely used for testing to
@@ -58,12 +61,13 @@ public class TestLocationAwareActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Reader reader = new InputStreamReader(inputStream);
 
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<ZooData.VertexInfo>>() {
-        }.getType();
-        List<ZooData.VertexInfo> zooData = gson.fromJson(reader, type);
+        Gson gson_node = new GsonBuilder()
+                .registerTypeAdapter(LocalTime.class, new LocalTimeDeserializer())
+                .create();
+        Reader reader = new InputStreamReader(inputStream);
+        Type nodeType = new TypeToken<List<ZooData.VertexInfo>>() {}.getType();
+        List<ZooData.VertexInfo> zooData = gson_node.fromJson(reader, nodeType);
 
         this.zooData = zooData.stream().collect(Collectors.toMap(v -> v.id, datum -> datum));
     }
