@@ -830,7 +830,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
+    "image_link": "../res/drawable/panda.jpeg",
     "scale": 3
   },
   {
@@ -849,7 +849,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
+    "image_link": "../res/drawable/chimpanzee.jpeg",
     "scale": "4.1"
   },
   {
@@ -868,7 +868,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
+    "image_link": "../res/drawable/wolf.jpeg",
     "scale": 3
   },
   {
@@ -887,7 +887,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": "",
+    "image_link": "../res/drawable/polar_bear.jpeg",
     "scale": 4
   },
   {
@@ -906,7 +906,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/penguin.jpeg"
   },
   {
     "id": "amur_leopard",
@@ -924,7 +924,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/amur_leopard.jpeg"
   },
   {
     "id": "reptile_house",
@@ -942,7 +942,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/reptile_house.jpeg"
   },
   {
     "id": "black_mamba",
@@ -959,7 +959,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/black_mamba.jpeg"
   },
   {
     "id": "koi",
@@ -985,7 +985,7 @@
       "hour": 9,
       "minute": 0
     },
-    "image_link": ""
+    "image_link": "../res/drawable/koi.webp"
   },
   {
     "id": "flamingo",
