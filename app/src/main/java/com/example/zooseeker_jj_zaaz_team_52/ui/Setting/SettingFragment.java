@@ -4,29 +4,46 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentSettingBinding;
+import com.example.zooseeker_jj_zaaz_team_52.ui.MapSettingsViewModel;
 
 
 public class SettingFragment extends Fragment {
 
     private FragmentSettingBinding binding;
 
+    private MapSettingsViewModel mapSettingsViewModel;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SettingViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(SettingViewModel.class);
+        mapSettingsViewModel = new ViewModelProvider(requireActivity()).get(MapSettingsViewModel.class);
 
         binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        CheckBox ExhibitCheckbox = view.findViewById(R.id.exhibits_checkbox);
+        CheckBox RestroomCheckbox = view.findViewById(R.id.restrooms_checkbox);
+        CheckBox RestaurantCheckbox = view.findViewById(R.id.restuarant_checkbox);
+
+        mapSettingsViewModel.getExhibitCheckbox().observe(getViewLifecycleOwner(), ExhibitCheckbox::setChecked);
+
+
+        System.out.println("SETTINGS INITIALIZED, EXHIBIT CHECKBOX: " + mapSettingsViewModel.getExhibitCheckbox().getValue());
+
+
+        ExhibitCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setExhibitCheckbox(isChecked));
+        RestroomCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setRestroomCheckbox(isChecked));
+        RestaurantCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setRestaurantCheckbox(isChecked));
+
         return root;
     }
 

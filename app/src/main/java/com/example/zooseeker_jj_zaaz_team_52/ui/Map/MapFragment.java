@@ -37,6 +37,7 @@ import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
 import com.example.zooseeker_jj_zaaz_team_52.R;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
+import com.example.zooseeker_jj_zaaz_team_52.ui.MapSettingsViewModel;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
@@ -59,6 +60,8 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     private boolean exhibitIncluded = true;
     private boolean restroomIncluded = true;;
     private boolean restaurantIncluded = true;
+
+    private MapSettingsViewModel mapSettingsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -93,12 +96,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
         }
 
-        if(getArguments() != null) {
-            exhibitIncluded = (boolean)(getArguments().getSerializable("ExhibitCheckBox"));
-            restroomIncluded = (boolean)(getArguments().getSerializable("RestroomCheckBox"));
-            restaurantIncluded = (boolean)(getArguments().getSerializable("RestaurantCheckBox"));
-        }
-
         binding.searchField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -126,12 +123,26 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         this.search = new ExhibitSearch(getContext());
         addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
 
-        //Go to Settings Fragment
-        binding.settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navToSettings();
-            }
+        //SETTINGS-filtering
+        mapSettingsViewModel = new ViewModelProvider(requireActivity()).get(MapSettingsViewModel.class);
+
+        mapSettingsViewModel.getExhibitCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
+//            clearZooMarkers();
+
+//            if(isChecked) {
+//                //STUFF IF EXHIBIT IS CHECKED
+//            }
+//
+//            else {
+//
+//            }
+        });
+
+        mapSettingsViewModel.getRestaurantCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
+            restaurantIncluded = true;
+        });
+        mapSettingsViewModel.getRestroomCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
+            restroomIncluded = true;
         });
 
         return root;
@@ -209,6 +220,16 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 x += 20;
                 y += 20;
                 i+=1;
+            }
+        }
+    }
+
+    private void clearZooMarkers() {
+        for(int i = 0; i < mapView.getChildCount(); i++) {
+            View child = mapView.getChildAt(i);
+
+            if(child instanceof Zoomarker) {
+                mapView.removeViewAt(i);
             }
         }
     }
