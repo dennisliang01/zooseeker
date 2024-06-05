@@ -1,14 +1,9 @@
-# Workplan for the week of 5/26-6/1
+# Workplan for week of 6/2-6/9
 
-### For this week, we are continuing to work on the backlogged user stories as well as grading our minal and our critiqe presentation for the enemy team minal
+### For this week we are initiating wrap up and planning our branch merges to have a 'complete' repo by 6/9 at 11:59 PM
 
-Our presentation from last week went very well and we are very happy to continue moving forward! We have made additional issues regarding documentation and testing and are actively working on those parts of the project. Unfortunately we did get sidetracked with reading the SWEBOK document to come up with questions for the minal and finalizing a war binder to use during the testing time. This did take considerable time as we had never made a test before. However we were able to update our database more, adding the possibility for show times, image links, and animal descriptions. The visual map received updates for animal specific medallions to add details, and work has been done on a filter for the map.
+After presenting our minal grading and critiques our last goal is to be as complete as we can before merging for the final product. Grading and critiqing went very smoothly and nothing went wrong with the presentation. We are still working on everything from the previous workplan but we've made progress in several areas. The database is essentially complete, the map filtering is functioning appropriately, and the detail pages are being linked in the proper locations. 
 
-We have reemphasized some of our user stories and made sure they were accurately assign. User story 11 is now underway officially and we are working on reassigning User story 12 as the original assignees are still working on what they were assigned for User Story 2. 
+We are aiming to be complete with all of our remaining feature tickets so that we can start merging Friday morning. We plan to be active and participating together for the duration of the merge as since each person worked on different aspects, different elements need to be merged from different places. From there we will be using the remaining time after final submission to finalize documentation and script our 6 minute presentation and live demo.
 
-We are currently:
-- Working on US11
-- Reasssigning US12
-- Continuing to make database updates
-- Continuing Documentation
-- Continuing Testing Implementation
+Overall we are very pleased with where we're at. This is obviously not where we thought we would be, but we have made substantial progress towards a lot of our goals and we are happy to present where we are.
