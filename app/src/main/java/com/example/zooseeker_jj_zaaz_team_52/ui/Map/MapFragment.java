@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -127,22 +128,29 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         mapSettingsViewModel = new ViewModelProvider(requireActivity()).get(MapSettingsViewModel.class);
 
         mapSettingsViewModel.getExhibitCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
-//            clearZooMarkers();
 
-//            if(isChecked) {
-//                //STUFF IF EXHIBIT IS CHECKED
-//            }
-//
-//            else {
-//
-//            }
+            clearZooMarkers();
+
+            if(isChecked)
+                addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
         });
 
         mapSettingsViewModel.getRestaurantCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
-            restaurantIncluded = true;
+
+            clearZooMarkers();
+
+            if(isChecked)
+                addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
+
         });
+
         mapSettingsViewModel.getRestroomCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
-            restroomIncluded = true;
+
+            clearZooMarkers();
+
+            if(isChecked)
+                addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
+
         });
 
         return root;
@@ -225,13 +233,14 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     }
 
     private void clearZooMarkers() {
-        for(int i = 0; i < mapView.getChildCount(); i++) {
+        for(int i = mapView.getChildCount() - 1; i >= 0; i--) {
             View child = mapView.getChildAt(i);
 
-            if(child instanceof Zoomarker) {
+            if(child instanceof Zoomarker)
                 mapView.removeViewAt(i);
-            }
+
         }
+
     }
 
     @Override

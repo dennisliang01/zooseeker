@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,17 +35,28 @@ public class SettingFragment extends Fragment {
         CheckBox RestroomCheckbox = view.findViewById(R.id.restrooms_checkbox);
         CheckBox RestaurantCheckbox = view.findViewById(R.id.restuarant_checkbox);
 
-        mapSettingsViewModel.getExhibitCheckbox().observe(getViewLifecycleOwner(), ExhibitCheckbox::setChecked);
+        ExhibitCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mapSettingsViewModel.setExhibitCheckbox(isChecked);
+            }
+        });
 
+        RestroomCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mapSettingsViewModel.setRestroomCheckbox(isChecked);
+            }
+        });
 
-        System.out.println("SETTINGS INITIALIZED, EXHIBIT CHECKBOX: " + mapSettingsViewModel.getExhibitCheckbox().getValue());
+        RestaurantCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mapSettingsViewModel.setRestaurantCheckbox(isChecked);
+            }
+        });
 
-
-        ExhibitCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setExhibitCheckbox(isChecked));
-        RestroomCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setRestroomCheckbox(isChecked));
-        RestaurantCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> mapSettingsViewModel.setRestaurantCheckbox(isChecked));
-
-        return root;
+        return view;
     }
 
     @Override
