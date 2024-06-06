@@ -43,25 +43,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/directions_title" />
 
-    <Button
+    <ImageButton
         android:id="@+id/previous_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="19dp"
+        android:scaleType="fitCenter"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/previous_button"
+        android:contentDescription="@string/previous"
         android:onClick="onPreviousButtonClicked"
-        android:text="@string/previous"
-        app:layout_constraintTop_toTopOf="@id/skip_btn"
+        app:layout_constraintBottom_toBottomOf="@id/skip_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/skip_btn"/>
+        app:layout_constraintTop_toTopOf="@id/skip_btn" />
 
-    <Button
+    <ImageButton
         android:id="@+id/next_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/next"
         android:onClick="onNextButtonClicked"
-        android:text="@string/next"
+        android:scaleType="fitCenter"
+        android:src="@drawable/next_button"
         app:layout_constraintBottom_toBottomOf="@+id/skip_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/skip_btn" />
@@ -86,19 +91,20 @@
         app:layout_constraintTop_toBottomOf="@id/next_btn"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/skip_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="84dp"
+        android:layout_height="88dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="60dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/skip_button"
         android:onClick="onSkipButtonClicked"
-        android:text="Skip"
-        app:layout_constraintTop_toBottomOf="@id/navigation_directions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/next_btn"
-        app:layout_constraintStart_toEndOf="@id/previous_btn"/>
+        app:layout_constraintStart_toEndOf="@id/previous_btn"
+        app:layout_constraintTop_toBottomOf="@id/navigation_directions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

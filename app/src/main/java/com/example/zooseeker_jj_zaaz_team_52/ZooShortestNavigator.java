@@ -193,8 +193,8 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
@@ -274,8 +274,8 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId()).street)).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
@@ -326,8 +326,8 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = paths.size() - 1; i >= 0; i--) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
@@ -377,8 +377,8 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
                 currentLoc = map.g.getEdgeTarget(e);
                 continue;
             }else{
+                directions.append((int) pathWeight).append("ft ");
                 directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-                directions.append((int) pathWeight).append(" feet");
                 pathWeight = 0;
             }
             if (i == paths.size() - 1) {

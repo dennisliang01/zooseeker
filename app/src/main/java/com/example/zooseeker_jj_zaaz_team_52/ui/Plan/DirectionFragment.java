@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,11 @@ import com.example.zooseeker_jj_zaaz_team_52.location.Coord;
 import com.example.zooseeker_jj_zaaz_team_52.location.LocationModel;
 import com.example.zooseeker_jj_zaaz_team_52.location.ZooLocation;
 import org.jgrapht.alg.util.Pair;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
+import android.graphics.Typeface;
 
 public class DirectionFragment extends Fragment {
     final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
@@ -34,9 +40,9 @@ public class DirectionFragment extends Fragment {
     TextView exhibitName;
     TextView previousExhibit;
     TextView nextExhibit;
-    Button nextButton;
-    Button previousButton;
-    Button skipButton;
+    ImageButton nextButton;
+    ImageButton previousButton;
+    ImageButton skipButton;
     MenuItem briefToggle;
     Menu menu;
     boolean offeredReplan = false;
@@ -111,7 +117,15 @@ public class DirectionFragment extends Fragment {
 
     public void updateActivityView() {
         exhibitName.setText(currentNavigator.getExhibit().exhibit_name);
-        directionsView.setText(currentNavigator.calcLocationBasedDirections(currentPosition,showBrief));
+
+        String fullText = currentNavigator.calcLocationBasedDirections(currentPosition,showBrief);
+        int firstSpaceIndex = fullText.indexOf(' ');
+        fullText = fullText.substring(0, firstSpaceIndex) + "\n" + fullText.substring(firstSpaceIndex + 1);
+        SpannableString spannableString = new SpannableString(fullText);
+        spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, firstSpaceIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new RelativeSizeSpan(1.5f), 0, firstSpaceIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        directionsView.setText(spannableString);
+
         Pair<Integer, PlanListItem> previousExhibitInfo = currentNavigator.peekPrevious();
         Pair<Integer, PlanListItem> nextExhibitInfo = currentNavigator.peekNext();
 
