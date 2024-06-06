@@ -1,33 +1,105 @@
 {
   "creator": "JGraphT JSON Exporter",
-  "version": "1",
+  "version": "2",
   "nodes": [
     {
       "id": "entrance_exit_gate"
     },
     {
-      "id": "intxn_front_treetops"
+      "id": "intxn_front_safari"
+    },
+    {
+      "id": "intxn_front_safari_2"
+    },
+    {
+      "id": "intxn_front_savannah"
+    },
+    {
+      "id": "intxn_safari_savannah"
+    },
+    {
+      "id": "intxn_front_arctic"
+    },
+    {
+      "id": "intxn_front_arctic_2"
+    },
+    {
+      "id": "intxn_front_lagoon"
+    },
+    {
+      "id": "intxn_front_south"
+    },
+    {
+      "id": "intxn_front_bear"
+    },
+    {
+      "id": "intxn_benchley_front"
+    },
+    {
+      "id": "intxn_benchley_front_2"
+    },
+    {
+      "id": "intxn_front_bamboo"
+    },
+    {
+      "id": "intxn_front_primate"
+    },
+    {
+      "id": "intxn_front_treetop"
+    },
+    {
+      "id": "intxn_front_bird"
     },
     {
       "id": "intxn_front_monkey"
     },
     {
-      "id": "intxn_front_lagoon_1"
+      "id": "intxn_front_rainforest"
     },
     {
-      "id": "intxn_front_lagoon_2"
+      "id": "intxn_savannah_safari"
     },
     {
-      "id": "intxn_treetops_fern_trail"
+      "id": "intxn_arctic_bird"
     },
     {
-      "id": "intxn_treetops_orangutan_trail"
+      "id": "intxn_arctic_ferng"
     },
     {
-      "id": "intxn_treetops_hippo_trail"
+      "id": "intxn_safari_ferng"
     },
     {
-      "id": "intxn_hippo_monkey_trails"
+      "id": "intxn_safari_arctic"
+    },
+    {
+      "id": "intxn_safari_lagoon"
+    },
+    {
+      "id": "intxn_safari_plaza"
+    },
+    {
+      "id": "intxn_plaza_rainforest"
+    },
+    {
+      "id": "intxn_plaza_south"
+    },
+    {
+      "id": "intxn_plaza_benchley"
+    },
+    {
+      "id": "intxn_benchley_bear"
+    },
+    {
+      "id": "intxn_benchley_bamboo"
+    },
+    {
+      "id": "intxn_bamboo_primate"
+    },
+    {
+      "id": "intxn_primate_monkey"
+    },
+    {
+      "id": "intxn_primate_treetop"
     },
     {
       "id": "koi"
@@ -66,165 +138,528 @@
       "id": "crocodile"
     },
     {
-      "id": "benchley_plaza"
+      "id": "lion"
+    },
+    {
+      "id": "meerkat"
+    },
+    {
+      "id": "warthog"
+    },
+    {
+      "id": "african_plains"
+    },
+    {
+      "id": "elephant"
+    },
+    {
+      "id": "black_rhino"
+    },
+    {
+      "id": "cheetah"
+    },
+    {
+      "id": "reptile_house"
+    },
+    {
+      "id": "jaguar"
+    },
+    {
+      "id": "capybara"
+    },
+    {
+      "id": "sloth_bear"
+    },
+    {
+      "id": "tiger"
+    },
+    {
+      "id": "panda"
+    },
+    {
+      "id": "chimpanzee"
+    },
+    {
+      "id": "wolf"
+    },
+    {
+      "id": "polar_bear"
+    },
+    {
+      "id": "penguin"
+    },
+    {
+      "id": "amur_leopard"
     }
   ],
   "edges": [
     {
-      "id": "gate_to_front",
+      "id": "gate_to_front_safari",
       "source": "entrance_exit_gate",
-      "target": "intxn_front_treetops",
-      "weight": 10.0
+      "target": "intxn_front_safari",
+      "weight": 110.0
     },
     {
-      "id": "front_to_monkey",
-      "source": "intxn_front_treetops",
-      "target": "intxn_front_monkey",
+      "id": "front_safari_to_lion",
+      "source": "intxn_front_safari",
+      "target": "lion",
+      "weight": 200.0
+    },
+    {
+      "id": "front_safari_to_meerkat",
+      "source": "intxn_front_safari",
+      "target": "meerkat",
       "weight": 50.0
     },
     {
-      "id": "monkey_to_flamingo",
-      "source": "intxn_front_monkey",
-      "target": "flamingo",
-      "weight": 30.0
-    },
-    {
-      "id": "flamingo_to_capuchin",
-      "source": "flamingo",
-      "target": "capuchin",
-      "weight": 150.0
-    },
-    {
-      "id": "capuchin_to_hippo_monkey",
-      "source": "capuchin",
-      "target": "intxn_hippo_monkey_trails",
-      "weight": 50.0
-    },
-    {
-      "id": "hippo_monkey_to_scripps",
-      "source": "intxn_hippo_monkey_trails",
-      "target": "scripps_aviary",
-      "weight": 30.0
-    },
-    {
-      "id": "scripps_to_gorilla",
-      "source": "scripps_aviary",
-      "target": "gorilla",
-      "weight": 100.0
-    },
-    {
-      "id": "gorilla_to_benchley",
-      "source": "gorilla",
-      "target": "benchley_plaza",
-      "weight": 50.0
-    },
-    {
-      "id": "front_to_fern",
-      "source": "intxn_front_treetops",
-      "target": "intxn_treetops_fern_trail",
-      "weight": 30.0
-    },
-    {
-      "id": "fern_to_orangutan",
-      "source": "intxn_treetops_fern_trail",
-      "target": "intxn_treetops_orangutan_trail",
-      "weight": 30.0
-    },
-    {
-      "id": "treetops_to_siamang",
-      "source": "intxn_treetops_orangutan_trail",
-      "target": "siamang",
+      "id": "front_safari_to_koi",
+      "source": "intxn_front_safari",
+      "target": "koi",
       "weight": 60.0
     },
     {
-      "id": "treetops_to_hippo",
-      "source": "intxn_treetops_orangutan_trail",
-      "target": "intxn_treetops_hippo_trail",
-      "weight": 100.0
+      "id": "lion_to_front_savannah",
+      "source": "lion",
+      "target": "intxn_front_savannah",
+      "weight": 240.0
     },
     {
-      "id": "hippo_to_hippo",
-      "source": "intxn_treetops_hippo_trail",
+      "id": "front_savannah_to_african_plains",
+      "source": "intxn_front_savannah",
+      "target": "african_plains",
+      "weight": 110.0
+    },
+    {
+      "id": "front_savannah_to_hippo",
+      "source": "intxn_front_savannah",
       "target": "hippo",
-      "weight": 30.0
+      "weight": 60.0
+    },
+    {
+      "id": "african_plains_to_savannah_safari",
+      "source": "african_plains",
+      "target": "intxn_savannah_safari",
+      "weight": 120.0
     },
     {
       "id": "hippo_to_crocodile",
       "source": "hippo",
       "target": "crocodile",
-      "weight": 10.0
+      "weight": 130.0
     },
     {
-      "id": "crocodile_to_monkey_hippo",
+      "id": "crocodile_to_front_safari_2",
       "source": "crocodile",
-      "target": "intxn_hippo_monkey_trails",
-      "weight": 30.0
+      "target": "intxn_front_safari_2",
+      "weight": 90.0
     },
     {
-      "id": "hippo_to_parker",
-      "source": "intxn_treetops_hippo_trail",
-      "target": "parker_aviary",
-      "weight": 60.0
+      "id": "front_safari_2_to_elephant",
+      "source": "intxn_front_safari_2",
+      "target": "elephant",
+      "weight": 190.0
     },
     {
-      "id": "siamang_to_orangutan",
-      "source": "siamang",
-      "target": "orangutan",
-      "weight": 5.0
+      "id": "elephant_to_front_arctic",
+      "source": "elephant",
+      "target": "intxn_front_arctic",
+      "weight": 130.0
     },
     {
-      "id": "orangutan_to_parker",
-      "source": "orangutan",
-      "target": "parker_aviary",
-      "weight": 50.0
+      "id": "front_arctic_to_penguin",
+      "source": "intxn_front_arctic",
+      "target": "penguin",
+      "weight": 250.0
     },
     {
-      "id": "parker_to_owens",
-      "source": "parker_aviary",
-      "target": "owens_aviary",
-      "weight": 50.0
+      "id": "penguin_to_amur",
+      "source": "penguin",
+      "target": "amur_leopard",
+      "weight": 90.0
     },
     {
-      "id": "parker_to_benchley",
-      "source": "parker_aviary",
-      "target": "benchley_plaza",
+      "id": "amur_to_arctic_bird",
+      "source": "amur_leopard",
+      "target": "intxn_arctic_bird",
+      "weight": 110.0
+    },
+    {
+      "id": "arctic_bird_to_wolf",
+      "source": "intxn_arctic_bird",
+      "target": "wolf",
       "weight": 80.0
     },
     {
-      "id": "owens_to_fern",
-      "source": "owens_aviary",
+      "id": "wolf_to_front_arctic_2",
+      "source": "wolf",
+      "target": "intxn_front_arctic_2",
+      "weight": 100.0
+    },
+    {
+      "id": "front_arctic_2_to_polar",
+      "source": "intxn_front_arctic_2",
+      "target": "polar_bear",
+      "weight": 70.0
+    },
+    {
+      "id": "polar_to_front_arctic",
+      "source": "polar_bear",
+      "target": "intxn_front_arctic",
+      "weight": 100.0
+    },
+    {
+      "id": "front_arctic_2_to_cheetah",
+      "source": "intxn_front_arctic_2",
+      "target": "cheetah",
+      "weight": 200.0
+    },
+    {
+      "id": "cheetah_to_arctic_ferng",
+      "source": "cheetah",
+      "target": "intxn_arctic_ferng",
+      "weight": 110.0
+    },
+    {
+      "id": "arctic_ferng_to_safari_arctic",
+      "source": "intxn_arctic_ferng",
+      "target": "intxn_safari_arctic",
+      "weight": 90.0
+    },
+    {
+      "id": "safari_arctic_to_savannah_safari",
+      "source": "intxn_safari_arctic",
+      "target": "intxn_savannah_safari",
+      "weight": 40.0
+    },
+    {
+      "id": "savannah_safari_to_front_safari_2",
+      "source": "intxn_savannah_safari",
+      "target": "intxn_front_safari_2",
+      "weight": 270.0
+    },
+    {
+      "id": "safari_arctic_to_scripps",
+      "source": "intxn_safari_arctic",
+      "target": "scripps_aviary",
+      "weight": 80.0
+    },
+    {
+      "id": "scripps_to_safari_ferng",
+      "source": "scripps_aviary",
+      "target": "intxn_safari_ferng",
+      "weight": 70.0
+    },
+    {
+      "id": "safari_ferng_to_fernc",
+      "source": "intxn_safari_ferng",
       "target": "fern_canyon",
-      "weight": 30.0
+      "weight": 90.0
     },
     {
-      "id": "fern_to_fern",
+      "id": "fernc_to_arctic_ferng",
       "source": "fern_canyon",
-      "target": "intxn_treetops_fern_trail",
-      "weight": 60.0
+      "target": "intxn_arctic_ferng",
+      "weight": 130.0
     },
     {
-      "id": "front_to_lagoon1",
-      "source": "intxn_front_treetops",
-      "target": "intxn_front_lagoon_1",
-      "weight": 30.0
+      "id": "safari_ferng_to_rhino",
+      "source": "intxn_safari_ferng",
+      "target": "black_rhino",
+      "weight": 70.0
     },
     {
-      "id": "lagoon1_to_lagoon2",
-      "source": "intxn_front_lagoon_1",
-      "target": "intxn_front_lagoon_2",
-      "weight": 30.0
+      "id": "rhino_to_safari_plaza",
+      "source": "black_rhino",
+      "target": "intxn_safari_plaza",
+      "weight": 50.0
     },
     {
-      "id": "lagoon1_to_koi",
-      "source": "intxn_front_lagoon_1",
-      "target": "koi",
+      "id": "safari_plaza_to_warthog",
+      "source": "intxn_safari_plaza",
+      "target": "warthog",
+      "weight": 90.0
+    },
+    {
+      "id": "warthog_to_safari_lagoon",
+      "source": "warthog",
+      "target": "intxn_safari_lagoon",
       "weight": 20.0
     },
     {
-      "id": "lagoon2_to_koi",
-      "source": "koi",
-      "target": "intxn_front_lagoon_2",
+      "id": "safari_lagoon_to_meerkat",
+      "source": "intxn_safari_lagoon",
+      "target": "meerkat",
+      "weight": 120.0
+    },
+    {
+      "id": "safari_lagoon_to_front_lagoon",
+      "source": "intxn_safari_lagoon",
+      "target": "intxn_front_lagoon",
+      "weight": 160.0
+    },
+    {
+      "id": "front_lagoon_to_flamingo",
+      "source": "intxn_front_lagoon",
+      "target": "flamingo",
+      "weight": 70.0
+    },
+    {
+      "id": "flamingo_to_koi",
+      "source": "flamingo",
+      "target": "koi",
+      "weight": 150.0
+    },
+    {
+      "id": "safari_plaza_to_plaza_rainforest",
+      "source": "intxn_safari_plaza",
+      "target": "intxn_plaza_rainforest",
       "weight": 30.0
+    },
+    {
+      "id": "plaza_rainforest_to_jaguar",
+      "source": "intxn_plaza_rainforest",
+      "target": "jaguar",
+      "weight": 60.0
+    },
+    {
+      "id": "plaza_rainforest_to_front_rainforest",
+      "source": "intxn_plaza_rainforest",
+      "target": "intxn_front_rainforest",
+      "weight": 140.0
+    },
+    {
+      "id": "jaguar_to_plaza_south",
+      "source": "jaguar",
+      "target": "intxn_plaza_south",
+      "weight": 40.0
+    },
+    {
+      "id": "plaza_south_to_front_south",
+      "source": "intxn_plaza_south",
+      "target": "intxn_front_south",
+      "weight": 130.0
+    },
+    {
+      "id": "front_south_to_capybara",
+      "source": "intxn_front_south",
+      "target": "capybara",
+      "weight": 50.0
+    },
+    {
+      "id": "capybara_to_front_rainforest",
+      "source": "capybara",
+      "target": "intxn_front_rainforest",
+      "weight": 50.0
+    },
+    {
+      "id": "front_rainforest_to_parker",
+      "source": "intxn_front_rainforest",
+      "target": "parker_aviary",
+      "weight": 60.0
+    },
+    {
+      "id": "parker_to_front_lagoon",
+      "source": "parker_aviary",
+      "target": "intxn_front_lagoon",
+      "weight": 70.0
+    },
+    {
+      "id": "plaza_south_to_plaza_benchley",
+      "source": "intxn_plaza_south",
+      "target": "intxn_plaza_benchley",
+      "weight": 60.0
+    },
+    {
+      "id": "front_south_to_front_bear",
+      "source": "intxn_front_south",
+      "target": "intxn_front_bear",
+      "weight": 50.0
+    },
+    {
+      "id": "front_bear_to_sloth",
+      "source": "intxn_front_bear",
+      "target": "sloth_bear",
+      "weight": 40.0
+    },
+    {
+      "id": "sloth_to_benchley_bear",
+      "source": "sloth_bear",
+      "target": "intxn_benchley_bear",
+      "weight": 60.0
+    },
+    {
+      "id": "benchley_bear_to_plaza_benchley",
+      "source": "intxn_benchley_bear",
+      "target": "intxn_plaza_benchley",
+      "weight": 40.0
+    },
+    {
+      "id": "front_bear_to_tiger",
+      "source": "intxn_front_bear",
+      "target": "tiger",
+      "weight": 70.0
+    },
+    {
+      "id": "tiger_to_front_bamboo",
+      "source": "tiger",
+      "target": "intxn_front_bamboo",
+      "weight": 280.0
+    },
+    {
+      "id": "front_bamboo_to_bamboo_primate",
+      "source": "intxn_front_bamboo",
+      "target": "intxn_bamboo_primate",
+      "weight": 120.0
+    },
+    {
+      "id": "bamboo_primate_to_panda",
+      "source": "intxn_bamboo_primate",
+      "target": "panda",
+      "weight": 40.0
+    },
+    {
+      "id": "benchley_bamboo_to_panda",
+      "source": "intxn_benchley_bamboo",
+      "target": "panda",
+      "weight": 140.0
+    },
+    {
+      "id": "benchley_bear_to_benchley_bamboo",
+      "source": "intxn_benchley_bear",
+      "target": "intxn_benchley_bamboo",
+      "weight": 140.0
+    },
+    {
+      "id": "plaza_benchley_to_benchley_front",
+      "source": "intxn_plaza_benchley",
+      "target": "intxn_benchley_front",
+      "weight": 240.0
+    },
+    {
+      "id": "benchley_front_to_benchley_front_2",
+      "source": "intxn_benchley_front",
+      "target": "intxn_benchley_front_2",
+      "weight": 70.0
+    },
+    {
+      "id": "benchley_front_2_to_benchley_bamboo",
+      "source": "intxn_benchley_front_2",
+      "target": "intxn_benchley_bamboo",
+      "weight": 80.0
+    },
+    {
+      "id": "bamboo_primate_to_chimpanzee",
+      "source": "intxn_bamboo_primate",
+      "target": "chimpanzee",
+      "weight": 80.0
+    },
+    {
+      "id": "chimpanzee_to_primate_monkey",
+      "source": "chimpanzee",
+      "target": "intxn_primate_monkey",
+      "weight": 60.0
+    },
+    {
+      "id": "primate_monkey_to_capuchin",
+      "source": "intxn_primate_monkey",
+      "target": "capuchin",
+      "weight": 80.0
+    },
+    {
+      "id": "capuchin_to_front_monkey",
+      "source": "capuchin",
+      "target": "intxn_front_monkey",
+      "weight": 80.0
+    },
+    {
+      "id": "front_monkey_to_front_bamboo",
+      "source": "intxn_front_monkey",
+      "target": "intxn_front_bamboo",
+      "weight": 100.0
+    },
+    {
+      "id": "front_monkey_to_gorilla",
+      "source": "intxn_front_monkey",
+      "target": "gorilla",
+      "weight": 300.0
+    },
+    {
+      "id": "gorilla_to_front_primate",
+      "source": "gorilla",
+      "target": "intxn_front_primate",
+      "weight": 170.0
+    },
+    {
+      "id": "front_primate_to_front_bird",
+      "source": "intxn_front_primate",
+      "target": "intxn_front_bird",
+      "weight": 190.0
+    },
+    {
+      "id": "front_bird_to_owens",
+      "source": "intxn_front_bird",
+      "target": "owens_aviary",
+      "weight": 120.0
+    },
+    {
+      "id": "owens_to_arctic_bird",
+      "source": "owens_aviary",
+      "target": "intxn_arctic_bird",
+      "weight": 60.0
+    },
+    {
+      "id": "front_primate_to_orangutan",
+      "source": "intxn_front_primate",
+      "target": "orangutan",
+      "weight": 110.0
+    },
+    {
+      "id": "orangutan_to_primate_treetop",
+      "source": "orangutan",
+      "target": "intxn_primate_treetop",
+      "weight": 90.0
+    },
+    {
+      "id": "primate_treetop_to_primate_monkey",
+      "source": "intxn_primate_treetop",
+      "target": "intxn_primate_monkey",
+      "weight": 150.0
+    },
+    {
+      "id": "primate_treetop_to_front_treetop",
+      "source": "intxn_primate_treetop",
+      "target": "intxn_front_treetop",
+      "weight": 170.0
+    },
+    {
+      "id": "front_treetop_to_front_bird",
+      "source": "intxn_front_treetop",
+      "target": "intxn_front_bird",
+      "weight": 150.0
+    },
+    {
+      "id": "front_treetop_to_siamang",
+      "source": "intxn_front_treetop",
+      "target": "siamang",
+      "weight": 60.0
+    },
+    {
+      "id": "siamang_to_benchley_front_2",
+      "source": "siamang",
+      "target": "intxn_benchley_front_2",
+      "weight": 220.0
+    },
+    {
+      "id": "benchley_front_to_reptile",
+      "source": "intxn_benchley_front",
+      "target": "reptile_house",
+      "weight": 60.0
+    },
+    {
+      "id": "reptile_to_front_arctic_2",
+      "source": "reptile_house",
+      "target": "intxn_front_arctic_2",
+      "weight": 50.0
     }
   ]
 }
