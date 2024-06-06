@@ -100,6 +100,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             }
         }
 
+        // Create plan using Dijkstra's algorithm
         do {
             GraphNavigationStep nextExhibit = getShortestDistance(currentExhibit, destinationCopy);
             PlanListItem nextShortest = nextExhibit.planItem;
@@ -479,6 +480,42 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
 
     }
 
+@Override
+public void skipToEnd() {
+
+        List<GraphNavigationStep> newPlan = new ArrayList<>();
+
+        // If user is currently at the start
+        if (currentIndex == 0) {
+            newPlan.add(this.plan.get(0));
+            this.plan = newPlan;
+
+            PlanListItem currentLoc = this.plan.get(currentIndex).planItem;
+            ArrayList<Pair<PlanListItem, Boolean>> exit = new ArrayList<>() {
+                {
+                    add(new Pair<>(ENTRANCE, false));
+                }
+            };
+            plan.add(getShortestDistance(currentLoc, exit));
+
+        } else if (currentIndex == plan.size() - 1) {
+//            Do nothing if already at the end/exit
+//            Can consider adding a popup message
+
+        } else {
+                newPlan = plan.subList(0, currentIndex + 1);
+                this.plan = newPlan;
+
+                // Add exit gate to the plan
+                PlanListItem currentLoc = this.plan.get(currentIndex).planItem;
+                ArrayList<Pair<PlanListItem, Boolean>> exit = new ArrayList<>() {
+                    {
+                        add(new Pair<>(ENTRANCE, false));
+                    }
+                };
+                plan.add(getShortestDistance(currentLoc, exit));
+        }
+}
 
     @Override
     public void skipCurrentExhibit(PlanListItem nearestLandMark) {

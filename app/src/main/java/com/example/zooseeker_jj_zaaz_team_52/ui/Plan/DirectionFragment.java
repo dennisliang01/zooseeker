@@ -25,12 +25,15 @@ import com.example.zooseeker_jj_zaaz_team_52.ZooShortestNavigator;
 import com.example.zooseeker_jj_zaaz_team_52.location.Coord;
 import com.example.zooseeker_jj_zaaz_team_52.location.LocationModel;
 import com.example.zooseeker_jj_zaaz_team_52.location.ZooLocation;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import org.jgrapht.alg.util.Pair;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.graphics.Typeface;
+import android.widget.Toast;
 
 public class DirectionFragment extends Fragment {
     final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
@@ -42,6 +45,7 @@ public class DirectionFragment extends Fragment {
     TextView nextExhibit;
     ImageButton nextButton;
     ImageButton previousButton;
+    ImageButton stopButton;
     ImageButton skipButton;
     MenuItem briefToggle;
     Menu menu;
@@ -69,6 +73,7 @@ public class DirectionFragment extends Fragment {
         nextExhibit = view.findViewById(R.id.next_text);
         nextButton = view.findViewById(R.id.next_btn);
         previousButton = view.findViewById(R.id.previous_btn);
+        stopButton = view.findViewById(R.id.stop_btn);
         skipButton = view.findViewById(R.id.skip_btn);
         model = new ViewModelProvider(this).get(LocationModel.class);
         model.getLastKnownCoords().observe(requireActivity(), (zooLocation) -> {
@@ -88,6 +93,29 @@ public class DirectionFragment extends Fragment {
             currentNavigator.previous();
             updateActivityView();
             saveData();
+        });
+        stopButton.setOnClickListener(v -> {
+            new MaterialAlertDialogBuilder(requireContext())
+                    .setTitle("End Plan")
+                    .setMessage("Are you sure you would like to end your plan?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        Log.d("Yes pressed", "Yes pressed");
+
+//                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+//
+//                        // Update the database to delete all exhibits in the plan after the skip button is pressed.
+//                        while (currentNavigator.peekNext() != null) {
+//                            planListItemDao.delete(currentNavigator.getExhibit().exhibit_name);
+//                            currentNavigator.next();
+//                        }
+
+                        currentNavigator.skipToEnd();
+                        updateActivityView();
+                    })
+                    .setNegativeButton("No", (dialog, which) -> {
+                        Log.d("Yes pressed", "Yes pressed");
+                    })
+                    .show();
         });
         skipButton.setOnClickListener(v -> {
             offeredReplan = false;

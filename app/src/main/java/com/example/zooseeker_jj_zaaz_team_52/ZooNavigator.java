@@ -84,6 +84,8 @@ public interface ZooNavigator extends Serializable {
      */
     Set<String> getLandMarksOnPath();
 
+    void skipToEnd();
+
     /**
      * functionality of skipping an exhibit, should trigger a replan
      * @param nearestLandMark
