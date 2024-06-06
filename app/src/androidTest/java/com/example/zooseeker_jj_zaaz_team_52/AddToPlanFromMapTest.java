@@ -8,6 +8,7 @@ import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -34,14 +36,10 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import androidx.test.core.app.ApplicationProvider;
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class MapTest {
-
-    @Rule
-    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
+public class AddToPlanFromMapTest {
 
     @Before
     public void setup() {
@@ -61,8 +59,12 @@ public class MapTest {
         PlanDatabase.getSingleton(ApplicationProvider.getApplicationContext()).planListItemDao().deleteAll();
     }
 
+    @Rule
+    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
+            new ActivityScenarioRule<>(MainActivity.class);
+
     @Test
-    public void mapTest() {
+    public void addToPlanFromMapTest() {
         ViewInteraction zoomarker = onView(
                 childAtPosition(
                         allOf(withId(R.id.relativeLayout),
@@ -71,13 +73,6 @@ public class MapTest {
                                         0)),
                         11));
         zoomarker.perform(scrollTo(), click());
-
-        ViewInteraction textView = onView(
-                allOf(withId(androidx.appcompat.R.id.alertTitle), withText("Lion"),
-                        withParent(allOf(withId(androidx.appcompat.R.id.title_template),
-                                withParent(withId(androidx.appcompat.R.id.topPanel)))),
-                        isDisplayed()));
-        textView.check(matches(withText("Lion")));
 
         ViewInteraction materialButton = onView(
                 allOf(withId(android.R.id.button1), withText("Confirm"),
@@ -94,15 +89,39 @@ public class MapTest {
                                 childAtPosition(
                                         withClassName(is("android.widget.ScrollView")),
                                         0)),
-                        27));
+                        16));
         zoomarker2.perform(scrollTo(), click());
 
-        ViewInteraction textView2 = onView(
-                allOf(withId(androidx.appcompat.R.id.alertTitle), withText("Polar Bear"),
-                        withParent(allOf(withId(androidx.appcompat.R.id.title_template),
-                                withParent(withId(androidx.appcompat.R.id.topPanel)))),
+        ViewInteraction materialButton2 = onView(
+                allOf(withId(android.R.id.button1), withText("Confirm"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(androidx.appcompat.R.id.buttonPanel),
+                                        0),
+                                3)));
+        materialButton2.perform(scrollTo(), click());
+
+        ViewInteraction bottomNavigationItemView = onView(
+                allOf(withId(R.id.navigation_plan), withContentDescription("Plan"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.nav_view),
+                                        0),
+                                1),
                         isDisplayed()));
-        textView2.check(matches(withText("Polar Bear")));
+        bottomNavigationItemView.perform(click());
+
+        ViewInteraction textView = onView(
+                allOf(withId(R.id.display_exhibit_name), withText("Lion"),
+                        withParent(withParent(withId(R.id.plan_items))),
+                        isDisplayed()));
+        textView.check(matches(withText("Lion")));
+
+        ViewInteraction textView2 = onView(
+                allOf(withId(R.id.display_exhibit_name), withText("Elephant"),
+                        withParent(withParent(withId(R.id.plan_items))),
+                        isDisplayed()));
+        textView2.check(matches(withText("Elephant")));
     }
 
     private static Matcher<View> childAtPosition(
