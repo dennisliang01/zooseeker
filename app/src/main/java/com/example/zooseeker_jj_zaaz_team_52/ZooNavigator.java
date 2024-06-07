@@ -26,6 +26,8 @@ public interface ZooNavigator extends Serializable {
      */
     PlanListItem getExhibit();
 
+    List<GraphNavigationStep> getPlan();
+
     /**
      * gets detailed direction to the exhibit
      */

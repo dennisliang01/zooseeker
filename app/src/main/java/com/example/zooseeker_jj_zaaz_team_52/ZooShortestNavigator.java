@@ -32,6 +32,10 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
     List<GraphNavigationStep> plan;
 
 
+    @Override
+    public List<GraphNavigationStep> getPlan(){
+        return this.plan;
+    }
     int currentIndex;
 
     public int getCurrentIndex(){
@@ -194,7 +198,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
-            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
@@ -275,7 +279,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
-            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId()).street)).append(" ");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
@@ -327,7 +331,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = paths.size() - 1; i >= 0; i--) {
             IdentifiedWeightedEdge e = paths.get(i);
 
-            directions.append((int) map.g.getEdgeWeight(e)).append("ft ");
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
             if (i == paths.size() - 1) {
                 directions.append(" to ");
@@ -378,7 +382,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
                 currentLoc = map.g.getEdgeTarget(e);
                 continue;
             }else{
-                directions.append((int) pathWeight).append("ft ");
+                directions.append((int) pathWeight).append("ft\n");
                 directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
                 pathWeight = 0;
             }
@@ -396,8 +400,10 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             }
 
             if (i != paths.size() - 1) {
-                directions.append("\n");
+                directions.append("\n───────────────────────\n");
             }
+
+
         }
 
         if (exhibitToVisit.parent_exhibit_id != null) {
