@@ -1,0 +1,92 @@
+[
+  {
+    "visitor_id": "aedan_bailey",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "aedan_bailey",
+    "exhibit_name": "lion",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "chuong_nguyen",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "chuong_nguyen",
+    "exhibit_name": "meerkat",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "dennis_liang",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "dennis_liang",
+    "exhibit_name": "warthog",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "even_liu",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "even_liu",
+    "exhibit_name": "zebra",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "jasmine_yang",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "jasmine_yang",
+    "exhibit_name": "giraffe",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "jay_wu",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "jay_wu",
+    "exhibit_name": "elephant",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "merlin_zhang",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "merlin_zhang",
+    "exhibit_name": "black_rhino",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "phil_putra",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "phil_putra",
+    "exhibit_name": "cheetah",
+    "visited": "false"
+  },
+  {
+    "visitor_id": "zhach_zhong",
+    "exhibit_name": "entrance_exit_gate",
+    "visited": "true"
+  },
+  {
+    "visitor_id": "zhach_zhong",
+    "exhibit_name": "jaguar",
+    "visited": "false"
+  }
+]

@@ -38,6 +38,7 @@ import com.example.zooseeker_jj_zaaz_team_52.databinding.FragmentHomeBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
@@ -47,6 +48,9 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
     private ExhibitSearch search;
 
+    public float convertPixelToDp(float px, Context context) {
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         MapViewModel homeViewModel =
@@ -56,6 +60,21 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         mapView = binding.relativeLayout;
         search = new ExhibitSearch(getContext());
         map = binding.map;
+        mapView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                float x = event.getX();
+                float y = event.getY();
+                // Convert pixels to dp
+                float xDp = convertPixelToDp(x, getContext());
+                float yDp = convertPixelToDp(y, getContext());
+
+                System.out.println("x : "  + xDp + " y: " + yDp);
+
+                
+                return true;
+            }
+        });
         Drawable drawable = map.getDrawable();
         if (drawable != null) {
             // Get the intrinsic dimensions of the drawable
@@ -94,8 +113,9 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         List<String> items = new ArrayList<String>();
 
         for(ZooData.VertexInfo item : allExhibits) {
-            if((item.kind.toString()).equals("EXHIBIT"))
-                items.add(item.name);
+            if((item.kind.toString()).equals("EXHIBIT")) {
+                System.out.println(item.name);
+            }
         }
 
         ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, items);
@@ -107,7 +127,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     }
 
     private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
-
         //Clear all zoomarkers mapview
         for (int i = mapView.getChildCount() - 1; i >= 0; i--) {
             View child = mapView.getChildAt(i);
@@ -115,59 +134,26 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 mapView.removeViewAt(i);
             }
         }
-        int x = 10;
-        int y = 10;
 
-        List<double[]> coordinates = new ArrayList<>();
-
-        coordinates.add(new double[]{416.35617, 521.4215});
-        coordinates.add(new double[]{386.89667, 592.32385});
-        coordinates.add(new double[]{452.3473, 592.32385});
-        coordinates.add(new double[]{385.44638, 652.33734});
-        coordinates.add(new double[]{390.54013, 700.6978});
-        coordinates.add(new double[]{483.6282, 662.8814});
-        coordinates.add(new double[]{573.0732, 681.77734});
-        coordinates.add(new double[]{552.3508, 721.41656});
-        coordinates.add(new double[]{557.8093, 389.7997});
-        coordinates.add(new double[]{609.44104, 332.71805});
-        coordinates.add(new double[]{704.3508, 386.1534});
-        coordinates.add(new double[]{613.08453, 723.61755});
-        coordinates.add(new double[]{640.7205, 786.1495});
-        coordinates.add(new double[]{699.62714, 822.8818});
-        coordinates.add(new double[]{591.62714, 613.43396});
-        coordinates.add(new double[]{701.8061, 547.6065});
-        coordinates.add(new double[]{797.07526, 589.0689});
-        coordinates.add(new double[]{803.6225, 670.5092});
-        coordinates.add(new double[]{864.72266, 641.0693});
-        coordinates.add(new double[]{894.1701, 528.70416});
-        coordinates.add(new double[]{989.4393, 526.16693});
-        coordinates.add(new double[]{991.9801, 582.5341});
-        coordinates.add(new double[]{982.1644, 645.7994});
-        coordinates.add(new double[]{783.99115, 773.0689});
-        coordinates.add(new double[]{889.07635, 758.16406});
-        coordinates.add(new double[]{955.2578, 767.9691});
-        coordinates.add(new double[]{801.08167, 912.3363});
-        coordinates.add(new double[]{928.35156, 877.7965});
         int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
             //Only add exhibits, not streets and etc.
-            if (value.kind == ZooData.VertexInfo.Kind.EXHIBIT) {
-                Zoomarker zoomarker = new Zoomarker(value, getContext(), null);
+            if ((value.kind == ZooData.VertexInfo.Kind.EXHIBIT && value.parent_id == null) || (value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP) ) {
+                Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
                 // Set the margins to position the Zoomarker view
-                params.leftMargin = convertDpToPixel((float) coordinates.get(i)[0], getContext()); // replace 400 with your desired x position
-                params.topMargin = convertDpToPixel((float)coordinates.get(i)[1], getContext()); // replace 500 with your desired y position
+                    params.leftMargin = convertDpToPixel((float) zoomarker.markerData.lat, getContext()); // replace 400 with your desired x position
+                    params.topMargin = convertDpToPixel((float) zoomarker.markerData.lng, getContext()); // replace 500 with your desired y position
+
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
-                x += 20;
-                y += 20;
-                i+=1;
+                i += 1;
             }
         }
     }
@@ -194,27 +180,22 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 .setTitle(zoomarkerData.name)
                 .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
                 .setPositiveButton("Confirm", (dialog, which) -> {
-
                     PlanListItemDao planListItemDao = getPlanItems();
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
                     planListItemDao.insert(newPlanExhibit);
-
                     Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
                     mapPlanSuccessToast.show();
-
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
-                    // Handle negative button press
+                    //Handle negative button press
                 })
                 .setNeutralButton("Details", (dialog, which) -> {
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-//                    openExhibitDetails(newPlanExhibit);
-
+                    //openExhibitDetails(newPlanExhibit);
                     NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("exhibitDetails", newPlanExhibit);
                     controller.navigate(R.id.fragment_details, bundle);
-
                 })
                 .show();
     }

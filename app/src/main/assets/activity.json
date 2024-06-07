@@ -1,0 +1,14 @@
+[
+  {
+    "activity_name" : "Feeding",
+    "activity_type" : "Test"
+  },
+  {
+    "activity_name" : "Cleaning",
+    "activity_type" : "Test"
+  },
+  {
+    "activity_name" : "Sleeping",
+    "activity_type" : "Test"
+  }
+]

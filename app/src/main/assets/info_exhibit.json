@@ -1,0 +1,15 @@
+[
+  {
+    "scientific_name": "Hydrochoerus Hydrochaeris",
+    "exhibit_name": "Capybara Exhibit",
+    "start_time": "2019-10-01T00:00:00",
+    "end_time": "2019-10-31T23:59:59"
+  },
+
+  {
+    "scientific_name": "Ailuropoda melanoleuca",
+    "exhibit_name": "Panda Park",
+    "start_time": "2024-06-01T00:00:00",
+    "end_time": "2024-06-2T23:59:59"
+  }
+]

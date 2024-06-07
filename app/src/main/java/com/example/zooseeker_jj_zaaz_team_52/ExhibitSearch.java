@@ -5,6 +5,7 @@ import android.util.Log;
 import android.util.Pair;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -38,12 +40,13 @@ public class ExhibitSearch {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Reader reader = new InputStreamReader(inputStream);
+        Gson gson_node = new GsonBuilder()
+                .registerTypeAdapter(LocalTime.class, new LocalTimeDeserializer())
+                .create();
 
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<ZooData.VertexInfo>>() {
-        }.getType();
-        List<ZooData.VertexInfo> zooData = gson.fromJson(reader, type);
+        Reader reader = new InputStreamReader(inputStream);
+        Type nodeType = new TypeToken<List<ZooData.VertexInfo>>() {}.getType();
+        List<ZooData.VertexInfo> zooData = gson_node.fromJson(reader, nodeType);
 
         this.zooData = zooData.stream().collect(Collectors.toMap(v -> v.id, datum -> datum));
         this.stringMatcher = stringMatcher;
@@ -54,9 +57,9 @@ public class ExhibitSearch {
      * see {@link #ExhibitSearch(String, Context, StringDistance)} for full information
      */
     public ExhibitSearch(Context context) {
+        System.out.println("WHAT THE FUCK");
         setupSearch(context.getString(R.string.node_file), context, DEFAULT_STRING_MATCHER);
     }
-
 
     /**
      * Load a .json file of data to load and the related VertexInfo objects to be searched.
@@ -96,6 +99,7 @@ public class ExhibitSearch {
         keyword = keyword.toLowerCase(Locale.ROOT);
         List<Pair<Double, ZooData.VertexInfo>> data = new ArrayList<>();
 
+        // Android log class, used to log informational messages
         Log.i(this.getClass().getSimpleName(),
                 String.format("Search Weights for search term: [%s]", keyword));
         for (Map.Entry<String, ZooData.VertexInfo> exhibit : zooData.entrySet()) {
