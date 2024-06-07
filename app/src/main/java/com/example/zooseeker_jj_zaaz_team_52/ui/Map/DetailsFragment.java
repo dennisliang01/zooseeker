@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import android.util.Log;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -113,6 +114,7 @@ public class DetailsFragment extends Fragment {
 
             int imageResId = getResources().getIdentifier(exhibitInfo.image_location, "drawable", getContext().getPackageName());
             //Instant Glide = null;
+            Log.d("Image_debug", exhibitInfo.image_location);
             Glide.with(this).load(imageResId).into(exhibitImageView);
         }
 
