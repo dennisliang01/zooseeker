@@ -123,8 +123,14 @@ public class DirectionFragment extends Fragment {
                     .setMessage("Are you sure you would like to end your plan?")
                     .setPositiveButton("Yes", (dialog, which) -> {
                         Log.d("Yes pressed", "Yes pressed");
+                        ArrayList<PlanListItem> remainingExhibits = new ArrayList<>();
 
-                        ArrayList<PlanListItem> remainingExhibits = currentNavigator.findRemainingExhibits();
+                        if (currentNavigator.getCurrentIndex() != currentNavigator.getPlan().size() - 1) {
+                            remainingExhibits = currentNavigator.findRemainingExhibits();
+                        }
+
+
+                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
 
                         currentNavigator.skipToEnd();
                         updateActivityView();
@@ -132,7 +138,7 @@ public class DirectionFragment extends Fragment {
                         Log.d("Current Index", String.valueOf(currentNavigator.getCurrentIndex()));
                         Log.d("Plan Size", String.valueOf(currentNavigator.getPlan().size()));
 
-
+                        // If the user is at the end of the plan, prompt a message.
                         if (currentNavigator.getCurrentIndex() == currentNavigator.getPlan().size() - 1) {
                             new MaterialAlertDialogBuilder(requireContext())
                                     .setTitle("Alert")
@@ -149,18 +155,15 @@ public class DirectionFragment extends Fragment {
                                 stepStatus.setMax(planMax);
                                 progress = planMax - 1;
                                 stepStatus.setProgress(progress);
+
+                                for (int i = 0; i < remainingExhibits.size(); i++) {
+                                    Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
+                                    planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
+                                    currentNavigator.next();
+                                }
+                            remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
                         }
 
-
-//                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
-//
-//                        for (int i = 0; i < remainingExhibits.size(); i++) {
-//                            Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
-//                            planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
-//                            currentNavigator.next();
-//                        }
-//
-//                        remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
                     })
                     .setNegativeButton("No", (dialog, which) -> {
                         Log.d("Yes pressed", "Yes pressed");
