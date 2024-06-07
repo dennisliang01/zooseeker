@@ -102,12 +102,12 @@ public class ZooNavigatorTest {
      */
     @Test
     public void testDirection() {
-        assertEquals("Proceed on Entrance Way 10 feet towards Entrance Plaza\n" +
-                "Proceed on Reptile Road 100 feet to Alligators", nav.getDirection());
+        assertEquals("10ft\nProceed on Entrance Way towards Entrance Plaza\n" +
+                "100ft\nProceed on Reptile Road to Alligators", nav.getDirection());
         nav.next();
-        assertEquals("Proceed on Sharp Teeth Shortcut 200 feet to Lions", nav.getDirection());
+        assertEquals("200ft\nProceed on Sharp Teeth Shortcut to Lions", nav.getDirection());
         nav.next();
-        assertEquals("Proceed on Africa Rocks Street 200 feet to Gorillas", nav.getDirection());
+        assertEquals("200ft\nProceed on Africa Rocks Street to Gorillas", nav.getDirection());
     }
 
     /**
@@ -115,18 +115,18 @@ public class ZooNavigatorTest {
      */
     @Test
     public void testPathWithGetNextDirection() {
-        assertEquals("Proceed on Arctic Avenue 300 feet towards Entrance Plaza\n" +
-                        "Proceed on Reptile Road 100 feet to Alligators",
+        assertEquals("300ft\nProceed on Arctic Avenue towards Entrance Plaza\n" +
+                        "100ft\nProceed on Reptile Road to Alligators",
                 customNav.getDirection()
         );
         assertEquals(400, customNav.getDistance());
         customNav.next();
-        assertEquals("Proceed on Sharp Teeth Shortcut 200 feet to Lions",
+        assertEquals("200ft\nProceed on Sharp Teeth Shortcut to Lions",
                 customNav.getDirection()
         );
         assertEquals(200, customNav.getDistance());
         customNav.next();
-        assertEquals("Proceed on Africa Rocks Street 200 feet to Gorillas",
+        assertEquals("200ft\nProceed on Africa Rocks Street to Gorillas",
                 customNav.getDirection()
         );
         assertEquals(200, customNav.getDistance());
@@ -137,13 +137,13 @@ public class ZooNavigatorTest {
      */
     @Test
     public void testPathWithGetPreviousDirection() {
-        assertEquals("Proceed on Sharp Teeth Shortcut 200 feet to Alligators\n",
+        assertEquals("200ft\nProceed on Sharp Teeth Shortcut to Alligators\n",
                 customNav.getPreviousDirection()
         );
 
         assertEquals(400, customNav.getDistance());
         customNav.previous();
-        assertEquals("Proceed on Reptile Road 100 feet to Entrance Plaza\nProceed on Arctic Avenue 300 feet towards Arctic Foxes\n",
+        assertEquals("100ft\nProceed on Reptile Road to Entrance Plaza\nProceed on Arctic Avenue 300 feet towards Arctic Foxes\n",
                 customNav.getPreviousDirection()
         );
 
@@ -164,13 +164,15 @@ public class ZooNavigatorTest {
         final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
         String currentLoc = ENTRANCE.exhibit_id;
         String desId = "crocodile";
-        assertEquals("Proceed on Gate Path 110 feet towards Front Street / Safari Way\n" +
-                "Proceed on Front Street 200 feet towards Lion\n" +
-                "Proceed on Front Street 240 feet towards Front Street / Savannah Walk\n" +
-                "Proceed on Front Street 60 feet towards Hippos\n" +
-                "Proceed on Front Street 130 feet to Crocodiles", customNav2.getDirection());
+        assertEquals("10ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
+                "30ft\nProceed on Treetops Way towards Treetops Way / Fern Canyon Trail\n" +
+                "30ft\nProceed on Treetops Way towards Treetops Way / Orangutan Trail\n" +
+                "100ft\nProceed on Treetops Way towards Treetops Way / Hippo Trail\n" +
+                "30ft\nProceed on Hippo Trail towards Hippos\n" +
+                "10ft\nProceed on Hippo Trail to Crocodiles", customNav2.getDirection());
         GraphPath<String, IdentifiedWeightedEdge> path = DijkstraShortestPath.findPathBetween(newZooMap.g, currentLoc, desId);
-        assertEquals("Proceed on Gate Path 110 feet towards Front Street / Safari Way\n" +
-                "Proceed on Front Street 630 feet to Crocodiles", customNav2.getBriefDirection(path));
+        assertEquals("10ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
+                "160ft\nProceed on Treetops Way towards Treetops Way / Hippo Trail\n" +
+                "40ft\nProceed on Hippo Trail to Crocodiles", customNav2.getBriefDirection(path));
     }
 }
