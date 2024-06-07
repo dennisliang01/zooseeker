@@ -73,8 +73,14 @@ public class PlanFragment extends Fragment {
         createPlanBtn = view.findViewById(R.id.create_plan);
 
         createPlanBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+                PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+                List<PlanListItem> planListItems = planListItemDao.getAll();
+                zooNavigator = new ZooShortestNavigator(planListItems, requireActivity());
+
                 NavController controller = Navigation.findNavController(view);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("navigator", zooNavigator);
@@ -87,10 +93,6 @@ public class PlanFragment extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(KEY, -2);
         editor.apply();
-
-        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
-        List<PlanListItem> planListItems = planListItemDao.getAll();
-        zooNavigator = new ZooShortestNavigator(planListItems, requireActivity());
 
         courseRV = view.findViewById(R.id.plan_items);
         numItemSelected = view.findViewById(R.id.plan_title);
