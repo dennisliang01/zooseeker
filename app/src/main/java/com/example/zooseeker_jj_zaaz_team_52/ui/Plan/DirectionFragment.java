@@ -149,6 +149,13 @@ public class DirectionFragment extends Fragment {
                             stepStatus.setMax(planMax);
                             progress = planMax - 1;
                             stepStatus.setProgress(progress);
+
+                            for (int i = 0; i < remainingExhibits.size(); i++) {
+                                Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
+                                planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
+                                currentNavigator.next();
+                            }
+                            remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
                         } else {
                                 planMax = currentNavigator.getPlan().size() - 2;
                                 stepStatus = view.findViewById(R.id.progressBar);
@@ -161,7 +168,7 @@ public class DirectionFragment extends Fragment {
                                     planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
                                     currentNavigator.next();
                                 }
-                            remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
+                                remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
                         }
 
                     })
