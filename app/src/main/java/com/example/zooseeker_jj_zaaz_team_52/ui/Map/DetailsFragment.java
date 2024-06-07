@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.example.zooseeker_jj_zaaz_team_52.ZooNavigator;
 import com.example.zooseeker_jj_zaaz_team_52.ZooShortestNavigator;
@@ -112,7 +113,7 @@ public class DetailsFragment extends Fragment {
 
             int imageResId = getResources().getIdentifier(exhibitInfo.image_location, "drawable", getContext().getPackageName());
             //Instant Glide = null;
-            //Glide.with(this).load(imageResId).into(exhibitImageView);
+            Glide.with(this).load(imageResId).into(exhibitImageView);
         }
 
         Button backButton = view.findViewById(R.id.btn_back);
