@@ -39,6 +39,7 @@ import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -123,21 +124,50 @@ public class DirectionFragment extends Fragment {
                     .setPositiveButton("Yes", (dialog, which) -> {
                         Log.d("Yes pressed", "Yes pressed");
 
-//                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
-//
-//                        // Update the database to delete all exhibits in the plan after the skip button is pressed.
-//                        while (currentNavigator.peekNext() != null) {
-//                            planListItemDao.delete(currentNavigator.getExhibit().exhibit_name);
-//                            currentNavigator.next();
-//                        }
+                        ArrayList<PlanListItem> remainingExhibits = currentNavigator.findRemainingExhibits();
 
                         currentNavigator.skipToEnd();
                         updateActivityView();
+                        saveData();
+                        Log.d("Current Index", String.valueOf(currentNavigator.getCurrentIndex()));
+                        Log.d("Plan Size", String.valueOf(currentNavigator.getPlan().size()));
+
+
+                        if (currentNavigator.getCurrentIndex() == currentNavigator.getPlan().size() - 1) {
+                            new MaterialAlertDialogBuilder(requireContext())
+                                    .setTitle("Alert")
+                                    .setMessage("You already reached the end.").show();
+                        } else if (currentNavigator.getCurrentIndex() == 0) {
+                            planMax = currentNavigator.getPlan().size() - 1;
+                            stepStatus = view.findViewById(R.id.progressBar);
+                            stepStatus.setMax(planMax);
+                            progress = planMax - 1;
+                            stepStatus.setProgress(progress);
+                        } else {
+                                planMax = currentNavigator.getPlan().size() - 2;
+                                stepStatus = view.findViewById(R.id.progressBar);
+                                stepStatus.setMax(planMax);
+                                progress = planMax - 1;
+                                stepStatus.setProgress(progress);
+                        }
+
+
+//                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+//
+//                        for (int i = 0; i < remainingExhibits.size(); i++) {
+//                            Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
+//                            planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
+//                            currentNavigator.next();
+//                        }
+//
+//                        remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
                     })
                     .setNegativeButton("No", (dialog, which) -> {
                         Log.d("Yes pressed", "Yes pressed");
                     })
                     .show();
+
+
         });
         skipButton.setOnClickListener(v -> {
             offeredReplan = false;

@@ -508,7 +508,7 @@ public void skipToEnd() {
 //            Do nothing if already at the end/exit
 //            Can consider adding a popup message
 
-        } else {
+        }  else {
                 newPlan = plan.subList(0, currentIndex + 1);
                 this.plan = newPlan;
 
@@ -585,6 +585,20 @@ public void skipToEnd() {
         return nonVisitedIds;
     }
 
+    /* Different than findNonVisited Exhibits
+    * This function returns the remaining exhibits from the user's current location
+     */
+    @Override
+    public ArrayList<PlanListItem> findRemainingExhibits() {
+        ArrayList<PlanListItem> remainingExhibits = new ArrayList<>();
+        Log.d("Current Index", String.valueOf(currentIndex));
+        for (int i = currentIndex + 1; i < plan.size(); i++) {
+            Log.d("Adding", plan.get(i).planItem.exhibit_name);
+            Log.d("Index", String.valueOf(i));
+            remainingExhibits.add(plan.get(i).planItem);
+        }
+        return remainingExhibits;
+    }
     @Override
     public double minDistanceFromUnvisited(ZooLocation loc) {
         double minimum = Double.MAX_VALUE;
