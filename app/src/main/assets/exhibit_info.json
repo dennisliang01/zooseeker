@@ -216,7 +216,7 @@
       "start_time": "08:00 AM",
       "end_time": "09:00 AM"
     },
-    "description": "Parker Aviary is a large, open-air enclosure housing a variety of bird species. It provides visitors with an immersive experience to observe birds in a naturalistic setting.",
+    "description": "Parker Aviary is a large, open-air enclosure housing a variety of bird species. It provides visitors with an immersive experience to observe birds in a naturalistic setting. \n Toucans are known for their large, colorful beaks and vibrant plumage. They are native to the tropical forests of Central and South America.",
     "image_location": "parker_aviary"
   },
   {
@@ -317,5 +317,16 @@
       },
       "description": "The Emerald Dove is a small, colorful bird found in Southeast Asia. It is named for its bright green wings and is often seen foraging on the forest floor.",
       "image_location": "dove"
+  },
+  {
+    "animal_name": "Reptile House",
+    "location": "Reptile House",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "The Reptile House is a captivating attraction designed to immerse visitors in the fascinating world of reptiles. The black mamba is one of Africa's most feared and venomous snakes, recognized for its incredible speed, reaching up to 20 km/h (12 mph), and potent neurotoxic venom. Despite its name, it typically has a gray to olive-brown color, with the \"black\" referring to the inside of its mouth, which it displays when threatened.",
+    "image_location": "black_mamba"
   }
 ]
