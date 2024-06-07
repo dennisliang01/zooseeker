@@ -161,7 +161,8 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
             // Only add exhibits, not streets and etc.
-            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT ||
+            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT && value.parent_id == null ||
+                    value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP  ||
                     restroomIncluded && value.kind == ZooData.VertexInfo.Kind.RESTROOM ||
                     restaurantIncluded && value.kind == ZooData.VertexInfo.Kind.RESTAURANT) {
                 Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
