@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import android.util.Log;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.example.zooseeker_jj_zaaz_team_52.ZooData;
 import com.example.zooseeker_jj_zaaz_team_52.ZooNavigator;
 import com.example.zooseeker_jj_zaaz_team_52.ZooShortestNavigator;
@@ -46,7 +46,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-
 
 public class DetailsFragment extends Fragment {
 
@@ -136,6 +135,7 @@ public class DetailsFragment extends Fragment {
         });
 
         return view;
+
     }
 
     public void showDialog(PlanListItem zoomarkerData) {
@@ -143,12 +143,14 @@ public class DetailsFragment extends Fragment {
                 .setTitle(zoomarkerData.exhibit_name)
                 .setMessage("Are you sure you would like to add " + zoomarkerData.exhibit_name + " to your plan?")
                 .setPositiveButton("Confirm", (dialog, which) -> {
+
                     PlanListItemDao planListItemDao = getPlanItems();
                     PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.exhibit_name, zoomarkerData.exhibit_id);
                     planListItemDao.insert(newPlanExhibit);
 
                     Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.exhibit_name + " to plan!", Toast.LENGTH_LONG);
                     mapPlanSuccessToast.show();
+
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     // Handle negative button press
@@ -193,4 +195,3 @@ public class DetailsFragment extends Fragment {
         return exhibitDataMap;
     }
 }
-

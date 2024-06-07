@@ -46,15 +46,6 @@
         android:background="#79AD78"
         android:layout_marginTop="62dp">
 
-        <Button
-            android:id="@+id/settings_btn"
-            android:layout_width="133dp"
-            android:layout_height="67dp"
-            android:layout_marginStart="305dp"
-            android:layout_marginTop="18dp"
-            android:text="Settings"
-            android:textSize="10dp" />
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">

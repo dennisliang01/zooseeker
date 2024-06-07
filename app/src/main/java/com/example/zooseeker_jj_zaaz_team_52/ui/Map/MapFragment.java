@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -16,13 +17,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -41,6 +45,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.zooseeker_jj_zaaz_team_52.ui.MapSettingsViewModel;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//SETTINGS
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
 public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickListener {
     private FragmentHomeBinding binding;
     private RelativeLayout mapView;
@@ -56,8 +73,11 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
+    private MapSettingsViewModel mapSettingsViewModel;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         MapViewModel homeViewModel =
                 new ViewModelProvider(this).get(MapViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -79,6 +99,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             }
         });
         Drawable drawable = map.getDrawable();
+
         if (drawable != null) {
             // Get the intrinsic dimensions of the drawable
             int intrinsicWidth = drawable.getIntrinsicWidth();
@@ -97,12 +118,7 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             layoutParams.width = scaledWidth;
             layoutParams.height = scaledHeight;
             map.setLayoutParams(layoutParams);
-        }
 
-        if(getArguments() != null) {
-            exhibitIncluded = (boolean)(getArguments().getSerializable("ExhibitCheckBox"));
-            restroomIncluded = (boolean)(getArguments().getSerializable("RestroomCheckBox"));
-            restaurantIncluded = (boolean)(getArguments().getSerializable("RestaurantCheckBox"));
         }
 
         binding.searchField.addTextChangedListener(new TextWatcher() {
@@ -132,12 +148,15 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         this.search = new ExhibitSearch(getContext());
         addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
 
-        //Go to Settings Fragment
-        binding.settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navToSettings();
-            }
+        //SETTINGS-filtering
+        mapSettingsViewModel = new ViewModelProvider(requireActivity()).get(MapSettingsViewModel.class);
+
+        mapSettingsViewModel.getExhibitCheckbox().observe(getViewLifecycleOwner(), isChecked -> {
+
+            clearZooMarkers();
+
+            if(isChecked)
+                addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
         });
 
         return root;
@@ -149,6 +168,10 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
     }
 
     private void addZoomarkers(List<ZooData.VertexInfo> zooData) {
+
+        //if statement to check the type of zoo marker
+        //for loop to filter out the ones we want to show and show them
+
         //Clear all zoomarkers mapview
         for (int i = mapView.getChildCount() - 1; i >= 0; i--) {
             View child = mapView.getChildAt(i);
@@ -157,14 +180,16 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             }
         }
 
+        int x = 10;
+        int y = 10;
+
+
         int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
-            // Only add exhibits, not streets and etc.
-            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT && value.parent_id == null ||
-                    value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP  ||
-                    restroomIncluded && value.kind == ZooData.VertexInfo.Kind.RESTROOM ||
-                    restaurantIncluded && value.kind == ZooData.VertexInfo.Kind.RESTAURANT) {
+            //Only add exhibits, not streets and etc.
+            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT) {
+
                 Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
@@ -179,8 +204,20 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
                 i += 1;
+
             }
         }
+    }
+
+    private void clearZooMarkers() {
+        for(int i = mapView.getChildCount() - 1; i >= 0; i--) {
+            View child = mapView.getChildAt(i);
+
+            if(child instanceof Zoomarker)
+                mapView.removeViewAt(i);
+
+        }
+
     }
 
     @Override
@@ -200,6 +237,37 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         showDialog(clickedMarkerData);
     }
 
+    public void showDialog(ZooData.VertexInfo zoomarkerData) {
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle(zoomarkerData.name)
+                .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
+                .setPositiveButton("Confirm", (dialog, which) -> {
+
+                    PlanListItemDao planListItemDao = getPlanItems();
+                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
+                    planListItemDao.insert(newPlanExhibit);
+
+                    Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
+                    mapPlanSuccessToast.show();
+
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> {
+                    // Handle negative button press
+                })
+                .setNeutralButton("Details", (dialog, which) -> {
+                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
+//                    openExhibitDetails(newPlanExhibit);
+
+                    NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("exhibitDetails", newPlanExhibit);
+                    controller.navigate(R.id.fragment_details, bundle);
+
+                })
+                .show();
+    }
+
+
     public void navToSettings() {
         NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
 
@@ -208,30 +276,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         bundle.putSerializable("currRestroomToggledStatus", restroomIncluded);
         bundle.putSerializable("currRestaurantToggledStatus", restaurantIncluded);
         controller.navigate(R.id.fragment_settings, bundle);
-    }
-
-    public void showDialog(ZooData.VertexInfo zoomarkerData) {
-        new MaterialAlertDialogBuilder(requireContext())
-                .setTitle(zoomarkerData.name)
-                .setMessage("Are you sure you would like to add " + zoomarkerData.name + " to your plan?")
-                .setPositiveButton("Confirm", (dialog, which) -> {
-                    PlanListItemDao planListItemDao = getPlanItems();
-                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-                    planListItemDao.insert(newPlanExhibit);
-                    Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
-                    mapPlanSuccessToast.show();
-                })
-                .setNegativeButton("Cancel", (dialog, which) -> {
-                    //Handle negative button press
-                })
-                .setNeutralButton("Details", (dialog, which) -> {
-                    PlanListItem newPlanExhibit = new PlanListItem(zoomarkerData.name, zoomarkerData.id);
-                    NavController controller = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("exhibitDetails", newPlanExhibit);
-                    controller.navigate(R.id.fragment_details, bundle);
-                })
-                .show();
     }
 
     public void openExhibitDetails(PlanListItem details) {

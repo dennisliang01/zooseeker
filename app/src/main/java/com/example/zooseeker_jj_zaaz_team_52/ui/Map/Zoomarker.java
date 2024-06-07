@@ -1,7 +1,6 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
 import static org.apache.commons.lang3.ClassUtils.getPackageName;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -43,7 +42,6 @@ public class Zoomarker extends LinearLayout {
         LayoutInflater.from(context).inflate(R.layout.zoomarker, this, true);
         init();
     }
-
 
     private void init() {
         // Set the OnClickListener for this view

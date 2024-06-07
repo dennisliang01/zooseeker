@@ -128,7 +128,6 @@
                 android:backgroundTint="#EEC371"
                 android:text="Go Back to Map" />
 
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
