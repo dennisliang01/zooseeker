@@ -48,10 +48,8 @@ public class ZooData implements Serializable {
             @SerializedName("exhibit_group") EXHIBIT_GROUP,
             @SerializedName("restroom") RESTROOM,
             @SerializedName("restaurants") RESTAURANT,
-            @SerializedName("resting_area") RESTING_AREA,
-            @SerializedName("event") EVENT
-
-            }
+            @SerializedName("resting_area") RESTING_AREA
+        }
 
         public String id;
         public String parent_id;
@@ -63,10 +61,10 @@ public class ZooData implements Serializable {
         public List<String> tags;
         public double lat;
         public double lng;
-        public double scale;
         public LocalTime start_time;
         public LocalTime end_time;
         public URL img_link;
+        public double scale;
         public boolean isSelected;
 
         @NonNull
@@ -97,5 +95,46 @@ public class ZooData implements Serializable {
     public static class EdgeInfo implements Serializable {
         public String id;
         public String street;
+    }
+
+    public static class ExhibitInfo implements Serializable {
+        public String animal_name;
+        public String location;
+        public String status;
+        public String description;
+        public Availability availability;
+        public String image_location;
+
+        public static class Availability implements Serializable {
+            public String start_time;
+            public String end_time;
+
+            public Availability(String start_time, String end_time) {
+                this.start_time = start_time;
+                this.end_time = end_time;
+            }
+        }
+
+        public ExhibitInfo(String animal_name, String location, String status, String description, Availability availability, String image_location) {
+            this.animal_name = animal_name;
+            this.location = location;
+            this.status = status;
+            this.description = description;
+            this.availability = availability;
+            this.image_location = image_location;
+        }
+
+        @NonNull
+        @Override
+        public String toString() {
+            return "ExhibitInfo{" +
+                    "animal_name='" + animal_name + '\'' +
+                    ", location='" + location + '\'' +
+                    ", status='" + status + '\'' +
+                    ", description='" + description + '\'' +
+                    ", availability=" + availability.start_time + " - " + availability.end_time +
+                    ", image_location='" + image_location + '\'' +
+                    '}';
+        }
     }
 }
