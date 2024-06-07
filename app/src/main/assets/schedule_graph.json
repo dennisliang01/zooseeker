@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1st_event_aedan_bailey",
+    "source": "entrance_exit_gate",
+    "target": "lion",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_chuong_nguyen",
+    "source": "entrance_exit_gate",
+    "target": "meerkat",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_dennis_liang",
+    "source": "entrance_exit_gate",
+    "target": "warthog",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_evan_liu",
+    "source": "entrance_exit_gate",
+    "target": "zebra",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_jasmine_yang",
+    "source": "entrance_exit_gate",
+    "target": "giraffe",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_jay_wu",
+    "source": "entrance_exit_gate",
+    "target": "elephant",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_merlin_zhang",
+    "source": "entrance_exit_gate",
+    "target": "black_rhino",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_phil_putra",
+    "source": "entrance_exit_gate",
+    "target": "cheetah",
+    "weight": 1.0
+  },
+  {
+    "id": "1st_event_zhach_zhong",
+    "source": "entrance_exit_gate",
+    "target": "jaguar",
+    "weight": 1.0
+  }
+]

@@ -1,0 +1,185 @@
+package com.example.zooseeker_jj_zaaz_team_52.ui.Plan;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import com.example.zooseeker_jj_zaaz_team_52.PlanDatabase;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
+import com.example.zooseeker_jj_zaaz_team_52.PlanListItemDao;
+import com.example.zooseeker_jj_zaaz_team_52.R;
+import com.example.zooseeker_jj_zaaz_team_52.Utilities;
+import com.example.zooseeker_jj_zaaz_team_52.ZooNavigator;
+import com.example.zooseeker_jj_zaaz_team_52.ZooShortestNavigator;
+import com.example.zooseeker_jj_zaaz_team_52.location.Coord;
+import com.example.zooseeker_jj_zaaz_team_52.location.LocationModel;
+import com.example.zooseeker_jj_zaaz_team_52.location.ZooLocation;
+import org.jgrapht.alg.util.Pair;
+
+public class DirectionFragment extends Fragment {
+    final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
+    public ZooLocation currentPosition = ZooLocation.STARTING_POINT;
+    ZooNavigator currentNavigator;
+    TextView directionsView;
+    TextView exhibitName;
+    TextView previousExhibit;
+    TextView nextExhibit;
+    Button nextButton;
+    Button previousButton;
+    Button skipButton;
+    MenuItem briefToggle;
+    Menu menu;
+    boolean offeredReplan = false;
+    LocationModel model;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String KEY = "index";
+    boolean showBrief = true;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_directions, container, false );
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        currentNavigator = (ZooShortestNavigator) getArguments().getSerializable("navigator");
+//      currentNavigator = (ZooShortestNavigator) intent.getSerializableExtra("CurrentNavigator");
+        saveData();
+        // Initialize components of DirectionsActivity UI
+        directionsView = view.findViewById(R.id.navigation_directions);
+        exhibitName = view.findViewById(R.id.exhibit_name);
+        previousExhibit = view.findViewById(R.id.previous_text);
+        nextExhibit = view.findViewById(R.id.next_text);
+        nextButton = view.findViewById(R.id.next_btn);
+        previousButton = view.findViewById(R.id.previous_btn);
+        skipButton = view.findViewById(R.id.skip_btn);
+        model = new ViewModelProvider(this).get(LocationModel.class);
+        model.getLastKnownCoords().observe(requireActivity(), (zooLocation) -> {
+            Log.i(this.getClass().toString(), String.format("Observing location model update to %s", zooLocation));
+            updateUserLocation(zooLocation);
+        });
+
+        // Set a click listener on the button
+        nextButton.setOnClickListener(v -> {
+            offeredReplan = false;
+            currentNavigator.next();
+            saveData();
+            updateActivityView();
+        });
+        previousButton.setOnClickListener(v -> {
+            offeredReplan = false;
+            currentNavigator.previous();
+            updateActivityView();
+            saveData();
+        });
+        skipButton.setOnClickListener(v -> {
+            offeredReplan = false;
+            // Sync the database to delete the current exhibit the user skips.
+            PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+            planListItemDao.delete(currentNavigator.getExhibit().exhibit_name);
+            // Skip button will skip the current exhibit the user is on.
+            currentNavigator.skipCurrentExhibit(new PlanListItem(currentPosition.getNearestLandmark().name,
+                    currentPosition.getNearestLandmark().id));
+            // Prompt a replan
+            updateActivityView();
+        });
+        // Set DirectionsActivity UI for first exhibit upon creation of activity
+        updateActivityView();
+
+
+    }
+    /**
+     * Save the index of direction user has viewed in Direction.
+     */
+    public void saveData(){
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY, currentNavigator.getCurrentIndex());
+        editor.apply();
+    }
+
+    public void updateActivityView() {
+        exhibitName.setText(currentNavigator.getExhibit().exhibit_name);
+        directionsView.setText(currentNavigator.calcLocationBasedDirections(currentPosition,showBrief));
+        Pair<Integer, PlanListItem> previousExhibitInfo = currentNavigator.peekPrevious();
+        Pair<Integer, PlanListItem> nextExhibitInfo = currentNavigator.peekNext();
+
+        if (previousExhibitInfo != null) {
+            previousButton.setEnabled(true);
+            String display = previousExhibitInfo.getSecond().exhibit_name + " * " + previousExhibitInfo.getFirst();
+            previousExhibit.setText(display);
+        } else {
+            previousButton.setEnabled(false);
+            previousExhibit.setText("");
+        }
+
+        if (nextExhibitInfo != null) {
+            nextButton.setEnabled(true);
+            String display = nextExhibitInfo.getSecond().exhibit_name + " * " + nextExhibitInfo.getFirst();
+            nextExhibit.setText(display);
+        } else {
+            nextButton.setEnabled(false);
+            nextExhibit.setText("");
+        }
+
+        skipButton.setEnabled(currentNavigator.getExhibit().id != ENTRANCE.id);
+    }
+
+    /**
+     * LocationObserver Interface method
+     * The LocationObserver will call this method to update newPosition everytime it acquires a
+     * new position value
+     **/
+    public void updateUserLocation(ZooLocation newPosition) {
+        currentPosition = newPosition; //saving currentPosition for later use
+        // this prompts a check on replan route ...
+        checkToReplanRoute();
+    }
+
+
+    /**
+     * checks degree of severity that the user is off the route
+     * if user is closer to later later exhibit in plan Then regenerate optimized plan
+     * <p>
+     * else: user is still closest to current exhibit seeing directions to
+     * update the directions to the exhibit from current location
+     */
+    public void checkToReplanRoute() {
+        if (!currentNavigator.getLandMarksOnPath().contains(currentPosition.getNearestLandmark().id)
+                && currentNavigator.minDistanceFromUnvisited(currentPosition)
+                < Coord.dist(Coord.fromZooLocation(currentPosition), currentNavigator.getCurrentLocation())) {
+            // based on location, replan is best
+            if (!offeredReplan) {
+                offeredReplan = true;
+                Utilities.showAlert(this, "Would you like to replan your route?");
+            }
+        } else {
+            // no need to replan, just update directions.
+            updateDirections();
+        }
+    }
+
+    public void updateDirections(){
+        updateActivityView();
+    }
+
+    public void updateRoute() {
+        offeredReplan = false;
+        currentNavigator.regenerateOptimizedPlan(new PlanListItem(currentPosition.
+                getNearestLandmark().name, currentPosition.getNearestLandmark().id));
+        updateActivityView();
+    }
+
+
+}

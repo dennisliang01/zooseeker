@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">zooseeker-jj-zaaz-team-52</string>
-    <string name="search_hint">exhibit</string>
+    <string name="search_hint">Search for an exhibit...</string>
     <string name="search_label">searchlabel</string>
+    <string name="search_title">exhibit</string>
     <string name="defaultexhibit">DefaultExhibit</string>
     <string name="animal_name">Animal Name</string>
     <string name="exhibit_type">Exhibit Type</string>
-    <string name="search_title">exhibit</string>
     <string name="voice_search">voice_search</string>
     <string name="previous_text">previous text</string>
     <string name="next_text">next text</string>
@@ -38,4 +38,15 @@
     <string name="title_home">Map</string>
     <string name="title_plan">Plan</string>
     <string name="title_directions">Direction</string>
+    <string name="title_activity_details2">DetailsActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_setting">Setting</string>
+
 </resources>

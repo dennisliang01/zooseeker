@@ -1,0 +1,22 @@
+[
+  {
+    "scientific_name": "Ailuropoda melanoleuca",
+    "regular_name": "Giant Panda",
+    "description": "The giant panda, also known as the panda bear or simply panda, is a bear species endemic to China. It is characterised by its black-and-white coat and rotund body. The name \"giant panda\" is sometimes used to distinguish it from the red panda, a neighboring musteloid.",
+    "image_location": "Test"
+  },
+
+  {
+    "scientific_name": "Panthera Leo",
+    "regular_name": "Lion",
+    "description": "The lion is a large cat of the genus Panthera, native to Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane.",
+    "image_location": "Test"
+  },
+
+  {
+    "scientific_name": "Hydrochoerus Hydrochaeris",
+    "regular_name": "Capybara ",
+    "description": "The capybara or greater capybara is a giant cavy rodent native to South America. It is the largest living rodent and a member of the genus Hydrochoerus. The only other extant member is the lesser capybara.",
+    "image_location": "Test"
+  }
+]

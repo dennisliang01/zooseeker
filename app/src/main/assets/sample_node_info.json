@@ -10,13 +10,37 @@
             "begin",
             "entrance",
             "exit"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "entrance_plaza",
         "kind": "intersection",
         "name": "Entrance Plaza",
-        "tags": []
+        "tags": [],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "gorillas",
@@ -27,7 +51,19 @@
             "monkey",
             "ape",
             "mammal"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "gators",
@@ -37,7 +73,19 @@
             "alligator",
             "reptile",
             "gator"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "lions",
@@ -48,7 +96,19 @@
             "cats",
             "mammal",
             "africa"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "elephant_odyssey",
@@ -58,7 +118,19 @@
             "elephant",
             "mammal",
             "africa"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     },
     {
         "id": "arctic_foxes",
@@ -68,6 +140,18 @@
             "arctic",
             "fox",
             "mammal"
-        ]
+        ],
+        "lat": 32.73561,
+        "lng": -117.14936,
+        "description": "The main entrance and exit gate of the zoo, providing access to all exhibits and attractions within the park.",
+        "start_time": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end_time": {
+            "hour": 9,
+            "minute": 0
+        },
+        "image_link": ""
     }
 ]

@@ -1,0 +1,44 @@
+5-24-2024
+US2-3 Database Schema Design and Database Selection
+
+Progress: 
+Schema Design: https://lucid.app/lucidchart/a5a1479b-9480-4e74-95dd-ba03c8f3243c/edit?viewport_loc=-82%2C282%2C2253%2C1175%2C0_0&invitationId=inv_4055a01c-5329-4c4a-8822-ceb3fe892c1f
+New attributes added to current ZooData Java file:
+Description of Exhibit: Wetland African environment exhibit
+Accessibility Options: Disabled individuals can go
+Start Time: When exhibit opens for guess
+End Time: When exhibit closes for guess
+Img Link: Url to an image of the Exhibit
+
+Visitor Table
+Visitor Id: name of visitor
+Visitor Type: Adult, Child
+Break Frequency: How often a person needs to take a break from traveling
+Accessibility Needs: Wheelchair, lifts
+
+Schedule Table
+Vertex Info: (Starting node is always at the gate with visited == true)
+Visitor ID: name of visitor
+Exhibit Name: name of exhibit
+Visited: True/False
+
+Edge Info: 
+ID: Numberth Event
+Start Event Time: 8:00
+End Even Time: 8:30
+
+We decided to implement a fake database using json files because the current data is persistent. Will implement a database in the future as more data get added
+The schedule table is implemented similar to a tree with each node having a single parent and child node except the starting node, which will only have 1 child node and no parent node. Each node will be an exhibit/event and edges being equivalent to the time of the event. We want to implement the schedule as a tree because we want the events to be stored in chronological order for easy traversing, adding, and popping.
+
+
+5-15-2024
+US2-2 Database Selection
+
+Progress:
+
+Our user story subteam collectively decided to proceed in the development of the application using the native Android Studio singleton database pattern as opposed to leveraging a third-party hosting service. In our deliberations, plans were made to create at least 5 unique daos to represent five different data types to be stored within the singleton. The schemas for object types which were created in the original iteration of the ZooSeeker application were left relatively unchanged, with the exception of the animal exhibit schema, which now contains a new field describing whether or not the given exhibit is available for visitors. Supplementing these existing dao types, two new types introduced to facilitate new features include the general location data type, used to represent common areas such as restaurants, restrooms, and shows, and also the location availability data type, which is used to house a boolean representing whether or not a given location is open or closed. Recurring data types left unmodified since their original implementation include daos for storing the current user’s navigation plan, the graph dao and its semantic representation of the zoo layout, the node item dao for key stopping points within the zoo, and the edge item dao for pathways between nodes.
+
+Justification:
+
+We decided to continue using the Android Studio local database due to the needs of our app and features. With the expanded feature set for our app, we need to be able to store information such as zoo exhibit status, animal information, and connecting paths between exhibits. We decided to not go with a remote database because we don’t really have a need for it and it will add unnecessary complexity to our application and development process. We decided to have at least 5 different tables for the database because of the different structure of the data such as zoo path and zoo exhibit times.
+

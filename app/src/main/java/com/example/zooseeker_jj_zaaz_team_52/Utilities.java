@@ -11,11 +11,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zooseeker_jj_zaaz_team_52.location.Coord;
 import com.example.zooseeker_jj_zaaz_team_52.location.Coords;
 import com.example.zooseeker_jj_zaaz_team_52.location.LocationModel;
+import com.example.zooseeker_jj_zaaz_team_52.ui.Plan.DirectionFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -33,18 +35,18 @@ import java.util.stream.Collectors;
  */
 public class Utilities {
 
-    public static void showAlert(Activity activity, String message) {
-        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
+    public static void showAlert(Fragment activity, String message) {
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity.getActivity());
 
         alertBuilder
                 .setTitle("Alert!")
                 .setMessage(message)
                 .setPositiveButton("Yes", (dialogInterface, i) -> {
-                    ((DirectionsActivity) activity).updateRoute();
+                    ((DirectionFragment) activity).updateRoute();
                     dialogInterface.dismiss();
                 })
                 .setNegativeButton("No", (dialogInterface, i) -> {
-                    ((DirectionsActivity) activity).updateDirections();
+                    ((DirectionFragment) activity).updateDirections();
                     dialogInterface.dismiss();
                 });
 

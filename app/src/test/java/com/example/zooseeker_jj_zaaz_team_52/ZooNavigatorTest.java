@@ -164,15 +164,13 @@ public class ZooNavigatorTest {
         final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
         String currentLoc = ENTRANCE.exhibit_id;
         String desId = "crocodile";
-        assertEquals("Proceed on Gate Path 10 feet towards Front Street / Treetops Way\n" +
-                "Proceed on Treetops Way 30 feet towards Treetops Way / Fern Canyon Trail\n" +
-                "Proceed on Treetops Way 30 feet towards Treetops Way / Orangutan Trail\n" +
-                "Proceed on Treetops Way 100 feet towards Treetops Way / Hippo Trail\n" +
-                "Proceed on Hippo Trail 30 feet towards Hippos\n" +
-                "Proceed on Hippo Trail 10 feet to Crocodiles", customNav2.getDirection());
+        assertEquals("Proceed on Gate Path 110 feet towards Front Street / Safari Way\n" +
+                "Proceed on Front Street 200 feet towards Lion\n" +
+                "Proceed on Front Street 240 feet towards Front Street / Savannah Walk\n" +
+                "Proceed on Front Street 60 feet towards Hippos\n" +
+                "Proceed on Front Street 130 feet to Crocodiles", customNav2.getDirection());
         GraphPath<String, IdentifiedWeightedEdge> path = DijkstraShortestPath.findPathBetween(newZooMap.g, currentLoc, desId);
-        assertEquals("Proceed on Gate Path 10 feet towards Front Street / Treetops Way\n" +
-                "Proceed on Treetops Way 160 feet towards Treetops Way / Hippo Trail\n" +
-                "Proceed on Hippo Trail 40 feet to Crocodiles", customNav2.getBriefDirection(path));
+        assertEquals("Proceed on Gate Path 110 feet towards Front Street / Safari Way\n" +
+                "Proceed on Front Street 630 feet to Crocodiles", customNav2.getBriefDirection(path));
     }
 }
