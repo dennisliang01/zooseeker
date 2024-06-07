@@ -203,7 +203,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -284,7 +284,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -336,7 +336,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -389,7 +389,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             if (i == paths.size() - 1) {
                 directions.append(" to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
