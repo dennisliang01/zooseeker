@@ -50,6 +50,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 //SETTINGS
 import androidx.fragment.app.Fragment;
@@ -85,19 +86,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
         mapView = binding.relativeLayout;
         search = new ExhibitSearch(getContext());
         map = binding.map;
-        mapView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                float x = event.getX();
-                float y = event.getY();
-                // Convert pixels to dp
-                float xDp = convertPixelToDp(x, getContext());
-                float yDp = convertPixelToDp(y, getContext());
-
-                System.out.println("x : "  + xDp + " y: " + yDp);
-                return true;
-            }
-        });
         Drawable drawable = map.getDrawable();
 
         if (drawable != null) {
@@ -187,7 +175,19 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                     value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP  ||
                     restroomIncluded && value.kind == ZooData.VertexInfo.Kind.RESTROOM ||
                     restaurantIncluded && value.kind == ZooData.VertexInfo.Kind.RESTAURANT) {
-                Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
+
+
+                boolean zooMarkerinPlan = false;
+                //Change stroke color if already in plan
+                PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+                for (PlanListItem item : planListItemDao.getAll()){
+                    if(Objects.equals(item.exhibit_id, value.id)) {
+                        zooMarkerinPlan = true;
+                    }
+                }
+
+
+                Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale, zooMarkerinPlan);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
@@ -245,6 +245,16 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
 
                     Toast mapPlanSuccessToast = Toast.makeText(getContext(), "Added " + zoomarkerData.name + " to plan!", Toast.LENGTH_LONG);
                     mapPlanSuccessToast.show();
+                    for (int i = 0; i < mapView.getChildCount(); i++) {
+                        View child = mapView.getChildAt(i);
+                        if (child instanceof Zoomarker) {
+                            Zoomarker zoomarker = (Zoomarker) child;
+                            if (Objects.equals(zoomarker.markerData.id, zoomarkerData.id)) {
+                                zoomarker.setPlanned();
+                                break;
+                            }
+                        }
+                    }
 
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {

@@ -9,11 +9,10 @@
         android:id="@+id/zoomarkericon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:strokeWidth="3dp"
-        android:padding="5dp"
         android:layout_marginRight="20dp"
-        app:strokeColor="@android:color/darker_gray"
-        app:shapeAppearanceOverlay="@style/circleImageView"
+        android:padding="5dp"
         android:src="@drawable/croc"
-        />
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:strokeColor="@color/black"
+        app:strokeWidth="3dp" />
 </LinearLayout>
