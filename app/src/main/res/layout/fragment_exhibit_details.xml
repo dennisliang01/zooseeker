@@ -28,12 +28,18 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/exhibit_image"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="252dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/amur_leopard_hero_0" />
+                android:id="@+id/carousel_view"
+                app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"/>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/exhibit_image"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="252dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/amur_leopard_hero_0" />-->
 
             <LinearLayout
                 android:layout_marginTop="10dp"

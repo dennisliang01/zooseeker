@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
@@ -71,13 +75,15 @@ public class DetailsFragment extends Fragment {
         String currExhibitName = currentPlanListItem.exhibit_name;
         String currExhibitID = currentPlanListItem.exhibit_id;
 
+
+
         TextView titleText = view.findViewById(R.id.exhibit_id);
         titleText.setText(currExhibitName);
         TextView locationText = view.findViewById(R.id.exhibit_location);
         TextView statusText = view.findViewById(R.id.exhibit_status);
         TextView descriptionText = view.findViewById(R.id.exhibit_description);
         TextView avalibilityText = view.findViewById(R.id.exhibit_avaliability);
-        ImageView exhibitImageView = view.findViewById(R.id.exhibit_image);
+//        ImageView exhibitImageView = view.findViewById(R.id.exhibit_image);
         ImageView statusImage  = view.findViewById(R.id.exhibit_status_image);
         ImageView avaliabilityImage = view.findViewById(R.id.exhibit_avaliability_image);
 
@@ -113,8 +119,13 @@ public class DetailsFragment extends Fragment {
 
             int imageResId = getResources().getIdentifier(exhibitInfo.image_location, "drawable", getContext().getPackageName());
             //Instant Glide = null;
+            RecyclerView recyclerView = view.findViewById(R.id.carousel_view);
+            ArrayList<String> arrayList = new ArrayList<>();
+            Collections.addAll(arrayList, exhibitInfo.image_location.split(";"));
+            ImageAdapter adapter = new ImageAdapter(getContext(), arrayList);
+            recyclerView.setAdapter(adapter);
             Log.d("Image_debug", exhibitInfo.image_location);
-            Glide.with(this).load(imageResId).into(exhibitImageView);
+//            Glide.with(this).load(imageResId).into(exhibitImageView);
         }
 
         Button backButton = view.findViewById(R.id.btn_back);

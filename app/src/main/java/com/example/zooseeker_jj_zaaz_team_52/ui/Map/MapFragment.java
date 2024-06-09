@@ -180,16 +180,13 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
             }
         }
 
-        int x = 10;
-        int y = 10;
-
-
-        int i = 0;
         //Create Zoomarkers for each exhibits and add them to the map
         for (ZooData.VertexInfo value : zooData) {
             //Only add exhibits, not streets and etc.
-            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT) {
-
+            if (exhibitIncluded && value.kind == ZooData.VertexInfo.Kind.EXHIBIT && value.parent_id == null ||
+                    value.kind == ZooData.VertexInfo.Kind.EXHIBIT_GROUP  ||
+                    restroomIncluded && value.kind == ZooData.VertexInfo.Kind.RESTROOM ||
+                    restaurantIncluded && value.kind == ZooData.VertexInfo.Kind.RESTAURANT) {
                 Zoomarker zoomarker = new Zoomarker( getContext(), value, (value.scale == 0) ? 2 : (int) value.scale);
                 zoomarker.setOnZoomarkerClickListener(this);
                 // Create layout parameters
@@ -203,7 +200,6 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 zoomarker.setLayoutParams(params);
                 // Add the Zoomarker view to the RelativeLayout
                 mapView.addView(zoomarker);
-                i += 1;
 
             }
         }
