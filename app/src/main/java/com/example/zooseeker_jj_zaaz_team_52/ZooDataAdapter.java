@@ -51,7 +51,7 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
         holder.setExhibit(exhibits.get(position));
         holder.getExhibitView().setText(holder.getExhibit().kind.toString().toLowerCase());
         holder.getAnimalView().setText(holder.getExhibit().name);
-        holder.setAnimalImage(holder.getExhibit().name);
+        holder.setAnimalImage(holder.getExhibit().id);
 
         for (PlanListItem selected : dataBase.getAll()) {
             if (selected.exhibit_name.equals(holder.getExhibit().name)) {
