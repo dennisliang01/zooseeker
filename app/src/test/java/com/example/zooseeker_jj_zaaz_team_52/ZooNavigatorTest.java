@@ -165,12 +165,17 @@ public class ZooNavigatorTest {
         String currentLoc = ENTRANCE.exhibit_id;
         String desId = "crocodile";
         assertEquals("110ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
+                        "_______________________________________\n" +
                 "200ft\nProceed on Front Street towards Lion\n" +
+                        "_______________________________________\n" +
                 "240ft\nProceed on Front Street towards Front Street / Savannah Walk\n" +
+                        "_______________________________________\n" +
                 "60ft\nProceed on Front Street towards Hippos\n" +
+                        "_______________________________________\n" +
                 "130ft\nProceed on Front Street to Crocodiles", customNav2.getDirection());
         GraphPath<String, IdentifiedWeightedEdge> path = DijkstraShortestPath.findPathBetween(newZooMap.g, currentLoc, desId);
         assertEquals("110ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
+                        "_______________________________________\n" +
                 "630ft\nProceed on Front Street to Crocodiles", customNav2.getBriefDirection(path));
     }
 }
