@@ -143,7 +143,7 @@ public class ZooNavigatorTest {
 
         assertEquals(400, customNav.getDistance());
         customNav.previous();
-        assertEquals("100ft\nProceed on Reptile Road to Entrance Plaza\n300ft \nProceed on Arctic Avenue towards Arctic Foxes\n",
+        assertEquals("100ft\nProceed on Reptile Road to Entrance Plaza\n300ft\nProceed on Arctic Avenue towards Arctic Foxes\n",
                 customNav.getPreviousDirection()
         );
 
@@ -164,15 +164,13 @@ public class ZooNavigatorTest {
         final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
         String currentLoc = ENTRANCE.exhibit_id;
         String desId = "crocodile";
-        assertEquals("110ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
-                "30ft\nProceed on Treetops Way towards Treetops Way / Fern Canyon Trail\n" +
-                "30ft\nProceed on Treetops Way towards Treetops Way / Orangutan Trail\n" +
-                "100ft\nProceed on Treetops Way towards Treetops Way / Hippo Trail\n" +
-                "30ft\nProceed on Hippo Trail towards Hippos\n" +
-                "10ft\nProceed on Hippo Trail to Crocodiles", customNav2.getDirection());
+        assertEquals("110ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
+                "200ft\nProceed on Front Street towards Lion\n" +
+                "240ft\nProceed on Front Street towards Front Street / Savannah Walk\n" +
+                "60ft\nProceed on Front Street towards Hippos\n" +
+                "130ft\nProceed on Front Street to Crocodiles\n", customNav2.getDirection());
         GraphPath<String, IdentifiedWeightedEdge> path = DijkstraShortestPath.findPathBetween(newZooMap.g, currentLoc, desId);
-        assertEquals("10ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
-                "160ft\nProceed on Treetops Way towards Treetops Way / Hippo Trail\n" +
-                "40ft\nProceed on Hippo Trail to Crocodiles", customNav2.getBriefDirection(path));
+        assertEquals("10ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
+                "630ft\nProceed on Front Street to Crocodiles\n", customNav2.getBriefDirection(path));
     }
 }
