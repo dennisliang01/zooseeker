@@ -32,6 +32,10 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
     List<GraphNavigationStep> plan;
 
 
+    @Override
+    public List<GraphNavigationStep> getPlan(){
+        return this.plan;
+    }
     int currentIndex;
 
     public int getCurrentIndex(){
@@ -100,6 +104,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             }
         }
 
+        // Create plan using Dijkstra's algorithm
         do {
             GraphNavigationStep nextExhibit = getShortestDistance(currentExhibit, destinationCopy);
             PlanListItem nextShortest = nextExhibit.planItem;
@@ -193,12 +198,12 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
-                directions.append(" to ");
+                directions.append("to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -274,12 +279,12 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = 0; i < paths.size(); i++) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId()).street)).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
-                directions.append(" to ");
+                directions.append("to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -326,12 +331,12 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         for (int i = paths.size() - 1; i >= 0; i--) {
             IdentifiedWeightedEdge e = paths.get(i);
 
+            directions.append((int) map.g.getEdgeWeight(e)).append("ft\n");
             directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-            directions.append((int) map.g.getEdgeWeight(e)).append(" feet");
             if (i == paths.size() - 1) {
-                directions.append(" to ");
+                directions.append("to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -377,14 +382,14 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
                 currentLoc = map.g.getEdgeTarget(e);
                 continue;
             }else{
+                directions.append((int) pathWeight).append("ft\n");
                 directions.append("Proceed on ").append(Objects.requireNonNull(map.streetInfo.get(e.getId())).street).append(" ");
-                directions.append((int) pathWeight).append(" feet");
                 pathWeight = 0;
             }
             if (i == paths.size() - 1) {
-                directions.append(" to ");
+                directions.append("to ");
             } else {
-                directions.append(" towards ");
+                directions.append("towards ");
             }
             if (currentLoc.equals(map.g.getEdgeSource(e))) {
                 directions.append(map.getExhibitNameById(map.g.getEdgeTarget(e)));
@@ -395,8 +400,11 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             }
 
             if (i != paths.size() - 1) {
-                directions.append("\n");
+                directions.append("\n_______________________________________\n");
+
             }
+
+
         }
 
         if (exhibitToVisit.parent_exhibit_id != null) {
@@ -479,6 +487,42 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
 
     }
 
+@Override
+public void skipToEnd() {
+
+        List<GraphNavigationStep> newPlan = new ArrayList<>();
+
+        // If user is currently at the start
+        if (currentIndex == 0) {
+            newPlan.add(this.plan.get(0));
+            this.plan = newPlan;
+
+            PlanListItem currentLoc = this.plan.get(currentIndex).planItem;
+            ArrayList<Pair<PlanListItem, Boolean>> exit = new ArrayList<>() {
+                {
+                    add(new Pair<>(ENTRANCE, false));
+                }
+            };
+            plan.add(getShortestDistance(currentLoc, exit));
+
+        } else if (currentIndex == plan.size() - 1) {
+//            Do nothing if already at the end/exit
+//            Can consider adding a popup message
+
+        }  else {
+                newPlan = plan.subList(0, currentIndex + 1);
+                this.plan = newPlan;
+
+                // Add exit gate to the plan
+                PlanListItem currentLoc = this.plan.get(currentIndex).planItem;
+                ArrayList<Pair<PlanListItem, Boolean>> exit = new ArrayList<>() {
+                    {
+                        add(new Pair<>(ENTRANCE, false));
+                    }
+                };
+                plan.add(getShortestDistance(currentLoc, exit));
+        }
+}
 
     @Override
     public void skipCurrentExhibit(PlanListItem nearestLandMark) {
@@ -542,6 +586,20 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
         return nonVisitedIds;
     }
 
+    /* Different than findNonVisited Exhibits
+    * This function returns the remaining exhibits from the user's current location
+     */
+    @Override
+    public ArrayList<PlanListItem> findRemainingExhibits() {
+        ArrayList<PlanListItem> remainingExhibits = new ArrayList<>();
+        Log.d("Current Index", String.valueOf(currentIndex));
+        for (int i = currentIndex + 1; i < plan.size(); i++) {
+            Log.d("Adding", plan.get(i).planItem.exhibit_name);
+            Log.d("Index", String.valueOf(i));
+            remainingExhibits.add(plan.get(i).planItem);
+        }
+        return remainingExhibits;
+    }
     @Override
     public double minDistanceFromUnvisited(ZooLocation loc) {
         double minimum = Double.MAX_VALUE;

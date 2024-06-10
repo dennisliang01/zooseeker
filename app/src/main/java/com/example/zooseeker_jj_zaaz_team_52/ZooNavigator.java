@@ -10,7 +10,7 @@ import org.jgrapht.alg.util.Pair;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
-
+import java.util.ArrayList;
 /**
  * ZooNavigator Interface: Single Responsibility Principle - Interface method stubs that provide
  * information used when updating view in DirectionsActivity
@@ -25,6 +25,8 @@ public interface ZooNavigator extends Serializable {
      * gets information about the current exhibit
      */
     PlanListItem getExhibit();
+
+    List<GraphNavigationStep> getPlan();
 
     /**
      * gets detailed direction to the exhibit
@@ -85,10 +87,21 @@ public interface ZooNavigator extends Serializable {
     Set<String> getLandMarksOnPath();
 
     /**
+     *  skips to the end of the plan, current exhibit user is on should not be skipped
+     */
+    void skipToEnd();
+
+    /**
      * functionality of skipping an exhibit, should trigger a replan
      * @param nearestLandMark
      */
     void skipCurrentExhibit(PlanListItem nearestLandMark);
+
+    /**
+     * returns remaining exhibits in plan
+     * @return list of remaining exhibits
+     */
+    ArrayList<PlanListItem> findRemainingExhibits();
 
     /**
      * returns nonvisited exhibits in plan

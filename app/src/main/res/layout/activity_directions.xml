@@ -7,98 +7,140 @@
     android:scrollbarSize="20dp"
     tools:context=".DirectionsActivity">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="333dp"
+        android:layout_height="15dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="36dp"
+        android:max="100"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directions_title" />
+
     <TextView
         android:id="@+id/directions_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/directions"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/exhibit_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/exhibit_name"/>
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/exhibit_name"
-        android:layout_width="327dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="316dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
         android:text="@string/textview"
+
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation_directions"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/navigation_directions"
-        android:layout_width="334dp"
-        android:layout_height="428dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/hello_world"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/directions_title" />
+        app:layout_constraintTop_toBottomOf="@+id/directions_title" />
 
-    <Button
+    <ScrollView
+        android:layout_width="326dp"
+        android:layout_height="419dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/skip_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exhibit_name"
+        app:layout_constraintVertical_bias="0.298">
+
+        <TextView
+            android:id="@+id/navigation_directions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your long text here"
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <ImageButton
         android:id="@+id/previous_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="19dp"
+        android:scaleType="fitCenter"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/previous_button"
+        android:contentDescription="@string/previous"
         android:onClick="onPreviousButtonClicked"
-        android:text="@string/previous"
-        app:layout_constraintTop_toTopOf="@id/skip_btn"
+        app:layout_constraintBottom_toBottomOf="@id/skip_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/skip_btn"/>
+        app:layout_constraintTop_toTopOf="@id/skip_btn" />
 
-    <Button
+    <ImageButton
         android:id="@+id/next_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/next"
         android:onClick="onNextButtonClicked"
-        android:text="@string/next"
+        android:scaleType="fitCenter"
+        android:src="@drawable/next_button"
         app:layout_constraintBottom_toBottomOf="@+id/skip_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/skip_btn" />
 
     <TextView
         android:id="@+id/previous_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="35dp"
         android:text="@string/previous_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previous_btn"/>
+        app:layout_constraintTop_toBottomOf="@id/previous_btn" />
 
     <TextView
         android:id="@+id/next_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="35dp"
         android:text="@string/next_text"
         app:layout_constraintTop_toBottomOf="@id/next_btn"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/skip_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="84dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="60dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="60dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/skip_button"
         android:onClick="onSkipButtonClicked"
-        android:text="Skip"
-        app:layout_constraintTop_toBottomOf="@id/navigation_directions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/next_btn"
-        app:layout_constraintStart_toEndOf="@id/previous_btn"/>
+        app:layout_constraintStart_toEndOf="@id/stop_btn"
+        app:layout_constraintTop_toBottomOf="@id/navigation_directions" />
+
+    <ImageButton
+        android:id="@+id/stop_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="72dp"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="onStopButtonClicked"
+        android:scaleType="fitCenter"
+        android:src="@drawable/stop_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/skip_btn"
+        app:layout_constraintStart_toEndOf="@id/previous_btn"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

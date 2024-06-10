@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible">
-<!--    tools:context=".ui.Map.MapFragment"-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -40,41 +39,56 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
+        android:id="@+id/middleRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="787dp"
+        android:background="#79AD78"
+        android:layout_marginTop="62dp">
 
-        <HorizontalScrollView
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:layout_height="match_parent">
 
-            <ScrollView
+            <HorizontalScrollView
                 android:layout_width="match_parent"
+                android:id="@+id/horizontal_scroll_view"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
 
-                <RelativeLayout
-                    android:id="@+id/relativeLayout"
+                <ScrollView
+                    android:id="@+id/vertical_scroll_view"
                     android:layout_width="match_parent"
-                    android:background="#79AD78"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
 
-                    <ImageView
-                        android:id="@+id/map"
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleX="0.8"
-                        android:scaleY="0.8"
-                        android:src="@drawable/zoomap" />
+                        android:background="#79AD78">
 
-                </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/map"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="0dp"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            android:src="@drawable/zoomap" />
 
-            </ScrollView>
+                    </RelativeLayout>
 
-        </HorizontalScrollView>
+                </ScrollView>
 
-    </androidx.core.widget.NestedScrollView>
+            </HorizontalScrollView>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

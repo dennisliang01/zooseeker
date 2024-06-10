@@ -20,6 +20,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,6 +72,29 @@ public class PlanFragment extends Fragment {
             this.search = new ExhibitSearch(getContext());
         }
         createPlanBtn = view.findViewById(R.id.create_plan);
+
+        createPlanBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+                List<PlanListItem> planListItems = planListItemDao.getAll();
+                zooNavigator = new ZooShortestNavigator(planListItems, requireActivity());
+
+                NavController controller = Navigation.findNavController(view);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("navigator", zooNavigator);
+                controller.navigate(R.id.navigation_directions, bundle);
+
+            }
+        });
+
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY, -2);
+        editor.apply();
+
         courseRV = view.findViewById(R.id.plan_items);
         numItemSelected = view.findViewById(R.id.plan_title);
         dao = PlanDatabase.getSingleton(getContext()).planListItemDao();
@@ -135,9 +161,13 @@ public class PlanFragment extends Fragment {
         if (isVisible) {
             courseRV.setAdapter(searchAdapter);
             createPlanBtn.setVisibility(View.VISIBLE);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
+            courseRV.setLayoutManager(gridLayoutManager);
         } else {
             courseRV.setAdapter(zooAdapter);
             createPlanBtn.setVisibility(View.INVISIBLE);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+            courseRV.setLayoutManager(gridLayoutManager);
         }
         isVisible = !isVisible;
     }
