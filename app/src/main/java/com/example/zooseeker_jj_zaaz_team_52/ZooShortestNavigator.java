@@ -400,7 +400,8 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
             }
 
             if (i != paths.size() - 1) {
-                directions.append("\n───────────────────────\n");
+                directions.append("\n_______________________________________\n");
+
             }
 
 
