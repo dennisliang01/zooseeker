@@ -148,13 +148,13 @@ public class ZooNavigatorTest {
         );
 
         customNav.next();
-        assertEquals("Proceed on Sharp Teeth Shortcut 200 feet to Alligators\n", customNav.getPreviousDirection());
+        assertEquals("200ft\nProceed on Sharp Teeth Shortcut to Alligators\n", customNav.getPreviousDirection());
 
         customNav.next();
 
         assertEquals(400, customNav.getPreviousDistance());
         assertEquals(200, customNav.getDistance());
-        assertEquals("Proceed on Africa Rocks Street 200 feet to Lions\n",
+        assertEquals("200ft\nProceed on Africa Rocks Street to Lions\n",
                 customNav.getPreviousDirection()
         );
     }
@@ -168,9 +168,9 @@ public class ZooNavigatorTest {
                 "200ft\nProceed on Front Street towards Lion\n" +
                 "240ft\nProceed on Front Street towards Front Street / Savannah Walk\n" +
                 "60ft\nProceed on Front Street towards Hippos\n" +
-                "130ft\nProceed on Front Street to Crocodiles\n", customNav2.getDirection());
+                "130ft\nProceed on Front Street to Crocodiles", customNav2.getDirection());
         GraphPath<String, IdentifiedWeightedEdge> path = DijkstraShortestPath.findPathBetween(newZooMap.g, currentLoc, desId);
-        assertEquals("10ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
-                "630ft\nProceed on Front Street to Crocodiles\n", customNav2.getBriefDirection(path));
+        assertEquals("110ft\nProceed on Gate Path towards Front Street / Safari Way\n" +
+                "630ft\nProceed on Front Street to Crocodiles", customNav2.getBriefDirection(path));
     }
 }
