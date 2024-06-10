@@ -47,15 +47,18 @@
         android:layout_marginTop="62dp">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
+                android:id="@+id/horizontal_scroll_view"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
 
                 <ScrollView
+                    android:id="@+id/vertical_scroll_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="none">

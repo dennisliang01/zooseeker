@@ -232,7 +232,7 @@
   },
   {
     "animal_name": "Blue Capped Motmot",
-    "location": "Africa ExhibitsF",
+    "location": "Africa Exhibits",
     "status": "stable",
     "availability": {
       "start_time": "08:00 AM",
@@ -317,5 +317,16 @@
     },
     "description": "The Emerald Dove is a small, colorful bird found in Southeast Asia. It is named for its bright green wings and is often seen foraging on the forest floor.",
     "image_location": "dove"
+  },
+  {
+    "animal_name": "Polar Bear",
+    "location": "Arctic Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Polar bears are large, powerful carnivores native to the Arctic region, distinguished by their white fur, which provides excellent camouflage in their icy environment.",
+    "image_location": "polar_bear"
   }
 ]

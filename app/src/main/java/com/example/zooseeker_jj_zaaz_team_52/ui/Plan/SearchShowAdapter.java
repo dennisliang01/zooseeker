@@ -96,7 +96,7 @@ public class SearchShowAdapter extends RecyclerView.Adapter<SearchShowAdapter.Vi
         public void setPlanItem(PlanListItem planItem) {
             this.planItem = planItem;
             this.exhibit_name.setText(planItem.exhibit_name);
-            //this.exhibit_loc.setText(planItem.loc);
+            this.exhibit_loc.setText(planItem.loc);
             setAnimalImage(planItem.exhibit_id);
         }
 

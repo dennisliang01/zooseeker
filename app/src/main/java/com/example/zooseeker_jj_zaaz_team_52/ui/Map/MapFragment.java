@@ -15,16 +15,21 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -130,8 +135,40 @@ public class MapFragment extends Fragment implements Zoomarker.OnZoomarkerClickL
                 items.add(item.name);
         }
 
-        ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, items);
+        ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(requireContext(), R.layout.serachdropdown, items);
         binding.searchField.setAdapter(autoCompleteAdapter);
+
+        binding.searchField.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String exhibitmName = (String) ((TextView)(view.findViewById(R.id.dropdownTextView))).getText();
+                for (int i = 0; i < mapView.getChildCount(); i++) {
+                    View child = mapView.getChildAt(i);
+                    if (child instanceof Zoomarker) {
+                        Zoomarker zoomarker = (Zoomarker) child;
+                        if (Objects.equals(zoomarker.markerData.name, exhibitmName)) {
+                            System.out.println("FOUND SCROLLING");
+                            HorizontalScrollView horizontalScrollView = binding.horizontalScrollView;
+                            ScrollView verticalScrollView = binding.verticalScrollView;
+                            NestedScrollView nestedScrollView = binding.nestedScrollView;
+                            // Calculate the coordinates of the target view
+                            int[] targetLocation = new int[2];
+                            zoomarker.getLocationInWindow(targetLocation);
+
+                            int[] scrollViewLocation = new int[2];
+                            nestedScrollView.getLocationInWindow(scrollViewLocation);
+
+                            // Calculate the scroll position to center the target view
+                            System.out.println("Target loc x: "+ targetLocation[0] + " y: " + targetLocation[1]);
+                            // Scroll to the calculated position
+                            horizontalScrollView.smoothScrollTo(targetLocation[0], 0);
+                            verticalScrollView.smoothScrollTo(0, targetLocation[1]);
+                            break;
+                        }
+                    }
+                }
+            }
+        });
 
         this.search = new ExhibitSearch(getContext());
         addZoomarkers(new ArrayList<>(this.search.searchKeyword("")));
