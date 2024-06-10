@@ -118,7 +118,7 @@
       "end_time": "09:00 AM"
     },
     "description": "Capybaras are the largest rodents in the world. They are highly social animals and live in groups near water bodies in South America.",
-    "image_location": "capybara"
+    "image_location": "reptile_house;black_mamba"
   },
   {
     "animal_name": "Sloth Bear",
@@ -328,5 +328,38 @@
     },
     "description": "Polar bears are large, powerful carnivores native to the Arctic region, distinguished by their white fur, which provides excellent camouflage in their icy environment.",
     "image_location": "polar_bear"
+  },
+  {
+    "animal_name": "Amur Leopard",
+    "location": "Arctic Exhibits",
+    "status": "stable",
+    "description": "The Amur leopard is a critically endangered big cat native to the temperate forests of the Russian Far East and northeastern China, known for its thick, luxurious coat covered in distinctive rosettes. It is one of the rarest leopards in the world, with fewer than 100 individuals remaining in the wild.",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "image_location": "amur_leopard"
+  },
+  {
+    "animal_name": "Wolf",
+    "location": "South America Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Wolves are social carnivorous mammals known for their pack behavior, complex communication, and hunting prowess, typically found in various habitats across the Northern Hemisphere. They are characterized by their thick fur, sharp senses, and strong, cooperative bonds within their packs.",
+    "image_location": "wolf"
+  },
+  {
+    "animal_name": "Chimpanzee",
+    "location": "World of Primates",
+    "status": "stable",
+    "description": "Chimpanzees are highly intelligent primates native to the forests and savannas of Africa, known for their complex social structures and behaviors, including the use of tools. They share about 98% of their DNA with humans, making them one of our closest living relatives.",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "image_location": "chimpanzee"
   }
 ]
