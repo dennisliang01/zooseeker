@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +26,22 @@ import com.example.zooseeker_jj_zaaz_team_52.ZooShortestNavigator;
 import com.example.zooseeker_jj_zaaz_team_52.location.Coord;
 import com.example.zooseeker_jj_zaaz_team_52.location.LocationModel;
 import com.example.zooseeker_jj_zaaz_team_52.location.ZooLocation;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import org.jgrapht.alg.util.Pair;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DirectionFragment extends Fragment {
     final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
@@ -34,16 +51,23 @@ public class DirectionFragment extends Fragment {
     TextView exhibitName;
     TextView previousExhibit;
     TextView nextExhibit;
-    Button nextButton;
-    Button previousButton;
-    Button skipButton;
+    ImageButton nextButton;
+    ImageButton previousButton;
+    ImageButton stopButton;
+    ImageButton skipButton;
     MenuItem briefToggle;
     Menu menu;
+
+    ProgressBar stepStatus;
     boolean offeredReplan = false;
     LocationModel model;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String KEY = "index";
     boolean showBrief = true;
+
+    int progress = 0;
+
+    int planMax;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,6 +87,7 @@ public class DirectionFragment extends Fragment {
         nextExhibit = view.findViewById(R.id.next_text);
         nextButton = view.findViewById(R.id.next_btn);
         previousButton = view.findViewById(R.id.previous_btn);
+        stopButton = view.findViewById(R.id.stop_btn);
         skipButton = view.findViewById(R.id.skip_btn);
         model = new ViewModelProvider(this).get(LocationModel.class);
         model.getLastKnownCoords().observe(requireActivity(), (zooLocation) -> {
@@ -70,18 +95,89 @@ public class DirectionFragment extends Fragment {
             updateUserLocation(zooLocation);
         });
 
+        planMax = currentNavigator.getPlan().size() - 2;
+        stepStatus = view.findViewById(R.id.progressBar);
+        stepStatus.setMax(planMax);
+
+
         // Set a click listener on the button
         nextButton.setOnClickListener(v -> {
             offeredReplan = false;
             currentNavigator.next();
             saveData();
             updateActivityView();
+            progress++;
+            stepStatus.setProgress(progress);
         });
         previousButton.setOnClickListener(v -> {
             offeredReplan = false;
             currentNavigator.previous();
             updateActivityView();
             saveData();
+            progress--;
+            stepStatus.setProgress(progress);
+        });
+        stopButton.setOnClickListener(v -> {
+            new MaterialAlertDialogBuilder(requireContext())
+                    .setTitle("End Plan")
+                    .setMessage("Are you sure you would like to end your plan?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        Log.d("Yes pressed", "Yes pressed");
+                        ArrayList<PlanListItem> remainingExhibits = new ArrayList<>();
+
+                        if (currentNavigator.getCurrentIndex() != currentNavigator.getPlan().size() - 1) {
+                            remainingExhibits = currentNavigator.findRemainingExhibits();
+                        }
+
+
+                        PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
+
+                        currentNavigator.skipToEnd();
+                        updateActivityView();
+                        saveData();
+                        Log.d("Current Index", String.valueOf(currentNavigator.getCurrentIndex()));
+                        Log.d("Plan Size", String.valueOf(currentNavigator.getPlan().size()));
+
+                        // If the user is at the end of the plan, prompt a message.
+                        if (currentNavigator.getCurrentIndex() == currentNavigator.getPlan().size() - 1) {
+                            new MaterialAlertDialogBuilder(requireContext())
+                                    .setTitle("Alert")
+                                    .setMessage("You already reached the end.").show();
+                        } else if (currentNavigator.getCurrentIndex() == 0) {
+                            planMax = currentNavigator.getPlan().size() - 1;
+                            stepStatus = view.findViewById(R.id.progressBar);
+                            stepStatus.setMax(planMax);
+                            progress = planMax - 1;
+                            stepStatus.setProgress(progress);
+
+                            for (int i = 0; i < remainingExhibits.size(); i++) {
+                                Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
+                                planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
+                                currentNavigator.next();
+                            }
+                            remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
+                        } else {
+                                planMax = currentNavigator.getPlan().size() - 2;
+                                stepStatus = view.findViewById(R.id.progressBar);
+                                stepStatus.setMax(planMax);
+                                progress = planMax - 1;
+                                stepStatus.setProgress(progress);
+
+                                for (int i = 0; i < remainingExhibits.size(); i++) {
+                                    Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
+                                    planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
+                                    currentNavigator.next();
+                                }
+                                remainingExhibits.add(remainingExhibits.get(remainingExhibits.size() - 1));
+                        }
+
+                    })
+                    .setNegativeButton("No", (dialog, which) -> {
+                        Log.d("Yes pressed", "Yes pressed");
+                    })
+                    .show();
+
+
         });
         skipButton.setOnClickListener(v -> {
             offeredReplan = false;
@@ -93,6 +189,8 @@ public class DirectionFragment extends Fragment {
                     currentPosition.getNearestLandmark().id));
             // Prompt a replan
             updateActivityView();
+            planMax -= 1;
+            stepStatus.setMax(planMax);
         });
         // Set DirectionsActivity UI for first exhibit upon creation of activity
         updateActivityView();
@@ -111,7 +209,22 @@ public class DirectionFragment extends Fragment {
 
     public void updateActivityView() {
         exhibitName.setText(currentNavigator.getExhibit().exhibit_name);
-        directionsView.setText(currentNavigator.calcLocationBasedDirections(currentPosition,showBrief));
+        String fullText = currentNavigator.calcLocationBasedDirections(currentPosition,showBrief);
+
+        String regex = "\\b\\d+ft\\b";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(fullText);
+        SpannableString spannableString = new SpannableString(fullText);
+        while (matcher.find()) {
+            int start = matcher.start();
+            int end = matcher.end();
+            spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new RelativeSizeSpan(1.5f), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new ForegroundColorSpan(Color.BLACK), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+        directionsView.setText(spannableString);
+
         Pair<Integer, PlanListItem> previousExhibitInfo = currentNavigator.peekPrevious();
         Pair<Integer, PlanListItem> nextExhibitInfo = currentNavigator.peekNext();
 
