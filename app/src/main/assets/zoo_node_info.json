@@ -468,7 +468,7 @@
     "image_link": ""
   },
   {
-    "id": "intxn_primate_treetops",
+    "id": "intxn_primate_treetop",
     "kind": "intersection",
     "name": "Primate Path / Treetops Way",
     "tags": [],
@@ -504,7 +504,7 @@
     "image_link": ""
   },
   {
-    "id": "intxn_front_treetops",
+    "id": "intxn_front_treetop",
     "kind": "intersection",
     "name": "Front Street / Treetops Way",
     "tags": [],
