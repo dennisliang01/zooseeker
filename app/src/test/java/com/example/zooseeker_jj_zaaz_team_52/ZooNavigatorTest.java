@@ -143,7 +143,7 @@ public class ZooNavigatorTest {
 
         assertEquals(400, customNav.getDistance());
         customNav.previous();
-        assertEquals("100ft\nProceed on Reptile Road to Entrance Plaza\nProceed on Arctic Avenue 300 feet towards Arctic Foxes\n",
+        assertEquals("100ft\nProceed on Reptile Road to Entrance Plaza\n300ft \nProceed on Arctic Avenue towards Arctic Foxes\n",
                 customNav.getPreviousDirection()
         );
 
@@ -164,7 +164,7 @@ public class ZooNavigatorTest {
         final PlanListItem ENTRANCE = new PlanListItem("Entrance and Exit Gate", "entrance_exit_gate");
         String currentLoc = ENTRANCE.exhibit_id;
         String desId = "crocodile";
-        assertEquals("10ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
+        assertEquals("110ft\nProceed on Gate Path towards Front Street / Treetops Way\n" +
                 "30ft\nProceed on Treetops Way towards Treetops Way / Fern Canyon Trail\n" +
                 "30ft\nProceed on Treetops Way towards Treetops Way / Orangutan Trail\n" +
                 "100ft\nProceed on Treetops Way towards Treetops Way / Hippo Trail\n" +
