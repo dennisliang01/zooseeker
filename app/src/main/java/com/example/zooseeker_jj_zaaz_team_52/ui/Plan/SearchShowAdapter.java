@@ -3,11 +3,15 @@ package com.example.zooseeker_jj_zaaz_team_52.ui.Plan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.zooseeker_jj_zaaz_team_52.PlanListItem;
 import com.example.zooseeker_jj_zaaz_team_52.R;
 
@@ -45,7 +49,7 @@ public class SearchShowAdapter extends RecyclerView.Adapter<SearchShowAdapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.search_show_item, parent, false);
+                .inflate(R.layout.search_show_item_new, parent, false);
         return new ViewHolder(view);
     }
 
@@ -67,6 +71,7 @@ public class SearchShowAdapter extends RecyclerView.Adapter<SearchShowAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView exhibit_name;
         private final TextView exhibit_loc;
+        private final ImageView animal_search_image;
         private final TextView cancel_btn;
         private PlanListItem planItem;
 
@@ -74,6 +79,7 @@ public class SearchShowAdapter extends RecyclerView.Adapter<SearchShowAdapter.Vi
             super(itemView);
             this.exhibit_name = itemView.findViewById(R.id.display_exhibit_name);
             this.exhibit_loc = itemView.findViewById(R.id.display_exhibit_loc);
+            this.animal_search_image = itemView.findViewById(R.id.animal_search_image);
             this.cancel_btn = itemView.findViewById(R.id.delete_btn);
 
             this.cancel_btn.setOnClickListener(view -> {
@@ -90,7 +96,24 @@ public class SearchShowAdapter extends RecyclerView.Adapter<SearchShowAdapter.Vi
         public void setPlanItem(PlanListItem planItem) {
             this.planItem = planItem;
             this.exhibit_name.setText(planItem.exhibit_name);
-            this.exhibit_loc.setText(planItem.loc);
+            //this.exhibit_loc.setText(planItem.loc);
+            setAnimalImage(planItem.exhibit_id);
+        }
+
+        public void setAnimalImage(String exhibitName){
+            String resourceName = exhibitName.toLowerCase().replace(" ", "_").replace("-", "_");
+            int imageResId = itemView.getContext().getResources().getIdentifier(resourceName, "drawable", itemView.getContext().getPackageName());
+
+            // Use Glide to load the image or set a default image if the resource ID is not found
+            if (imageResId != 0) {
+                Glide.with(itemView.getContext())
+                        .load(imageResId)
+                        .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                        .into(animal_search_image);
+            } else {
+                animal_search_image.setImageResource(R.drawable.not_avaliable); // Fallback if no resource found
+            }
+
         }
     }
 }

@@ -4,10 +4,13 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +37,7 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.search_result_item, parent, false);
+                .inflate(R.layout.search_result_item_new, parent, false);
         return new ViewHolder(view);
     }
 
@@ -48,6 +51,7 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
         holder.setExhibit(exhibits.get(position));
         holder.getExhibitView().setText(holder.getExhibit().kind.toString().toLowerCase());
         holder.getAnimalView().setText(holder.getExhibit().name);
+        holder.setAnimalImage(holder.getExhibit().id);
 
         for (PlanListItem selected : dataBase.getAll()) {
             if (selected.exhibit_name.equals(holder.getExhibit().name)) {
@@ -84,11 +88,13 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
         private ZooData.VertexInfo exhibit;
         private TextView exhibitView;
         private TextView animalView;
+        private ImageView animalImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             exhibitView = itemView.findViewById(R.id.exhibit_type);
             animalView = itemView.findViewById(R.id.animal_name);
+            animalImage = itemView.findViewById(R.id.animal_image);
             this.animalView.setOnClickListener(view -> {
                 if (selectedConsumer == null) return;
                 selectedConsumer.accept(animalView, exhibit);
@@ -108,6 +114,8 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
             return exhibitView;
         }
 
+        public ImageView getAnimalImage() { return animalImage;}
+
         public void setExhibitView(TextView exhibitView) {
             this.exhibitView = exhibitView;
         }
@@ -118,6 +126,20 @@ public class ZooDataAdapter extends RecyclerView.Adapter<ZooDataAdapter.ViewHold
 
         public void setExhibit(ZooData.VertexInfo exhibit) {
             this.exhibit = exhibit;
+        }
+
+        public void setAnimalImage(String exhibitName){
+            String resourceName = exhibitName.toLowerCase().replace(" ", "_").replace("-", "_");
+            int imageResId = itemView.getContext().getResources().getIdentifier(resourceName, "drawable", itemView.getContext().getPackageName());
+
+            // Use Glide to load the image or set a default image if the resource ID is not found
+            if (imageResId != 0) {
+                Glide.with(itemView.getContext())
+                        .load(imageResId)
+                        .into(animalImage);
+            } else {
+                animalImage.setImageResource(R.drawable.not_avaliable); // Fallback if no resource found
+            }
         }
     }
 }

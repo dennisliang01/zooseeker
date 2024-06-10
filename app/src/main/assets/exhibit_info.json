@@ -1,0 +1,321 @@
+[
+  {
+    "animal_name": "Lion",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Lions are large carnivorous mammals that belong to the family of felines. They have a powerful build and are known for their strength and majestic mane.",
+    "image_location": "lion"
+  },
+  {
+    "animal_name": "Meerkat",
+    "location": "South America Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Meerkats are small mongooses known for their upright posture and social behavior. They live in large underground networks in deserts and savannas.",
+    "image_location": "meerkat"
+  },
+  {
+    "animal_name": "Warthog",
+    "location": "Asia Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Warthogs are wild members of the pig family that live in grassland, savanna, and woodland in sub-Saharan Africa. They are known for their distinctive tusks.",
+    "image_location": "warthog"
+  },
+  {
+    "animal_name": "African Plains",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "The African Plains exhibit showcases the diverse wildlife of the African savanna, including zebras, giraffes, and other iconic animals. Zebras are African equids best known for their distinctive black and white striped coats. Each zebra's stripes are unique. \n Giraffes are the tallest land animals, known for their long necks and legs, and spotted patterns. They are native to African savannas and woodlands.",
+    "image_location": "african_plains;zebra;giraffe"
+  },
+  {
+    "animal_name": "Zebra",
+    "location": "Arctic Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Zebras are African equids best known for their distinctive black and white striped coats. Each zebra's stripes are unique.",
+    "image_location": "zebra"
+  },
+  {
+    "animal_name": "Giraffe",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Giraffes are the tallest land animals, known for their long necks and legs, and spotted patterns. They are native to African savannas and woodlands.",
+    "image_location": "giraffe"
+  },
+  {
+    "animal_name": "Elephant",
+    "location": "Asia Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Elephants are the largest land animals on Earth. They are known for their intelligence, social structure, and long trunks.",
+    "image_location": "elephant"
+  },
+  {
+    "animal_name": "Black Rhino",
+    "location": "South America Exhibits",
+    "status": "endangered",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Black rhinos are critically endangered species known for their hooked upper lip which they use to grasp leaves and twigs.",
+    "image_location": "black_rhino"
+  },
+  {
+    "animal_name": "Cheetah",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Cheetahs are known for their incredible speed, reaching up to 60-70 mph in short bursts covering distances up to 500 meters.",
+    "image_location": "cheetah"
+  },
+  {
+    "animal_name": "Jaguar",
+    "location": "Asia Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Jaguars are large felines native to the Americas, known for their powerful build, and distinctive spotted coats.",
+    "image_location": "jaguar"
+  },
+  {
+    "animal_name": "Capybara",
+    "location": "Reptile House",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Capybaras are the largest rodents in the world. They are highly social animals and live in groups near water bodies in South America.",
+    "image_location": "capybara"
+  },
+  {
+    "animal_name": "Sloth Bear",
+    "location": "Front Street Friends",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Sloth bears are native to the Indian subcontinent and are known for their shaggy fur, long claws, and unique feeding habits on insects.",
+    "image_location": "sloth_bear"
+  },
+  {
+    "animal_name": "Tiger",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Tigers are the largest species among the Felidae and are recognized for their pattern of dark vertical stripes on reddish-orange fur.",
+    "image_location": "tiger"
+  },
+  {
+    "animal_name": "Panda",
+    "location": "Africa Exhibits",
+    "status": "endangered",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Pandas are bear-like animals native to south-central China. They are known for their distinctive black and white coloring and diet consisting mainly of bamboo.",
+    "image_location": "panda"
+  },
+  {
+    "animal_name": "Capuchin Monkeys",
+    "location": "Front Street Friends",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Capuchin monkeys are small primates known for their intelligence and dexterity. Native to South America, they are often recognized by their distinctive tufted hair.",
+    "image_location": "capuchin"
+  },
+  {
+    "animal_name": "Gorillas",
+    "location": "Arctic Exhibits",
+    "status": "threatened",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Gorillas are the largest of the primates and are native to the forests of central Africa. They are known for their gentle behavior and complex social structures.",
+    "image_location": "gorilla"
+  },
+  {
+    "animal_name": "Orangutans",
+    "location": "Arctic Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Orangutans are large apes with distinctive orange fur, native to the rainforests of Borneo and Sumatra. They are highly intelligent and spend most of their time in trees.",
+    "image_location": "orangutans"
+  },
+  {
+    "animal_name": "Siamangs",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Siamangs are the largest of the gibbons, known for their impressive vocalizations. They are native to the forests of Malaysia and Indonesia.",
+    "image_location": "siamang"
+  },
+  {
+    "animal_name": "Fern Canyon",
+    "location": "World of Primates",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Fern Canyon is a lush, green exhibit featuring a variety of fern species. It provides a cool, shaded environment reminiscent of a prehistoric landscape.",
+    "image_location": "fern_canyon"
+  },
+  {
+    "animal_name": "Parker Aviary",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Parker Aviary is a large, open-air enclosure housing a variety of bird species. It provides visitors with an immersive experience to observe birds in a naturalistic setting. \n Toucans are known for their large, colorful beaks and vibrant plumage. They are native to the tropical forests of Central and South America.",
+    "image_location": "parker_aviary;toucan;motmot"
+  },
+  {
+    "animal_name": "Toucan",
+    "location": "World of Primates",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Toucans are known for their large, colorful beaks and vibrant plumage. They are native to the tropical forests of Central and South America.",
+    "image_location": "toucan"
+  },
+  {
+    "animal_name": "Blue Capped Motmot",
+    "location": "Africa ExhibitsF",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "The Blue Capped Motmot is a colorful bird with a distinctive racket-shaped tail. It is native to the forests of Central America.",
+    "image_location": "motmot"
+  },
+  {
+    "animal_name": "Scripps Aviary",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Scripps Aviary is a large aviary featuring a diverse collection of birds from around the world. It offers a tranquil environment for bird-watching. \n Spoonbills are wading birds known for their distinctive flat, spoon-shaped bills. They can be found in marshes and wetlands around the world.",
+    "image_location": "scripps_aviary"
+  },
+  {
+    "animal_name": "Spoonbill",
+    "location": "Front Street Friends",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Spoonbills are wading birds known for their distinctive flat, spoon-shaped bills. They can be found in marshes and wetlands around the world.",
+    "image_location": "spoonbill"
+  },
+  {
+    "animal_name": "Hippos",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Hippos are large, semi-aquatic mammals native to sub-Saharan Africa. They spend much of their time in water to stay cool and are known for their massive size.",
+    "image_location": "hippo"
+  },
+  {
+    "animal_name": "Crocodiles",
+    "location": "Africa Exhibits",
+    "status": "threatened",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Crocodiles are large reptiles found in tropical regions around the world. Known for their powerful jaws and aggressive nature, they are apex predators in their habitats.",
+    "image_location": "crocodile"
+  },
+  {
+    "animal_name": "Owens Aviary",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "Owens Aviary is a spacious aviary that houses a variety of exotic birds. It provides a naturalistic habitat for birds to fly and interact. The Bali Mynah is a critically endangered bird native to the island of Bali in Indonesia. It is known for its striking white plumage and blue facial skin. \n The Emerald Dove is a small, colorful bird found in Southeast Asia. It is named for its bright green wings and is often seen foraging on the forest floor. \n The Bali Mynah is a critically endangered bird native to the island of Bali in Indonesia. It is known for its striking white plumage and blue facial skin.",
+    "image_location": "owens_aviary"
+  },
+  {
+    "animal_name": "Bali Mynah",
+    "location": "Africa Exhibits",
+    "status": "endangered",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "The Bali Mynah is a critically endangered bird native to the island of Bali in Indonesia. It is known for its striking white plumage and blue facial skin.",
+    "image_location": "bali_mynah"
+  },
+  {
+    "animal_name": "Emerald Dove",
+    "location": "Africa Exhibits",
+    "status": "stable",
+    "availability": {
+      "start_time": "08:00 AM",
+      "end_time": "09:00 AM"
+    },
+    "description": "The Emerald Dove is a small, colorful bird found in Southeast Asia. It is named for its bright green wings and is often seen foraging on the forest floor.",
+    "image_location": "dove"
+  }
+]

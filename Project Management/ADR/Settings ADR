@@ -1,0 +1,23 @@
+# Map Settings Context and Problem Statement
+
+The map settings aim to allow filtering of different nodes on the map fragment in order to preserve visual clarity.
+The map settings allows to filter exhibits, restrooms, and restaurants.
+
+# Decision Drivers
+
+- **User Experience:** The map must be navigable by users seeking to utilize the map for real-time navigation purposes, a task that is made easier with less visual noise that is not related to each user's individual zoo plan.
+- **Accessibility:** The inclusion of a settings page affords the possibility of the app accomodating users of different ability and affinity levels with the addition of toggleable settings that can cater the app display to individual users.
+
+# Considered Options
+
+In the development of the settings page, numerous ideas for settings to be displayed on the settings fragment were discussed. However, due to unforeseen time constraints, only the node-filtering functionality was implemented and represented in the fragment.
+
+# Separation of Map and Settings Fragments
+
+- **Pros:** Transitioning between fragments allows for real-time communication between different parts of the application, which inherently affords a clearer mental model to developers seeking to understand the mechanics of the filtering function
+- **Cons:** Real-time communication between both fragments via a viewmodel is a process that is computationally more expensive than the initially-proposed map-only option.
+
+# Implications
+
+- **Development:** Requires investment in manually changing inter-fragment viewmodel in order to facilitate communication between map and settings pages instead of using navigation controllers or extras for communication.
+- **Testing:** Extensive testing across different devices and browsers is necessary to ensure consistent performance and accessibility.

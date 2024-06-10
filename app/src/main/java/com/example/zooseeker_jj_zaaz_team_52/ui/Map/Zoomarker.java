@@ -1,8 +1,8 @@
 package com.example.zooseeker_jj_zaaz_team_52.ui.Map;
 
 import static org.apache.commons.lang3.ClassUtils.getPackageName;
-
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,7 +25,7 @@ public class Zoomarker extends LinearLayout {
     private OnZoomarkerClickListener clickListener;
     private ShapeableImageView mapIcon;
 
-    public Zoomarker(Context context, ZooData.VertexInfo info, double scale) {
+    public Zoomarker(Context context, ZooData.VertexInfo info, double scale, boolean selected) {
         super(context);
         markerData = info;
         init(context);
@@ -36,14 +36,22 @@ public class Zoomarker extends LinearLayout {
         mapIcon.setLayoutParams(layoutParams);
         int resId = getResources().getIdentifier("@drawable/" + markerData.id, "drawable", getContext().getPackageName());
         mapIcon.setImageResource(resId);
+        if(selected) {
+            ColorStateList strokeColor = ColorStateList.valueOf(getResources().getColor(R.color.red));
+            mapIcon.setStrokeColor(strokeColor);
+        }
+    }
 
+    public void setPlanned() {
+        ColorStateList strokeColor = ColorStateList.valueOf(getResources().getColor(R.color.red));
+        mapIcon.setStrokeColor(strokeColor);
+        this.invalidate();
     }
 
     private void init(Context context) {
         LayoutInflater.from(context).inflate(R.layout.zoomarker, this, true);
         init();
     }
-
 
     private void init() {
         // Set the OnClickListener for this view

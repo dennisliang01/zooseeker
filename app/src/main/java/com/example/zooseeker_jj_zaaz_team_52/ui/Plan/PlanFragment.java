@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -160,9 +161,13 @@ public class PlanFragment extends Fragment {
         if (isVisible) {
             courseRV.setAdapter(searchAdapter);
             createPlanBtn.setVisibility(View.VISIBLE);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
+            courseRV.setLayoutManager(gridLayoutManager);
         } else {
             courseRV.setAdapter(zooAdapter);
             createPlanBtn.setVisibility(View.INVISIBLE);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+            courseRV.setLayoutManager(gridLayoutManager);
         }
         isVisible = !isVisible;
     }
