@@ -266,7 +266,9 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
     public String calcLocationBasedDirections(ZooLocation currentPosition, boolean isBrief) {
 
         String currentLoc = currentPosition.getNearestLandmark().id;
-
+        if (peekPrevious() != null) {
+            currentLoc = peekPrevious().getSecond().getExhibitId();
+        }
         StringBuilder directions = new StringBuilder();
 
         PlanListItem exhibitToVisit = plan.get(currentIndex).planItem;
