@@ -37,7 +37,7 @@ public class Zoomarker extends LinearLayout {
         int resId = getResources().getIdentifier("@drawable/" + markerData.id, "drawable", getContext().getPackageName());
         mapIcon.setImageResource(resId);
         if(selected) {
-            ColorStateList strokeColor = ColorStateList.valueOf(getResources().getColor(R.color.red));
+            ColorStateList strokeColor = ColorStateList.valueOf(getResources().getColor(R.color.white));
             mapIcon.setStrokeColor(strokeColor);
         }
     }
