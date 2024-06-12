@@ -21,6 +21,8 @@ Once installed, start the app and follow the on-screen instructions to select ex
 
 [UI ADR](./Project%20Management/ADR/UI_ADR.md)
 
+[Map ADR](./Project%20Management/ADR/Map%20ADR.md)
+
 [Biweekly Workplans](./Project%20Management/CSE112%20Workplans)
 
 [Onboarding Guide](./Onboard.md)
