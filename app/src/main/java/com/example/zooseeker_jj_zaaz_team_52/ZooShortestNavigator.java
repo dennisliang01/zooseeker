@@ -488,7 +488,7 @@ public class ZooShortestNavigator implements ZooNavigator, Serializable {
 
 
     }
-
+    /* Skip to the end of the plan, current exhibit user is on should not be skipped */
 @Override
 public void skipToEnd() {
 

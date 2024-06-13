@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// This class is used to store the information of the activity.
 public class InfoActivityDB implements Serializable {
     public InfoActivityDB(String InfoActivityFile, Context context) {
 

@@ -15,6 +15,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * This class is used to store the information of the animal.
+ * The information includes the scientific name, regular name, animal description, and image location.
+ */
 public class AnimalInfoDB {
     public AnimalInfoDB(String AnimalInfoFile, Context context) {
 

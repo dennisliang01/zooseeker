@@ -18,9 +18,11 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
+// Activity class to store the activity name and type
 @Entity(tableName = "activity")
 public class Activity implements Serializable {
 
+    // activity_name is the primary key
     public Activity(@NonNull String activity_name, String activity_type) {
         this.activity_name = activity_name;
         this.activity_type = activity_type;
@@ -48,6 +50,7 @@ public class Activity implements Serializable {
                 '}';
     }
 
+    // Load the JSON file from the assets folder
     public static List<Activity> loadJSON(Context context, String path) {
         try {
             InputStream input = context.getAssets().open(path);

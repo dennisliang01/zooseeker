@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+// This class is used to create the database for the activities
 @Database(entities = {Activity.class}, version = 1, exportSchema = false)
 public abstract class ActivityDB extends RoomDatabase {
 
@@ -20,6 +21,7 @@ public abstract class ActivityDB extends RoomDatabase {
         return singleton;
     }
 
+    // This method creates the database
     private static ActivityDB makeDatabase(Context context) {
         return Room.databaseBuilder(context, ActivityDB.class, "activity.db")
                 .allowMainThreadQueries()

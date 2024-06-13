@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+/* VisitorDB Class: Single Responsibility - Manages visitor information
+* Note: Not yet implemented. Planned for future extensions.
+*/
 public class VisitorDB {
     Map<String, Schedule.VertexInfo> exhibitInfo;
 

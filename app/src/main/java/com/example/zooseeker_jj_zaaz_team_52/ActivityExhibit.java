@@ -3,6 +3,14 @@ package com.example.zooseeker_jj_zaaz_team_52;
 import java.io.Serializable;
 import java.time.LocalTime;
 
+/**
+ * This class is used to store the information of the activity and exhibit. This was intended as the linking table between the activity and exhibit.
+ * It has the following attributes:
+ * - activity_name: the name of the activity
+ * - exhibit_name: the name of the exhibit
+ * - start_time: the start time of the activity
+ * - end_time: the end time of the activity
+ */
 public class ActivityExhibit implements Serializable {
 
     public ActivityExhibit(String activity_name, String exhibit_name, LocalTime start_time, LocalTime end_time) {

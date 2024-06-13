@@ -18,6 +18,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * This class is used to store the information of the exhibit.
+ * The information includes the scientific name, exhibit name, start time, and end time.
+ */
 public class InfoExhibitDB implements Serializable {
 
     public InfoExhibitDB(String InfoExhibitFile, Context context) {
