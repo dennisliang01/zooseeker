@@ -19,6 +19,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+// VisitorDB class to store visitor information
+// Not yet used
 public class VisitorDB {
     Map<String, Schedule.VertexInfo> exhibitInfo;
 

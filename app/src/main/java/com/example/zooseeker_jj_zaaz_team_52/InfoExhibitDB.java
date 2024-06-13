@@ -18,8 +18,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// This class is used to store the information of the exhibit
 public class InfoExhibitDB implements Serializable {
 
+    // Read JSON file and store the information of the exhibit
     public InfoExhibitDB(String InfoExhibitFile, Context context) {
 
         InputStream inputStream = null;

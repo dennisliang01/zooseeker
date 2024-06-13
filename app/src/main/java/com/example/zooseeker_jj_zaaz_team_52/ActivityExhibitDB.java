@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * This class is used to read the JSON file that contains the activity and exhibit information.
+ * It reads the JSON file and stores the information in a map.
+ */
 public class ActivityExhibitDB implements Serializable {
     public ActivityExhibitDB(String ActivityExhibitFile, Context context) {
 

@@ -3,6 +3,7 @@ package com.example.zooseeker_jj_zaaz_team_52;
 import java.io.Serializable;
 import java.time.LocalTime;
 
+// This class is used to store the information of the exhibit
 public class InfoExhibit implements Serializable {
 
     public InfoExhibit(String scientific_name, String exhibit_name, LocalTime start_time, LocalTime end_time) {

@@ -3,6 +3,8 @@ package com.example.zooseeker_jj_zaaz_team_52;
 import java.io.Serializable;
 import java.time.LocalTime;
 
+// Visitor class to store visitor information
+// Not yet used
 public class Visitor implements Serializable {
         // Ex of visitor_type: Adult, Children, etc.
         public Visitor(String visitor_id, String visitor_type, int break_freq, String accessibility_needs) {
