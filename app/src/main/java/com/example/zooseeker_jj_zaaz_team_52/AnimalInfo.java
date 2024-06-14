@@ -2,8 +2,10 @@ package com.example.zooseeker_jj_zaaz_team_52;
 
 import java.io.Serializable;
 
+// This class is used to store the animal information
 public class AnimalInfo implements Serializable {
 
+    // Scientific name is the primary key
     public AnimalInfo(String scientific_name, String regular_name, String animal_description, String image_location) {
         this.scientific_name = scientific_name;
         this.regular_name = regular_name;

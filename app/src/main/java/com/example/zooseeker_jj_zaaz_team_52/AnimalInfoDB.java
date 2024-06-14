@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// Class to read the animal information from the JSON file
 public class AnimalInfoDB {
     public AnimalInfoDB(String AnimalInfoFile, Context context) {
 

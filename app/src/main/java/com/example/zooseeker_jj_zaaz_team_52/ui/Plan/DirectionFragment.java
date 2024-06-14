@@ -118,6 +118,7 @@ public class DirectionFragment extends Fragment {
             stepStatus.setProgress(progress);
         });
         stopButton.setOnClickListener(v -> {
+            // Prompt a message to confirm if the user wants to end the plan.
             new MaterialAlertDialogBuilder(requireContext())
                     .setTitle("End Plan")
                     .setMessage("Are you sure you would like to end your plan?")
@@ -128,7 +129,6 @@ public class DirectionFragment extends Fragment {
                         if (currentNavigator.getCurrentIndex() != currentNavigator.getPlan().size() - 1) {
                             remainingExhibits = currentNavigator.findRemainingExhibits();
                         }
-
 
                         PlanListItemDao planListItemDao = PlanDatabase.getSingleton(requireActivity()).planListItemDao();
 
@@ -150,6 +150,7 @@ public class DirectionFragment extends Fragment {
                             progress = planMax - 1;
                             stepStatus.setProgress(progress);
 
+                            // Delete the remaining exhibits from the database.
                             for (int i = 0; i < remainingExhibits.size(); i++) {
                                 Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
                                 planListItemDao.delete(remainingExhibits.get(i).exhibit_name);
@@ -163,6 +164,7 @@ public class DirectionFragment extends Fragment {
                                 progress = planMax - 1;
                                 stepStatus.setProgress(progress);
 
+                                // Delete the remaining exhibits from the database.
                                 for (int i = 0; i < remainingExhibits.size(); i++) {
                                     Log.d("Deleting", remainingExhibits.get(i).exhibit_name);
                                     planListItemDao.delete(remainingExhibits.get(i).exhibit_name);

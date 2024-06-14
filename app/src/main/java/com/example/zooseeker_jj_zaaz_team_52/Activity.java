@@ -18,9 +18,11 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
+// Activity Class: Single Responsibility - To store information about activities
 @Entity(tableName = "activity")
 public class Activity implements Serializable {
 
+    // Activity name is the primary key
     public Activity(@NonNull String activity_name, String activity_type) {
         this.activity_name = activity_name;
         this.activity_type = activity_type;

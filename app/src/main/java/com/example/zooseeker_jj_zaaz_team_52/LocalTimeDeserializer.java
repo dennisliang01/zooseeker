@@ -8,6 +8,7 @@ import com.google.gson.JsonDeserializationContext;
 import java.lang.reflect.Type;
 import java.time.LocalTime;
 
+// This class is used to deserialize LocalTime used in the DB
 public class LocalTimeDeserializer implements JsonDeserializer<LocalTime> {
     @Override
     public LocalTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
